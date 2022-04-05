@@ -1,0 +1,14 @@
+@import "./variables";
+
+@mixin button($bg-color: $button-bg1, $color: $light-color) {
+  background: $bg-color;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: $color;
+  border: none;
+  padding: 14px 28px;
+  transition: all 0.4s ease-in-out;
+}
