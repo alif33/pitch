@@ -10,6 +10,10 @@ h2.main-title {
   font-weight: 600;
   font-size: 35px;
   color: #000f3c;
+  @media (max-width: 600px) {
+    font-size: 25px;
+    line-height: 25px;
+  }
 }
 button.main-btn {
   @include button($button-bg1, $light-color);
@@ -27,13 +31,21 @@ img {
   left: 0;
   width: 100%;
   z-index: 99999;
+  .container {
+    @media (max-width: 600px) {
+      justify-content: start;
+    }
+  }
   .navbar-brand {
     position: relative;
     z-index: 999999;
+    @media (max-width: 580px) {
+      width: 35%;
+    }
   }
   .navbar-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     width: 50%;
   }
@@ -52,12 +64,26 @@ img {
     &:hover {
       background: transparent;
       box-shadow: 0 0 1px 2px #5780ff;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    @media (max-width: 992px) {
+      font-size: 16px;
+      line-height: 16px;
+    }
+    @media (max-width: 580px) {
+      font-size: 12px;
+      line-height: 12px;
     }
   }
   button.menu-btn {
+    margin-left: 35px;
     border: none;
     background: transparent;
     display: none;
+    @media (max-width: 580px) {
+      margin-left: 8px;
+    }
   }
   .navbar-menu {
     transition: all 0.5s ease-in-out;
@@ -135,28 +161,42 @@ img {
       flex-direction: row;
       justify-content: start;
       margin-top: 32px;
+      @media (max-width: 600px) {
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+        flex-direction: column;
+        align-items: start;
+      }
     }
     .header-title {
       width: 100%;
     }
     h2 {
       font-weight: 600;
-      font-size: 60px;
-      line-height: 60px;
+      font-size: 50px;
       position: relative;
       width: 439px;
       @media (max-width: 600px) {
         width: auto;
+        font-size: 30px;
+        width: 228px;
       }
       img {
         width: auto;
         position: absolute;
         top: -11%;
         left: -12%;
+        @media (max-width: 600px) {
+          display: none;
+        }
       }
     }
     input {
       @extend .input-basic;
+      @media (max-width: 600px) {
+        width: 283px;
+        height: 46px;
+      }
     }
     button {
       @include button($button-bg2, $light-color);
@@ -164,6 +204,9 @@ img {
         background-color: $light-color;
         color: $main-color;
         box-shadow: 0 0 9px 0px #00000024;
+      }
+      @media (max-width: 600px) {
+        margin-top: 30px;
       }
     }
   }
@@ -177,6 +220,24 @@ img {
       @media (max-width: 992px) {
         bottom: 8%;
         right: 0%;
+      }
+      @media (max-width: 675px) {
+        display: none;
+      }
+    }
+    img {
+      &:first-child {
+        display: block;
+      }
+        display: none;
+
+      @media (max-width: 675px) {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: block;
+        }
       }
     }
   }
@@ -249,6 +310,9 @@ img {
         height: 24px;
       }
     }
+    @media (max-width: 675px) {
+      margin-right: auto;
+    }
   }
 }
 
@@ -304,6 +368,9 @@ img {
             color: #000f3c;
             @media (max-width: 675px) {
               display: none;
+              padding: 2px 6px;
+              font-size: 12px;
+              text-align: center;
               &:first-child {
                 display: table-cell !important;
               }
@@ -326,6 +393,9 @@ img {
             }
             padding: 8px 33px;
             button.main-btn {
+              @media (max-width: 600px) {
+                width: 65%;
+              }
               @include button($light-color, #000f3c);
               margin-left: 0px;
               box-shadow: 0px 4px 10px 5px rgba(87, 128, 255, 0.1);
@@ -353,6 +423,9 @@ img {
 
             @media (max-width: 675px) {
               display: none;
+              padding: 8px 6px;
+              font-size: 12px;
+              text-align: center;
               &:first-child {
                 display: table-cell !important;
               }
@@ -373,6 +446,22 @@ img {
   img {
     width: inherit;
   }
+
+  .model-img {
+    position: relative;
+    img {
+      &:first-child {
+      }
+      &:last-child {
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        top: 42%;
+        left: 34%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
   button.main-btn {
     background: $button-bg2;
     color: $light-color;
@@ -380,6 +469,9 @@ img {
       background: $button-bg2;
       color: $light-color;
     }
+  }
+  h2 {
+    margin-top: 38px;
   }
 }
 
@@ -407,6 +499,11 @@ img {
   }
   .col-md-6 {
     flex-direction: column;
+  }
+  .pool-alert-right {
+    @media (max-width: 992px) {
+      margin-top: 70px;
+    }
   }
 }
 

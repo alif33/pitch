@@ -18,7 +18,9 @@ const Header = () => {
             </div>
             <div className="col-lg-6 col-md-12">
               <div className="header-rightside">
-                <img src="./img/header-img.svg" alt="" /> 
+                <img src="./img/header-img.svg" alt="" />
+                <img src="./img/header-img1.svg" alt="" />
+                 
                 <span>
                   <img src="./img/frame.svg" alt="" />
                 </span>

@@ -11,13 +11,6 @@ const Navbar = () => {
         </Link>
 
         <div className="navbar-div">
-          <button
-            className="menu-btn"
-            onClick={() => setNavbarShow(!navbarShow)}
-          >
-            <img src="./img/menu-icon.svg" alt="" />
-          </button>
-
           <div className={navbarShow ? "navbar-menu active" : "navbar-menu"}>
             {navbarShow && (
               <button
@@ -45,7 +38,13 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <button className="main-btn">Connect Wallet</button>
+          <button className="main-btn">Connect Wallet</button>{" "}
+          <button
+            className="menu-btn"
+            onClick={() => setNavbarShow(!navbarShow)}
+          >
+            <img src="./img/menu-icon.svg" alt="" />
+          </button>
         </div>
       </div>
     </nav>
