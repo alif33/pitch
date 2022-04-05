@@ -145,6 +145,9 @@ img {
       line-height: 60px;
       position: relative;
       width: 439px;
+      @media (max-width: 600px) {
+        width: auto;
+      }
       img {
         width: auto;
         position: absolute;
@@ -189,11 +192,6 @@ img {
   background: #eff3ff;
   @extend .flex-basic;
 
-  @media (max-width: 993px) {
-    img {
-      display: none;
-    }
-  }
   .new-project-title {
     text-align: center;
     h2 {
@@ -201,6 +199,9 @@ img {
     }
     img {
       width: auto;
+      @media (max-width: 993px) {
+        display: none;
+      }
     }
   }
   .new-project-items {
