@@ -2,7 +2,6 @@ import React from "react";
 import Slider from "react-slick";
 
 const NewProjects = () => {
-
   var settings = {
     dots: false,
     infinite: false,
@@ -45,17 +44,17 @@ const NewProjects = () => {
 
   return (
     <div className="new-project-section">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-lg-2 col-md-12">
             <div className="new-project-title">
               <img src="./img/frame.svg" alt="" />
-              <h2 className="main-title">Our new projects</h2>
+              <h2 className="main-title">Our new<br/> projects</h2>
               <img src="./img/frame.svg" alt="" />
             </div>
           </div>
           <div className="col-lg-10 col-md-12">
-            <div className="new-project-items">
+            <div className="new-project-items all">
               <Slider {...settings}>
                 <div>
                   <div className="px-2 mt-md-5">
@@ -146,6 +145,90 @@ const NewProjects = () => {
                   </div>
                 </div>
               </Slider>
+            </div>
+            <div className="new-project-items tablet">
+              <div className="row">
+                <div className="col-6 mt-5">
+                  <div className="new-project-item">
+                    <div className="card">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                    <div className="new-item-progass">
+                      <div
+                        className="progass-complate"
+                        style={{ width: "50%" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6 mt-5">
+                  <div className="new-project-item">
+                    <div className="card">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                    <div className="new-item-progass">
+                      <div
+                        className="progass-complate"
+                        style={{ width: "50%" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6 mt-5">
+                  <div className="new-project-item">
+                    <div className="card">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                    <div className="new-item-progass">
+                      <div
+                        className="progass-complate"
+                        style={{ width: "50%" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6 mt-5">
+                  <div className="new-project-item">
+                    <div className="card">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                    <div className="new-item-progass">
+                      <div
+                        className="progass-complate"
+                        style={{ width: "50%" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

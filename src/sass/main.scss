@@ -214,10 +214,14 @@ img {
 
   .header-rightside {
     position: relative;
+
+    @media (max-width: 804px) and (min-width: 600px) {
+      margin-top: 45px;
+    }
     span {
       position: absolute;
       bottom: 0;
-      right: -10%;
+      right: 0%;
       @media (max-width: 992px) {
         bottom: 8%;
         right: 0%;
@@ -249,6 +253,18 @@ img {
   }
 }
 
+.new-project-items.all {
+  display: block !important;
+  @media (max-width: 991px) and (min-width: 600px) {
+    display: none !important;
+  }
+}
+.new-project-items.tablet {
+  display: none !important;
+  @media (max-width: 991px) and (min-width: 600px) {
+    display: block !important;
+  }
+}
 .new-project-section {
   padding-top: 60px;
   padding-bottom: 40px;
@@ -284,6 +300,15 @@ img {
     .new-project-item {
       .card {
         @extend .card-basic;
+        @media (max-width: 1400px) and (min-width: 1024px) {
+          padding: 8px 10px !important;
+          p {
+            font-size: 12px !important;
+            span {
+              font-size: 12px !important;
+            }
+          }
+        }
       }
 
       .new-item-progass {
@@ -291,6 +316,7 @@ img {
       }
     }
   }
+
   button {
     font-weight: 500;
     font-size: 16px;
@@ -496,10 +522,9 @@ img {
   }
   h2 {
     margin-top: 38px;
-   
   }
-  P{
-     @media (max-width: 600px) {
+  P {
+    @media (max-width: 600px) {
       font-weight: 300;
       font-size: 18px;
       line-height: 20px;

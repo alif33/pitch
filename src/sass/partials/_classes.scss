@@ -71,6 +71,14 @@
       margin-left: 0;
     }
   }
+  @media (max-width: 1400px) and (min-width: 1024px) {
+    p {
+      font-size: 12px !important;
+      span {
+        font-size: 12px !important;
+      }
+    }
+  }
 }
 
 .progress {

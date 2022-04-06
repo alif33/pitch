@@ -47,92 +47,183 @@ const UpcomingProjects = () => {
           <h2 className="main-title">Upcoming projects</h2>
         </div>
         <div className="container">
-          <Slider {...settings}>
-            <div className="px-2 mt-md-5">
-              <div className="up-project">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count">
-                      In <span>3</span> Days
-                    </p>
+          <div className="new-project-items all">
+            <Slider {...settings}>
+              <div className="px-2 mt-md-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count">
+                        In <span>3</span> Days
+                      </p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
+                </div>
+              </div>
+              <div className="px-2 mt-md-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count">
+                        In <span>3</span> Days
+                      </p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="px-2 mt-md-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count">
+                        In <span>3</span> Days
+                      </p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="px-2 mt-md-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count active">soon</p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+          </div>
+          <div className="new-project-items tablet">
+            <div className="row">
+              <div className="col-6 mt-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count">
+                        {" "}
+                        In <span>3</span> Days
+                      </p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6 mt-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count">
+                        {" "}
+                        In <span>3</span> Days
+                      </p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6 mt-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count">
+                        {" "}
+                        In <span>3</span> Days
+                      </p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6 mt-5">
+                <div className="up-project">
+                  <div className="card">
+                    <div className="up-p-card-header">
+                      <img src="./img/roadstarter.svg" alt="" />
+                      <h4> RoadStarter</h4>
+                      <p className="count active">soon</p>
+                    </div>
+                    <div className="up-p-card-body">
+                      <p>
+                        total raise :<span> 200,000$</span>
+                      </p>
+                      <p>
+                        Max allocation :<span> TBA</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="px-2 mt-md-5">
-              <div className="up-project">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count">
-                      In <span>3</span> Days
-                    </p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="px-2 mt-md-5">
-              <div className="up-project">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count">
-                      In <span>3</span> Days
-                    </p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="px-2 mt-md-5">
-              <div className="up-project">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count active">soon</p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Slider>
+          </div>
         </div>
-      </div> 
+      </div>
     );
 };
 
