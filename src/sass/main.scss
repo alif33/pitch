@@ -61,11 +61,11 @@ img {
     }
   }
   button.main-btn {
+    font-size: 16px;
     &:hover {
       background: transparent;
       box-shadow: 0 0 1px 2px #5780ff;
       font-weight: 600;
-      font-size: 16px;
     }
     @media (max-width: 992px) {
       font-size: 16px;
@@ -74,6 +74,7 @@ img {
     @media (max-width: 580px) {
       font-size: 12px;
       line-height: 12px;
+      padding: 12px 18px;
     }
   }
   button.menu-btn {
@@ -163,7 +164,7 @@ img {
       margin-top: 32px;
       @media (max-width: 600px) {
         flex-wrap: wrap;
-        margin-bottom: 100px;
+        margin-bottom: 5px;
         flex-direction: column;
         align-items: start;
       }
@@ -206,7 +207,7 @@ img {
         box-shadow: 0 0 9px 0px #00000024;
       }
       @media (max-width: 600px) {
-        margin-top: 30px;
+        margin-top: 12px;
       }
     }
   }
@@ -229,21 +230,22 @@ img {
       &:first-child {
         display: block;
       }
-        display: none;
+      display: none;
 
       @media (max-width: 675px) {
         &:first-child {
-          display: none;
+          display: none !important;
         }
-        &:last-child {
-          display: block;
-        }
+        display: block !important;
       }
     }
   }
   @media (max-width: 992px) {
     height: auto;
     padding-top: 150px;
+  }
+  @media (max-width: 600px) {
+    padding-top: 75px;
   }
 }
 
@@ -252,15 +254,21 @@ img {
   padding-bottom: 40px;
   background: #eff3ff;
   @extend .flex-basic;
+  @media (max-width: 600px) {
+    padding-top: 0px;
+  }
 
   .new-project-title {
     text-align: center;
     h2 {
       margin: 55px 0;
+      @media (max-width: 600px) {
+        margin: 40px 0;
+      }
     }
     img {
       width: auto;
-      @media (max-width: 993px) {
+      @media (max-width: 991px) {
         display: none;
       }
     }
@@ -319,6 +327,9 @@ img {
 .upcoming-projects {
   padding: 100px 0;
   background: linear-gradient(97.41deg, #e4ebff -8.24%, $light-color 62.01%);
+  @media (max-width: 600px) {
+    padding: 60px 0;
+  }
   .up-project {
     margin-top: 40px;
     .card {
@@ -347,6 +358,9 @@ img {
 .recent-project {
   padding: 100px 0;
   background-color: $light-color;
+  @media (max-width: 600px) {
+    padding: 55px 0;
+  }
   .recent-project-table {
     margin-top: 40px !important;
     max-width: 975px;
@@ -437,12 +451,18 @@ img {
         }
       }
     }
+    @media (max-width: 600px) {
+      width: 282px;
+    }
   }
 }
 .model-section {
   @extend .flex-basic;
   padding: 100px 0;
   background: linear-gradient(98.32deg, #e4ebff 3.71%, #ffffff 94.89%);
+  @media (max-width: 600px) {
+    padding: 60px 0;
+  }
   img {
     width: inherit;
   }
@@ -469,9 +489,23 @@ img {
       background: $button-bg2;
       color: $light-color;
     }
+    @media (max-width: 600px) {
+      padding: 16px 17px;
+      margin-top: 20px;
+    }
   }
   h2 {
     margin-top: 38px;
+   
+  }
+  P{
+     @media (max-width: 600px) {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 20px;
+      color: #000f3c;
+      text-align: center;
+    }
   }
 }
 
@@ -503,6 +537,12 @@ img {
   .pool-alert-right {
     @media (max-width: 992px) {
       margin-top: 70px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      img {
+        max-width: 295.6px;
+      }
     }
   }
 }
@@ -510,9 +550,18 @@ img {
 .footer {
   padding: 50px 0;
   background: linear-gradient(90.13deg, #e5ecff -15.4%, #ffffff 48.07%);
-
+  .footer-logo {
+    @media (max-width: 767px) {
+      img {
+        width: 160px;
+        height: 38px;
+      }
+    }
+  }
   .footer-menu {
     list-style: none;
+    padding: 0;
+    margin: 0;
     .footer-menu-title {
       font-weight: 700;
       font-size: 15px;
@@ -528,6 +577,9 @@ img {
         text-transform: uppercase;
         color: #001246ad;
       }
+    }
+    @media (max-width: 767px) {
+      margin-top: 40px;
     }
   }
 }
@@ -714,6 +766,103 @@ img {
       }
       @media (max-width: 430px) {
         width: inherit;
+      }
+    }
+  }
+}
+
+.modal-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(90deg, #e5edff 3.32%, #ffffff 98.32%);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  @media (max-width: 600px) {
+    height: 265px;
+  }
+
+  .modal-info {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    width: 84%;
+    margin: auto;
+    @media (max-width: 992px) {
+      width: 95%;
+    }
+    @media (max-width: 600px) {
+      height: 265px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+    p {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #000f3c;
+      width: 64%;
+
+      a {
+        color: #000f3c;
+      }
+      @media (max-width: 992px) {
+        font-size: 12px;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    div {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 30%;
+      margin-left: auto;
+      justify-content: space-evenly;
+      @media (max-width: 992px) {
+        width: 36%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+        height: auto;
+      }
+      button.namage {
+        border: none;
+        background: transparent;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: lowercase;
+        color: #000f3c;
+      }
+      button.main-btn {
+        @include button($button-bg2, $light-color);
+      }
+      span {
+        cursor: pointer;
+        img {
+          width: 30px;
+          height: 30px;
+          &:last-child {
+            display: none;
+          }
+          @media (max-width: 992px) {
+            display: block !important;
+            &:first-child {
+              display: none !important;
+            }
+          }
+          @media (max-width: 600px) {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+          }
+        }
       }
     }
   }

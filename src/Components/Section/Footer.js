@@ -6,14 +6,14 @@ const Footer = () => {
     <div className="footer">
       <div className="container">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-3 col-sm-12">
             <div className="footer-logo">
               <Link to="/">
                 <img src="./img/footer-logo.svg" alt="" />
               </Link>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 col-sm-4 col-6">
             <ul className="footer-menu">
               <h4 className="footer-menu-title">COMPANY</h4>
               <li className="footer-menu-item">
@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 col-sm-4 col-6">
             <ul className="footer-menu">
               <h4 className="footer-menu-title">SUPPORT</h4>
               <li className="footer-menu-item">
@@ -47,7 +47,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 col-sm-4">
             <ul className="footer-menu">
               <h4 className="footer-menu-title">SUPPORT</h4>
               <li className="footer-menu-item">

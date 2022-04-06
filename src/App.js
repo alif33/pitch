@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Home from "./Components/Home";
 import ChainPort from "./Components/ChainPort";
 import Contact from "./Components/Contact";
+import Modal from "./Components/Section/Modal";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/chaiport" element={<ChainPort/>} />
         <Route path="/contact" element={<Contact/>} />
       </Routes>
+      <Modal/>
     </BrowserRouter>
   );
 };
