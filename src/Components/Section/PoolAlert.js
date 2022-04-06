@@ -15,7 +15,8 @@ const PoolAlert = () => {
             </div>
             <div className="col-md-6">
               <div className="pool-alert-right">
-                <img src="./img/poolalert.svg" alt="" />
+                <img src="./img/Group_227.svg" alt="" className='img1'/>
+                <img className='img2' src="./img/Group.svg" alt="" />
               </div>
             </div>
           </div>
