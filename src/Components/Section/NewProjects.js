@@ -9,6 +9,9 @@ const NewProjects = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
+    centerMode: true,
+    className: "center",
+    centerPadding: "40px",
     responsive: [
       {
         breakpoint: 1024,
@@ -49,7 +52,10 @@ const NewProjects = () => {
           <div className="col-lg-2 col-md-12">
             <div className="new-project-title">
               <img src="./img/frame.svg" alt="" />
-              <h2 className="main-title">Our new<br/> projects</h2>
+              <h2 className="main-title">
+                Our new
+                <br /> projects
+              </h2>
               <img src="./img/frame.svg" alt="" />
             </div>
           </div>
