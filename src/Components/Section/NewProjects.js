@@ -11,7 +11,7 @@ const NewProjects = () => {
     initialSlide: 0,
     centerMode: true,
     className: "center",
-    centerPadding: "40px",
+    centerPadding: "20px",
     responsive: [
       {
         breakpoint: 1024,

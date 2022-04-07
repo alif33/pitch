@@ -348,6 +348,9 @@ img {
             }
           }
         }
+        @media (max-width: 327px) {
+          padding: 28px 10px;
+        }
       }
 
       .new-item-progass {
@@ -415,6 +418,9 @@ img {
       }
       .up-p-card-body {
         padding: 28px 34px;
+        @media (max-width: 327px) {
+          padding: 22px 0px;
+        }
       }
     }
   }
