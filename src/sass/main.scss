@@ -10,9 +10,15 @@ h2.main-title {
   font-weight: 600;
   font-size: 35px;
   color: #000f3c;
+  text-transform: capitalize;
   @media (max-width: 600px) {
     font-size: 25px;
     line-height: 25px;
+  }
+  br {
+    @media (max-width: 676px) {
+      display: none;
+    }
   }
 }
 button.main-btn {
@@ -31,26 +37,50 @@ img {
   left: 0;
   width: 100%;
   z-index: 99999;
-  .container {
+  .container-fluid {
+    padding: 0 40px;
     @media (max-width: 600px) {
-      justify-content: start;
+      padding: 0 26px;
+      padding-left: 5px;
     }
   }
   .navbar-brand {
     position: relative;
-    z-index: 999999;
     @media (max-width: 580px) {
       width: 35%;
+    }
+    @media (max-width: 375px) {
+      width: 50%;
+      margin-right: 0;
     }
   }
   .navbar-div {
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 50%;
+    width: 70%;
+    @media (max-width: 992px) {
+      width: 50%;
+    }
   }
+
+  .mobile-show-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 14px;
+  }
+
   ul {
     li {
+      &:first-child {
+        display: none;
+        @media (max-width: 992px) {
+          display: block;
+        }
+      }
       a {
         font-weight: 500;
         font-size: 18px;
@@ -58,6 +88,9 @@ img {
         line-height: 18px;
         color: $light-color !important;
       }
+    }
+    li.active a {
+      color: #ff2853 !important;
     }
   }
   button.main-btn {
@@ -67,6 +100,7 @@ img {
       box-shadow: 0 0 1px 2px #5780ff;
       font-weight: 600;
     }
+
     @media (max-width: 992px) {
       font-size: 16px;
       line-height: 16px;
@@ -76,6 +110,9 @@ img {
       line-height: 12px;
       padding: 12px 18px;
     }
+    @media (max-width: 368px) {
+      padding: 11px 8px;
+    }
   }
   button.menu-btn {
     margin-left: 35px;
@@ -84,6 +121,11 @@ img {
     display: none;
     @media (max-width: 580px) {
       margin-left: 8px;
+    }
+    img {
+      @media (max-width: 350px) {
+        width: 22px;
+      }
     }
   }
   .navbar-menu {
@@ -95,9 +137,6 @@ img {
       width: 20px;
       border: none;
       background: transparent;
-      position: absolute;
-      top: 8%;
-      right: 4%;
       display: none;
       img {
         width: 100%;
@@ -854,7 +893,6 @@ img {
       font-weight: 600;
       font-size: 14px;
       line-height: 20px;
-      text-transform: uppercase;
       color: #000f3c;
       width: 64%;
 

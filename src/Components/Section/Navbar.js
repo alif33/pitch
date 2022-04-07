@@ -5,7 +5,7 @@ const Navbar = () => {
   const [navbarShow, setNavbarShow] = useState(false);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
-      <div className="container">
+      <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src="./img/logo.svg" alt="" />
         </Link>
@@ -13,25 +13,37 @@ const Navbar = () => {
         <div className="navbar-div">
           <div className={navbarShow ? "navbar-menu active" : "navbar-menu"}>
             {navbarShow && (
-              <button
-                className="close"
-                onClick={() => setNavbarShow(!navbarShow)}
-              >
-                <img src="./img/close.svg" alt="" />
-              </button>
+              <div className="mobile-show-navbar">
+                
+                <Link to="/">
+                  <img src="./img/logo.svg" alt="" />
+                </Link>
+
+                <button
+                  className="close"
+                  onClick={() => setNavbarShow(!navbarShow)}
+                >
+                  <img src="./img/close.svg" alt="" />
+                </button>
+              </div>
             )}
             <ul className="navbar-nav ms-auto">
               <li className="nav-item active">
                 <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/">
                   Submit IDO
                 </Link>
               </li>
-              <li className="nav-item active">
+              <li className="nav-item">
                 <Link className="nav-link" to="/">
                   Launchpad
                 </Link>
               </li>
-              <li className="nav-item active">
+              <li className="nav-item">
                 <Link className="nav-link" to="/">
                   Account
                 </Link>
