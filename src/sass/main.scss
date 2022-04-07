@@ -221,6 +221,7 @@ img {
         font-size: 30px;
         width: 228px;
       }
+      
       img {
         width: auto;
         position: absolute;
@@ -234,7 +235,7 @@ img {
     input {
       @extend .input-basic;
       @media (max-width: 600px) {
-        width: 283px;
+        width: 100%;
         height: 46px;
       }
     }
