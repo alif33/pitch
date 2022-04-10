@@ -9,16 +9,26 @@ import Home from "./Components/Home";
 import ChainPort from "./Components/ChainPort";
 import Contact from "./Components/Contact";
 import Modal from "./Components/Section/Modal";
+import CompanyInfo from "./Components/CompanyInfo";
+import MetricsInfo from "./Components/MetricsInfo";
+import ListingInfo from "./Components/ListingInfo";
+import PartnersInfluencers from "./Components/PartnersInfluencers";
+import ListingStrategy from "./Components/ListingStrategy";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/chaiport" element={<ChainPort/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/chaiport" element={<ChainPort />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/companyinfo" element={<CompanyInfo />} />
+        <Route path="/metricsinfo" element={<MetricsInfo />} />
+        <Route path="/listinginfo" element={<ListingInfo />} />
+        <Route path="/partnersinfluencers" element={<PartnersInfluencers />} />
+        <Route path="/listingstrategy" element={<ListingStrategy />} />
       </Routes>
-      <Modal/>
+      <Modal />
     </BrowserRouter>
   );
 };
