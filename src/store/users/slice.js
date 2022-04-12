@@ -10,12 +10,15 @@ export const userSlice = createSlice({
     },
     reducers: {
 
-        userLogin: (state, action) => {
+        setContact: (state, action) => {
+            const { name, email, number } = action.payload;
             return {
                 ...state,
-                isUser: true,
-                token: action.payload.token,
-                user: action.payload.user
+                contactInfo: {
+                    name,
+                    email,
+                    phoneNumber: number
+                }
             }
  
         },

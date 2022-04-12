@@ -1,8 +1,8 @@
 import { userSlice } from "./slice";
 const { actions: slice } = userSlice;
 
-export const userLogin = user => (dispatch) => {
-    dispatch(slice.userLogin(user))
+export const setContact = info => (dispatch) => {
+    dispatch(slice.setContact(info))
 }
 
 export const userLogout = () => (dispatch) => {

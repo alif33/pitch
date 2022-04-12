@@ -233,7 +233,7 @@ const CompanyInfoForm = () => {
                     <div className="input-file">
                       <input 
                         type="file" 
-                        accept="svg/jgeg/png"
+                        accept=""
                       />
                       <button>Upload Logo</button>
                     </div>

@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setContact } from "../../store/users/actions";
 import FromPagination from "./FromPagination";
+
 
 const ContactForm = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {
@@ -14,8 +18,9 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    dispatch(setContact(data));
     navigate("/companyinfo");
-    console.log(data);
+    // console.log(data);
   };
 
   return (

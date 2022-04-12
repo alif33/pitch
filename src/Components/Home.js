@@ -12,7 +12,7 @@ import UpcomingProjects from './Section/UpcomingProjects';
 const Home = () => {
 
   const { users } = useSelector(state=>state);
-
+  console.log(users);
     return (
       <div className="home">
         <Navbar active={"home"} />
