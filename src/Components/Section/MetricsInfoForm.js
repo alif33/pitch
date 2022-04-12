@@ -1,23 +1,22 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import {  setMetricsInfo } from "../../store/users/actions";
 
 const MetricsInfoForm = () => {
-  const [projectDiscerptionValidate, setProjectDiscerptionValidate] =
-    useState(false);
-  const [upload, setUpload] = useState(false);
+  const [upload,] = useState(false);
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const onSubmit = (data) => {
+    dispatch(setMetricsInfo(data));
     navigate("/listinginfo");
-
-    console.log(data);
   };
   return (
     <div className="container">

@@ -2,15 +2,24 @@ import React, { useState } from "react";
 import FromPagination from "./FromPagination";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCompanyInfo } from "../../store/users/actions";
 
 const CompanyInfoForm = () => {
-
-  const [upload, setUpload] = useState(true);
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [upload] =useState(true);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const navigate = useNavigate();
-  const onSubmit = data => {
+  const dispatch = useDispatch();
+
+  const onSubmit = (data) => {
+    dispatch(setCompanyInfo(data));
     navigate("/metricsinfo");
-    console.log(data)};
+    
+  };
   return (
     <div className="container">
       <div className="row">
@@ -18,7 +27,7 @@ const CompanyInfoForm = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <FromPagination page={[1, 2]} />
             <h2 className="main-title mt-3 py-3" style={{ width: "724px" }}>
-              Contact info
+              Company info
             </h2>
             <div className="form-group">
               <label htmlFor="projectDiscerption">
@@ -43,8 +52,9 @@ const CompanyInfoForm = () => {
                 Team background<span>*</span>
               </label>
               <textarea
-              id="teamBackground"
-                placeholder="Enter your team background "{...register("teamBackground", { required: true })}
+                id="teamBackground"
+                placeholder="Enter your team background "
+                {...register("teamBackground", { required: true })}
                 className={errors.teamBackground ? "incorrect" : "input"}
               />
               {errors.teamBackground && (
@@ -71,11 +81,10 @@ const CompanyInfoForm = () => {
                       placeholder="Enter your Facebook page "
                       {...register("facebook", {
                         pattern:
-                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                        /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\\-]*\/)*([\w\\-]*)/,
+                        required: true,
                       })}
-                      className={
-                        errors.facebook ? "incorrect" : "input"
-                      }
+                      className={errors.facebook ? "incorrect" : "input"}
                     />
                     {errors.facebook && (
                       <span>
@@ -96,12 +105,10 @@ const CompanyInfoForm = () => {
                       id="instagram"
                       placeholder="Enter your Instagram page "
                       {...register("instagram", {
-                        pattern:
-                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                        pattern:/(?:(?:http|https):\/\/)?(?:www\.)?(?:instagram\.com|instagr\.am)\/([A-Za-z0-9-_\\.]+)/im,
+                        required: true,
                       })}
-                      className={
-                        errors.instagram ? "incorrect" : "input"
-                      }
+                      className={errors.instagram ? "incorrect" : "input"}
                     />
                     {errors.instagram && (
                       <span>
@@ -124,11 +131,10 @@ const CompanyInfoForm = () => {
                       placeholder="Enter your LinkedIn page  "
                       {...register("linkedIn", {
                         pattern:
-                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                        /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\\/]))?/,
+                        required: true,
                       })}
-                      className={
-                        errors.linkedIn ? "incorrect" : "input"
-                      }
+                      className={errors.linkedIn ? "incorrect" : "input"}
                     />
                     {errors.linkedIn && (
                       <span>
@@ -146,15 +152,14 @@ const CompanyInfoForm = () => {
                     </label>
                     <input
                       type="text"
-                      id="linkedIn"
+                      id="discord"
                       placeholder="Enter your Discord page "
                       {...register("discord", {
                         pattern:
-                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                        /discordapp.com\/api\/webhooks\/([^\\/]+)\/([^\\/]+)/,
+                        required: true,
                       })}
-                      className={
-                        errors.discord ? "incorrect" : "input"
-                      }
+                      className={errors.discord ? "incorrect" : "input"}
                     />
                     {errors.discord && (
                       <span>
@@ -195,7 +200,7 @@ const CompanyInfoForm = () => {
                     )}
 
                     <p>Drag & Drop File Here</p>
-                    <input type="file"  />
+                    <input type="file" />
                   </div>
                 </div>
               </div>
@@ -231,15 +236,10 @@ const CompanyInfoForm = () => {
                     </label>
                     <h4>Upload Logo</h4>
                     <div className="input-file">
-                      <input 
-                        type="file" 
-                        accept=""
-                      />
+                      <input type="file" accept="" />
                       <button>Upload Logo</button>
                     </div>
-                    <p className="file-size">
-                      *Svg/Jpeg/Png (50MB max size)
-                    </p>
+                    <p className="file-size">*Svg/Jpeg/Png (50MB max size)</p>
                   </div>
                 </div>
                 <div className="col-md-5 ms-auto">

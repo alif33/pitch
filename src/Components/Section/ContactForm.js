@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,6 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
@@ -58,7 +57,7 @@ const ContactForm = () => {
                 placeholder="example@gmail.com"
                 {...register("email", {
                   pattern:
-                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, required: true 
+                    /^(([^<>()[\]\\.,;:\s@\\"]+(\.[^<>()[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, required: true 
                 })}
                 className={errors.email ? "incorrect" : "input"}
               />
@@ -76,12 +75,12 @@ const ContactForm = () => {
               <div className="input-number">
                 <input
                   id="number"
-                  type="number" {...register("number", {required: true  })}
-                  className={errors.number ? "incorrect" : "input"}
+                  type="number" {...register("phoneNumber", {required: true  })}
+                  className={errors.phoneNumber ? "incorrect" : "input"}
                 />
                 <div className="number-dropdon"></div>
               </div>
-              {errors.number && (
+              {errors.phoneNumber && (
                 <span>
                   <img src="./img/false-icon.svg" alt="" />
                   Incorrect number

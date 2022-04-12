@@ -1280,11 +1280,17 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  img {
+    height: 265px;
+    width: 265px;
+  }
   h2 {
     font-weight: 700;
     font-size: 30px;
     line-height: 30px;
     color: #ffffff;
+    margin-top: -92px;
+    margin-bottom: 12px;
   }
   p {
     font-weight: 700;

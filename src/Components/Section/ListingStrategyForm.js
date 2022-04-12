@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
+import {useDispatch} from  "react-redux";
+import { setListingStrategy } from "../../store/users/actions";
 
 const ListingStrategyForm = () => {
   const {
@@ -10,10 +12,10 @@ const ListingStrategyForm = () => {
     formState: { errors },
   } = useForm();
    const navigate = useNavigate();
+   const dispatch = useDispatch();
    const onSubmit = (data) => {
+    dispatch(setListingStrategy(data))
      navigate("/dataprocessing");
-    
-     console.log(data);
    };
   return (
     <div className="container">
