@@ -22,7 +22,7 @@ const ContactForm = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-10 m-auto">
-          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+          <form onSubmit={ handleSubmit(onSubmit) } className="contact-form">
             <FromPagination page={[1]} />
             <h2 className="main-title">Contact info</h2>
             <div className="form-group">
