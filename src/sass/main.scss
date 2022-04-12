@@ -3,6 +3,14 @@
 @import "./partials/classes";
 
 // navbar.....
+a {
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
 body {
   color: $text-color;
 }
@@ -23,6 +31,8 @@ h2.main-title {
 }
 button.main-btn {
   @include button($button-bg1, $light-color);
+  color: inherit;
+  text-decoration: none;
 }
 img {
   width: 100%;
@@ -48,6 +58,10 @@ img {
     position: relative;
     @media (max-width: 580px) {
       width: 35%;
+    }
+    @media (max-width: 600px) {
+      width: 50%;
+      margin-right: 0;
     }
     @media (max-width: 375px) {
       width: 50%;
@@ -891,6 +905,9 @@ img {
       padding: 6px 22px;
       width: 724px;
       height: 128px;
+      @media (max-width: 992px) {
+        width: auto;
+      }
       &::placeholder {
         color: #d2d2d2;
       }
@@ -908,8 +925,6 @@ img {
 
     .input-number {
       position: relative;
-      select {
-      }
     }
 
     span {
@@ -929,7 +944,7 @@ img {
   }
   .social-lick {
     width: 724px;
-    @media (max-width: 767px) {
+    @media (max-width: 992px) {
       width: auto;
     }
     h5 {
@@ -1035,6 +1050,15 @@ img {
     height: 48px;
     background: #ff2853;
     border-radius: 10px;
+    color: #fff;
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
   button.back-btn {
     border: none;
@@ -1195,8 +1219,9 @@ img {
     }
   }
 }
-.form-check {    display: flex;
-    align-items: center;
+.form-check {
+  display: flex;
+  align-items: center;
   input {
     width: 18px !important;
     padding: 0 !important;
@@ -1206,7 +1231,7 @@ img {
     background-color: #0d6efd;
   }
   label {
-   font-weight: 400 !important;
+    font-weight: 400 !important;
     font-size: 14px !important;
     line-height: 14px !important;
     color: #000f3c !important;

@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import FromPagination from "./FromPagination";
 
 const ContactForm = () => {
   const [emailValidate, setEmailValidate] = useState(true);
   const [phoneValidate, setPhoneValidate] = useState(true);
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then((res) => res.json())
+      .then((data) => setCountries(data));
+
+  }, []);
 
   return (
     <div className="container">
@@ -45,6 +54,9 @@ const ContactForm = () => {
                   id="number"
                   className={emailValidate ? "incorrect" : "input"}
                 />
+                <div className="number-dropdon">
+
+                </div>
               </div>
               {phoneValidate && (
                 <span>
@@ -53,7 +65,7 @@ const ContactForm = () => {
                 </span>
               )}
             </div>
-            <button className="main-btn">Next</button>
+            <button className="main-btn"><Link to="/companyinfo">Next</Link></button>
           </form>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import FromPagination from './FromPagination';
 
 const PartnersInfluencersForm = () => {
@@ -63,7 +64,7 @@ const PartnersInfluencersForm = () => {
                   </div>
                 </div>
               </div>
-              <button className="main-btn mt-5">Next</button>
+              <button className="main-btn mt-5"><Link to="/partnersinfluencers">Next</Link></button>
               <button className="back-btn mt-3">
                 <img src="./img/back-icon.svg" alt="" />
                 Back
