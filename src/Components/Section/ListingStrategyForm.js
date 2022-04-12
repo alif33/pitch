@@ -1,16 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
 
 const ListingStrategyForm = () => {
-  const [projectDiscerptionValidate, setProjectDiscerptionValidate] =
-    useState(false);
-  const [upload, setUpload] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+   const navigate = useNavigate();
+   const onSubmit = (data) => {
+     navigate("/dataprocessing");
+    
+     console.log(data);
+   };
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-10 m-auto">
-          <form action="#" className="contact-form">
+          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <FromPagination page={[1, 2, 3, 4, 5, 6]} />
             <h2 className="main-title mt-3 py-3">Listing Strategy</h2>
 
@@ -22,33 +31,41 @@ const ListingStrategyForm = () => {
                     <label htmlFor="email">
                       Title of the selection choice<span>*</span>
                     </label>
-                    <div class="form-check">
+                    <div className="form-check">
                       <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="flexCheckDefault"
+                        type="radio"
+                        value="DEX"
+                        id="choiceTitleSelection1"
+                        {...register("choiceTitleSelection", { required: true })}
+                        className={errors.choiceTitleSelection ? "incorrect form-check-input" : "input form-check-input"}
                       />
-                      <label class="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        htmlFor="choiceTitleSelection1"
+                      >
                         DEX
                       </label>
                     </div>
-                    <div class="form-check">
+                    <div className="form-check">
                       <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="flexCheckChecked"
+                        type="radio"
+                        id="choiceTitleSelection2"
+                        value="CEX"
+                        {...register("choiceTitleSelection", { required: true })}
+                        className={errors.choiceTitleSelection ? "incorrect form-check-input" : "input form-check-input"}
                       />
-                      <label class="form-check-label" for="flexCheckChecked">
+                      <label
+                        className="form-check-label"
+                        htmlFor="choiceTitleSelection2"
+                      >
                         CEX
                       </label>
                     </div>
 
-                    {projectDiscerptionValidate && (
+                    {errors.choiceTitleSelection && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect email
+                        Title of the selection choice is required{" "}
                       </span>
                     )}
                   </div>
@@ -58,21 +75,20 @@ const ListingStrategyForm = () => {
                 <div className="col-md-5 m-auto">
                   {" "}
                   <div className="form-group">
-                    <label htmlFor="email">
+                    <label htmlFor="liquidity">
                       Liquidity($)<span>*</span>
                     </label>
                     <input
                       type="text"
-                      id="instagram"
+                      id="liquidity"
                       placeholder="Enter Amount"
-                      className={
-                        projectDiscerptionValidate ? "incorrect" : "input"
-                      }
+                      {...register("liquidity", { required: true })}
+                      className={errors.liquidity ? "incorrect" : "input"}
                     />
-                    {projectDiscerptionValidate && (
+                    {errors.liquidity && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect email
+                        Liquidity is required{" "}
                       </span>
                     )}
                   </div>
@@ -82,28 +98,29 @@ const ListingStrategyForm = () => {
                 <div className="col-md-5 m-auto">
                   {" "}
                   <div className="form-group">
-                    <label htmlFor="email">
+                    <label htmlFor="marketMaker">
                       Market Maker<span>*</span>
                     </label>
                     <input
                       type="text"
-                      id="instagram"
-                      placeholder="Enter IDO size"
-                      className={
-                        projectDiscerptionValidate ? "incorrect" : "input"
-                      }
+                      id="marketMaker"
+                      placeholder="Enter Market Maker"
+                      {...register("marketMaker", { required: true })}
+                      className={errors.marketMaker ? "incorrect" : "input"}
                     />
-                    {projectDiscerptionValidate && (
+                    {errors.marketMaker && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect email
+                        Market Maker is required{" "}
                       </span>
                     )}
                   </div>
                 </div>
               </div>
             </div>
-            <button className="main-btn mt-5"><Link to="/partnersinfluencers">Next</Link></button>
+            <button type="submit" className="main-btn mt-5">
+              Next
+            </button>
             <button className="back-btn mt-3">
               <img src="./img/back-icon.svg" alt="" />
               Back

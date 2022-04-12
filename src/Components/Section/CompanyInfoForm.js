@@ -1,49 +1,56 @@
 import React, { useState } from "react";
 import FromPagination from "./FromPagination";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const CompanyInfoForm = () => {
-  const [projectDiscerptionValidate, setProjectDiscerptionValidate] =
-    useState(false);
+
   const [upload, setUpload] = useState(true);
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const navigate = useNavigate();
+  const onSubmit = data => {
+    navigate("/metricsinfo");
+    console.log(data)};
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-10 m-auto">
-          <form action="#" className="contact-form">
+          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <FromPagination page={[1, 2]} />
             <h2 className="main-title mt-3 py-3" style={{ width: "724px" }}>
               Contact info
             </h2>
             <div className="form-group">
-              <label htmlFor="email">
+              <label htmlFor="projectDiscerption">
                 Project discerption<span>*</span>
               </label>
               <textarea
                 id="projectDiscerption"
                 placeholder="Enter your team background  "
-                className={projectDiscerptionValidate ? "incorrect" : "input"}
+                {...register("projectDiscerption", { required: true })}
+                className={errors.projectDiscerption ? "incorrect" : "input"}
               />
-              {projectDiscerptionValidate && (
+              {errors.projectDiscerption && (
                 <span>
                   <img src="./img/false-icon.svg" alt="" />
-                  Incorrect email
+                  Project discerption is required
                 </span>
               )}
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">
+              <label htmlFor="teamBackground">
                 Team background<span>*</span>
               </label>
               <textarea
-                id="projectDiscerption"
-                placeholder="Enter your team background "
-                className={projectDiscerptionValidate ? "incorrect" : "input"}
+              id="teamBackground"
+                placeholder="Enter your team background "{...register("teamBackground", { required: true })}
+                className={errors.teamBackground ? "incorrect" : "input"}
               />
-              {projectDiscerptionValidate && (
+              {errors.teamBackground && (
                 <span>
                   <img src="./img/false-icon.svg" alt="" />
-                  Incorrect email
+                  Team background is required
                 </span>
               )}
             </div>
@@ -55,21 +62,25 @@ const CompanyInfoForm = () => {
               <div className="row mt-2">
                 <div className="col-md-5">
                   <div className="form-group">
-                    <label htmlFor="email">
+                    <label htmlFor="facebook">
                       Facebook<span>*</span>
                     </label>
                     <input
                       type="text"
                       id="facebook"
-                      placeholder="Enter your linkedIn page "
+                      placeholder="Enter your facebook page "
+                      {...register("facebook", {
+                        pattern:
+                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                      })}
                       className={
-                        projectDiscerptionValidate ? "incorrect" : "input"
+                        errors.facebook ? "incorrect" : "input"
                       }
                     />
-                    {projectDiscerptionValidate && (
+                    {errors.facebook && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect email
+                        Incorrect facebook
                       </span>
                     )}
                   </div>
@@ -77,21 +88,25 @@ const CompanyInfoForm = () => {
                 <div className="col-md-5 ms-auto">
                   {" "}
                   <div className="form-group">
-                    <label htmlFor="email">
+                    <label htmlFor="instagram">
                       Instagram<span>*</span>
                     </label>
                     <input
                       type="text"
                       id="instagram"
                       placeholder="Enter your Instagram page "
+                      {...register("instagram", {
+                        pattern:
+                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                      })}
                       className={
-                        projectDiscerptionValidate ? "incorrect" : "input"
+                        errors.instagram ? "incorrect" : "input"
                       }
                     />
-                    {projectDiscerptionValidate && (
+                    {errors.instagram && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect email
+                        Incorrect instagram
                       </span>
                     )}
                   </div>
@@ -100,21 +115,25 @@ const CompanyInfoForm = () => {
               <div className="row mt-2">
                 <div className="col-md-5">
                   <div className="form-group">
-                    <label htmlFor="email">
+                    <label htmlFor="linkedIn">
                       linkedIn<span>*</span>
                     </label>
                     <input
                       type="text"
-                      id="facebook"
+                      id="linkedIn"
                       placeholder="Enter your linkedIn page  "
+                      {...register("linkedIn", {
+                        pattern:
+                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                      })}
                       className={
-                        projectDiscerptionValidate ? "incorrect" : "input"
+                        errors.linkedIn ? "incorrect" : "input"
                       }
                     />
-                    {projectDiscerptionValidate && (
+                    {errors.linkedIn && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect email
+                        Incorrect linkedIn
                       </span>
                     )}
                   </div>
@@ -122,26 +141,31 @@ const CompanyInfoForm = () => {
                 <div className="col-md-5 ms-auto">
                   {" "}
                   <div className="form-group">
-                    <label htmlFor="email">
+                    <label htmlFor="discord">
                       Discord<span>*</span>
                     </label>
                     <input
                       type="text"
-                      id="instagram"
+                      id="linkedIn"
                       placeholder="Enter your Discord page "
+                      {...register("discord", {
+                        pattern:
+                        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
+                      })}
                       className={
-                        projectDiscerptionValidate ? "incorrect" : "input"
+                        errors.discord ? "incorrect" : "input"
                       }
                     />
-                    {projectDiscerptionValidate && (
+                    {errors.discord && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect email
+                        Incorrect discord
                       </span>
                     )}
                   </div>
                 </div>
               </div>
+
               <div className="row mt-5 pt-4">
                 <div className="col-md-5">
                   <div className="upload-pitch-deck">
@@ -171,7 +195,7 @@ const CompanyInfoForm = () => {
                     )}
 
                     <p>Drag & Drop File Here</p>
-                    <input type="file" />
+                    <input type="file"  />
                   </div>
                 </div>
               </div>
@@ -225,7 +249,7 @@ const CompanyInfoForm = () => {
               </div>
             </div>
             <button className="main-btn mt-5">Next</button>
-            <button className="back-btn mt-3">
+            <button type="submit" className="back-btn mt-3">
               <img src="./img/back-icon.svg" alt="" />
               Back
             </button>

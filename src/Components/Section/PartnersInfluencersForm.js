@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
 import FromPagination from './FromPagination';
 
 const PartnersInfluencersForm = () => {
      const [projectDiscerptionValidate, setProjectDiscerptionValidate] =
        useState(false);
      const [upload, setUpload] = useState(false); 
+     const {
+      register,
+      handleSubmit,
+      watch,
+      formState: { errors },
+    } = useForm();
+     const navigate = useNavigate();
+     const onSubmit = (data) => {
+       navigate("/listingstrategy");
+   
+       console.log(data);
+     };
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-10 m-auto">
-            <form action="#" className="contact-form">
+            <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
               <FromPagination page={[1, 2, 3, 4, 5]} />
               <h2 className="main-title mt-3 py-3">Partners & influencers</h2>
 
@@ -19,23 +32,22 @@ const PartnersInfluencersForm = () => {
                   <div className="col-md-5 m-auto">
                     {" "}
                     <div className="form-group">
-                      <label htmlFor="email">
+                      <label htmlFor="topPartners">
                         Top Partners<span>*</span>
                       </label>
                       <input
                         type="text"
-                        id="instagram"
+                        id="topPartners"
                         placeholder="Enter your top partners"
-                        className={
-                          projectDiscerptionValidate ? "incorrect" : "input"
-                        }
-                      />
-                      {projectDiscerptionValidate && (
-                        <span>
-                          <img src="./img/false-icon.svg" alt="" />
-                          Incorrect email
-                        </span>
-                      )}
+                        {...register("topPartners", { required: true })}
+                      className={errors.topPartners ? "incorrect" : "input"}
+                    />
+                    {errors.topPartners && (
+                      <span>
+                        <img src="./img/false-icon.svg" alt="" />
+                        Top Partners is required{" "}
+                      </span>
+                    )}
                     </div>
                   </div>
                 </div>
@@ -43,31 +55,30 @@ const PartnersInfluencersForm = () => {
                   <div className="col-md-5 m-auto">
                     {" "}
                     <div className="form-group">
-                      <label htmlFor="email">
+                      <label htmlFor="topInfluencers">
                         Top influencers<span>*</span>
                       </label>
                       <input
                         type="text"
-                        id="instagram"
+                        id="topInfluencers"
                         placeholder="Enter your top influencers"
-                        className={
-                          projectDiscerptionValidate ? "incorrect" : "input"
-                        }
+                        {...register("topInfluencers", { required: true })}
+                        className={errors.topInfluencers ? "incorrect" : "input"}
                       />
-                      {projectDiscerptionValidate && (
+                      {errors.topInfluencers && (
                         <span>
                           <img src="./img/false-icon.svg" alt="" />
-                          Incorrect email
+                          Top influencers is required{" "}
                         </span>
                       )}
                     </div>
                   </div>
                 </div>
               </div>
-              <button className="main-btn mt-5"><Link to="/partnersinfluencers">Next</Link></button>
+              <button className="main-btn mt-5">Next</button>
               <button className="back-btn mt-3">
                 <img src="./img/back-icon.svg" alt="" />
-                Back
+              Back
               </button>
             </form>
           </div>

@@ -1,31 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
 
 const ContactForm = () => {
-  const [emailValidate, setEmailValidate] = useState(true);
-  const [phoneValidate, setPhoneValidate] = useState(true);
-  const [countries, setCountries] = useState([]);
 
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
-      .then((res) => res.json())
-      .then((data) => setCountries(data));
+  const navigate = useNavigate();
 
-  }, []);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    navigate("/companyinfo");
+    console.log(data);
+  };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-10 m-auto">
-          <form action="#" className="contact-form">
+          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <FromPagination page={[1]} />
             <h2 className="main-title">Contact info</h2>
             <div className="form-group">
               <label htmlFor="name">
                 Full Name <span>*</span>
               </label>
-              <input type="text" id="name" required placeholder="your name" />
+              <input
+                type="text"
+                id="name"
+                {...register("name", { required: true })}
+                className={errors.name ? "incorrect" : "input"}
+                placeholder="your name"
+              />
+              {errors.name && (
+                <span>
+                  {" "}
+                  <img src="./img/false-icon.svg" alt="" /> Name is required
+                </span>
+              )}
             </div>
             <div className="form-group">
               <label htmlFor="email">
@@ -35,9 +51,13 @@ const ContactForm = () => {
                 type="email"
                 id="email"
                 placeholder="example@gmail.com"
-                className={emailValidate ? "incorrect" : "input"}
+                {...register("email", {
+                  pattern:
+                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, required: true 
+                })}
+                className={errors.email ? "incorrect" : "input"}
               />
-              {emailValidate && (
+              {errors.email && (
                 <span>
                   <img src="./img/false-icon.svg" alt="" />
                   Incorrect email
@@ -50,22 +70,22 @@ const ContactForm = () => {
               </label>
               <div className="input-number">
                 <input
-                  type="text"
                   id="number"
-                  className={emailValidate ? "incorrect" : "input"}
+                  type="number" {...register("number", {required: true  })}
+                  className={errors.number ? "incorrect" : "input"}
                 />
-                <div className="number-dropdon">
-
-                </div>
+                <div className="number-dropdon"></div>
               </div>
-              {phoneValidate && (
+              {errors.number && (
                 <span>
                   <img src="./img/false-icon.svg" alt="" />
                   Incorrect number
                 </span>
               )}
             </div>
-            <button className="main-btn"><Link to="/companyinfo">Next</Link></button>
+            <button type="submit" className="main-btn">
+              Next
+            </button>
           </form>
         </div>
       </div>
@@ -74,6 +94,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-
-

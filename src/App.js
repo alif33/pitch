@@ -14,6 +14,8 @@ import MetricsInfo from "./Components/MetricsInfo";
 import ListingInfo from "./Components/ListingInfo";
 import PartnersInfluencers from "./Components/PartnersInfluencers";
 import ListingStrategy from "./Components/ListingStrategy";
+import DataProcessing from "./Components/DataProcessing";
+import Congratulations from "./Components/Congratulations ";
 
 const App = () => {
   return (
@@ -27,6 +29,8 @@ const App = () => {
         <Route path="/listinginfo" element={<ListingInfo />} />
         <Route path="/partnersinfluencers" element={<PartnersInfluencers />} />
         <Route path="/listingstrategy" element={<ListingStrategy />} />
+        <Route path="/dataprocessing" element={<DataProcessing />} />
+        <Route path="/congratulations" element={<Congratulations />} />
       </Routes>
       <Modal />
     </BrowserRouter>

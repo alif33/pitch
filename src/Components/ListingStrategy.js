@@ -6,7 +6,7 @@ import Navbar from './Section/Navbar';
 const ListingStrategy = () => {
     return (
       <div>
-        <Navbar />
+        <Navbar active={"submit"} />
         <ListingStrategyForm />
         <Footer />
       </div>
