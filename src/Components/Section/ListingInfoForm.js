@@ -255,10 +255,13 @@ const ListingInfoForm = () => {
                     </label>
                     <h4>Upload Vesting Terms </h4>
                     <div className="input-file">
-                      <input type="file" />
-                      <button>upload deck</button>
+                      <input 
+                        type="file" 
+                        accept=""
+                        />
+                      <button>Upload File</button>
                     </div>
-                    <p className="file-size">Svg/Jpeg/Png (50MB max size)</p>
+                    <p className="file-size">Pdf/Word/Jpeg/Png (50MB max size)</p>
                   </div>
                 </div>
                 <div className="col-md-5 ms-auto">
@@ -286,10 +289,12 @@ const ListingInfoForm = () => {
                     </label>
                     <h4>Upload Pitchshows Vesting Terms</h4>
                     <div className="input-file">
-                      <input type="file" />
-                      <button>upload deck</button>
+                      <input 
+                        type="file" 
+                      />
+                      <button>Upload File</button>
                     </div>
-                    <p className="file-size">Svg/Jpeg/Png (50MB max size)</p>
+                    <p className="file-size">Pdf/Word/Jpeg/Png (50MB max size)</p>
                   </div>
                 </div>
                 <div className="col-md-5 ms-auto">

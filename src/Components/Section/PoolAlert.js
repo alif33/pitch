@@ -8,8 +8,7 @@ const PoolAlert = () => {
             <div className="col-md-6 d-flex justify-content-center     align-items-start   ">
               <h1>Pool Alert</h1>
               <p>
-                Subscribe and be the first to know about new pools and relevant
-                events.
+                Subscribe to be the first to know the new pools and relevant events.
               </p>
               <button className="main-btn">SUBSCRIBE</button>
             </div>

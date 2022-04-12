@@ -7,8 +7,8 @@ const Model = () => {
           <img src="./img/model.svg" alt="" />
           <img src="./img/animation.gif" alt="" />
         </div>
-        <h2 className="main-title">Our Simple IDO Model</h2>
-        <p>Powering the network by leveraging the power</p>
+        <h2 className="main-title">Our IDO Model</h2>
+        <p>Simpler, Safer and effective</p>
         <button className="main-btn">View Launchpad</button>
       </div>
     );

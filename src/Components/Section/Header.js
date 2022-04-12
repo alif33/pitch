@@ -8,10 +8,10 @@ const Header = () => {
             <div className="col-lg-6 col-md-12">
               <div className="header-leftside">
                 <div className="header-title">
-                  <h2><img src="./img/flag.svg" alt="" /> The RoadStarter For Fundraising & Launching Projects </h2>
+                  <h2><img src="./img/flag.svg" alt="" />A CrowdFunding Platform Driven By Its Community</h2>
                 </div>
                 <div className="header-search">
-                  <input type="text" placeholder="Email/Phone Number" />
+                  <input type="text" placeholder="Join the Community with your Email" />
                   <button className="header-search-btn">Get Started</button>
                 </div>
               </div>

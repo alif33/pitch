@@ -132,10 +132,10 @@ const MetricsInfoForm = () => {
                     <label htmlFor="">
                       Token Symbol<span>*</span>
                     </label>
-                    <h4>Upload your Pitch Deck File</h4>
+                    <h4>Upload Token Symbol Image</h4>
                     <div className="input-file">
                       <input type="file" />
-                      <button>upload deck</button>
+                      <button>Upload File</button>
                     </div>
                     <p className="file-size">Svg/Jpeg/Png (50MB max size)</p>
                   </div>

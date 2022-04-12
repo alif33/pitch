@@ -68,7 +68,7 @@ const CompanyInfoForm = () => {
                     <input
                       type="text"
                       id="facebook"
-                      placeholder="Enter your facebook page "
+                      placeholder="Enter your Facebook page "
                       {...register("facebook", {
                         pattern:
                         /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
@@ -80,7 +80,7 @@ const CompanyInfoForm = () => {
                     {errors.facebook && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect facebook
+                        Incorrect Facebook
                       </span>
                     )}
                   </div>
@@ -106,7 +106,7 @@ const CompanyInfoForm = () => {
                     {errors.instagram && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect instagram
+                        Incorrect Instagram
                       </span>
                     )}
                   </div>
@@ -116,12 +116,12 @@ const CompanyInfoForm = () => {
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="linkedIn">
-                      linkedIn<span>*</span>
+                      LinkedIn<span>*</span>
                     </label>
                     <input
                       type="text"
                       id="linkedIn"
-                      placeholder="Enter your linkedIn page  "
+                      placeholder="Enter your LinkedIn page  "
                       {...register("linkedIn", {
                         pattern:
                         /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g, required: true 
@@ -133,7 +133,7 @@ const CompanyInfoForm = () => {
                     {errors.linkedIn && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect linkedIn
+                        Incorrect LinkedIn
                       </span>
                     )}
                   </div>
@@ -159,7 +159,7 @@ const CompanyInfoForm = () => {
                     {errors.discord && (
                       <span>
                         <img src="./img/false-icon.svg" alt="" />
-                        Incorrect discord
+                        Incorrect Discord
                       </span>
                     )}
                   </div>
@@ -170,12 +170,12 @@ const CompanyInfoForm = () => {
                 <div className="col-md-5">
                   <div className="upload-pitch-deck">
                     <label htmlFor="">
-                      Pitch deck<span>*</span>
+                      Pitch Deck<span>*</span>
                     </label>
                     <h4>Upload your Pitch Deck File</h4>
                     <div className="input-file">
                       <input type="file" />
-                      <button>upload deck</button>
+                      <button>Upload Deck</button>
                     </div>
                     <p className="file-size">
                       *Pdf/Word/Jpeg/Png (50MB max size)
@@ -203,12 +203,12 @@ const CompanyInfoForm = () => {
                 <div className="col-md-5">
                   <div className="upload-pitch-deck">
                     <label htmlFor="">
-                      Pitch deck<span>*</span>
+                      Tokenomics Documentation<span>*</span>
                     </label>
-                    <h4>Upload your Pitch Deck File</h4>
+                    <h4>Upload your Tokenomics File</h4>
                     <div className="input-file">
                       <input type="file" />
-                      <button>upload deck</button>
+                      <button>Upload Tokenomics</button>
                     </div>
                     <p className="file-size">
                       *Pdf/Word/Jpeg/Png (50MB max size)
@@ -229,13 +229,16 @@ const CompanyInfoForm = () => {
                     <label htmlFor="">
                       Logo<span>*</span>
                     </label>
-                    <h4>Upload your Pitch Deck File</h4>
+                    <h4>Upload Logo</h4>
                     <div className="input-file">
-                      <input type="file" />
-                      <button>upload deck</button>
+                      <input 
+                        type="file" 
+                        accept="svg/jgeg/png"
+                      />
+                      <button>Upload Logo</button>
                     </div>
                     <p className="file-size">
-                      *Pdf/Word/Jpeg/Png (50MB max size)
+                      *Svg/Jpeg/Png (50MB max size)
                     </p>
                   </div>
                 </div>

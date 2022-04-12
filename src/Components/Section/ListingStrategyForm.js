@@ -104,7 +104,7 @@ const ListingStrategyForm = () => {
                     <input
                       type="text"
                       id="marketMaker"
-                      placeholder="Enter Market Maker"
+                      placeholder="Enter IDO Size"
                       {...register("marketMaker", { required: true })}
                       className={errors.marketMaker ? "incorrect" : "input"}
                     />
@@ -118,8 +118,11 @@ const ListingStrategyForm = () => {
                 </div>
               </div>
             </div>
-            <button type="submit" className="main-btn mt-5">
-              Next
+            <button 
+              type="submit" 
+              className="main-btn mt-5"
+            >
+              Submit
             </button>
             <button className="back-btn mt-3">
               <img src="./img/back-icon.svg" alt="" />
