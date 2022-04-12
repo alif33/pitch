@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { propertyFields } from '../../__lib__/config';
+// import { propertyFields } from '../../__lib__/config';
 
 
 export const propertySlice = createSlice({
     name: "property",
     initialState: {
-        ...propertyFields
+        
     },
     reducers: {
 

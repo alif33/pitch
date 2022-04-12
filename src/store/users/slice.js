@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit';
+import { userData } from '../../utils/schema';
+
 
 
 export const userSlice = createSlice({
     name: "users",
     initialState: {
-        token: '',
-        user: null,
-        isUser: false
+        ...userData
     },
     reducers: {
 
