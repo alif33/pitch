@@ -154,11 +154,13 @@ const CompanyInfoForm = () => {
                       type="text"
                       id="discord"
                       placeholder="Enter your Discord page "
-                      {...register("discord", {
-                        pattern:
-                        /discordapp.com\/api\/webhooks\/([^\\/]+)\/([^\\/]+)/,
-                        required: true,
-                      })}
+                      {...register("discord", 
+                        // {
+                        //   pattern:
+                        //   /discordapp.com\/api\/webhooks\/([^\\/]+)\/([^\\/]+)/,
+                        //   required: true,
+                        // }
+                      )}
                       className={errors.discord ? "incorrect" : "input"}
                     />
                     {errors.discord && (

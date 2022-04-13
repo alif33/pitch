@@ -2,8 +2,12 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
-import {useDispatch} from  "react-redux";
+import { useSelector, useDispatch } from  "react-redux";
 import { setListingStrategy } from "../../store/users/actions";
+import { postData } from "../../helpers/HttpService";
+import { collection, addDoc } from "firebase/firestore";
+// import db from "firebase/app";
+import db from "../../utils/db";
 
 const ListingStrategyForm = () => {
   const {
@@ -11,17 +15,29 @@ const ListingStrategyForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+   const { users } = useSelector(state=>state);
    const navigate = useNavigate();
    const dispatch = useDispatch();
-   const onSubmit = (data) => {
-    dispatch(setListingStrategy(data))
-     navigate("/dataprocessing");
+   const onSubmit = async(data) => {
+    await dispatch(setListingStrategy(data));
+    
+    await addDoc(collection(db, 'contact'),{
+      ...users.contactInfo,   
+      ...users.metricsInfo,  
+      ...users.listingInfo,  
+      ...users.partnersInfluencers,  
+      ...users.listingStrategy,
+      projectDiscerption: users.companyInfo.projectDiscerption, 
+      teamBackground: users.companyInfo.teamBackground,
+      ...users.companyInfo.socialsLink
+    });
+
    };
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-10 m-auto">
-          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+          <form onSubmit={ handleSubmit(onSubmit) } className="contact-form">
             <FromPagination page={[1, 2, 3, 4, 5, 6]} />
             <h2 className="main-title mt-3 py-3">Listing Strategy</h2>
 
