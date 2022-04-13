@@ -911,6 +911,7 @@ img {
       }
       &:focus {
         outline: none;
+        border: 1px solid #2d4798;
       }
       @media (max-width: 430px) {
         width: inherit;
@@ -938,6 +939,7 @@ img {
       }
       &:focus {
         outline: none;
+        border: 1px solid #2d4798;
       }
       @media (max-width: 430px) {
         width: inherit;
@@ -1100,6 +1102,12 @@ img {
     font-size: 15px;
     line-height: 15px;
     color: #09216a;
+    a {
+      color: #09216a;
+      &:hover {
+        color: #09216a;
+      }
+    }
     img {
       width: 10px;
       height: 10px;

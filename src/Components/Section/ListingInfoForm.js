@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setListingInfo } from "../../store/users/actions";
 
 const ListingInfoForm = () => {
   const [upload] = useState(false);
+  const { users } = useSelector((state) => state);
+  const { listingInfo } = users;
   const {
     register,
     handleSubmit,
@@ -15,7 +17,7 @@ const ListingInfoForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onSubmit = (data) => {
-    dispatch(setListingInfo(data))
+    dispatch(setListingInfo(data));
     navigate("/partnersinfluencers");
   };
   return (
@@ -40,6 +42,7 @@ const ListingInfoForm = () => {
                       type="text"
                       id="IDOSize"
                       placeholder="Enter diluted valuation "
+                      defaultValue={listingInfo.IDOSize}
                       {...register("IDOSize", { required: true })}
                       className={errors.IDOSize ? "incorrect" : "input"}
                     />
@@ -64,6 +67,7 @@ const ListingInfoForm = () => {
                       id="additionalPlatforms"
                       placeholder="Enter  Additional
                         platforms"
+                      defaultValue={listingInfo.additionalPlatforms}
                       {...register("additionalPlatforms", { required: true })}
                       className={
                         errors.additionalPlatforms ? "incorrect" : "input"
@@ -89,6 +93,7 @@ const ListingInfoForm = () => {
                       type="text"
                       id="facebook"
                       placeholder="Enter  Pitchshow Size"
+                      defaultValue={listingInfo.pitchshowSize}
                       {...register("pitchshowSize", { required: true })}
                       className={errors.pitchshowSize ? "incorrect" : "input"}
                     />
@@ -110,6 +115,7 @@ const ListingInfoForm = () => {
                       type="text"
                       id="dilutedValuation"
                       placeholder="Enter Diluted Valuation"
+                      defaultValue={listingInfo.dilutedValuation}
                       {...register("dilutedValuation", { required: true })}
                       className={
                         errors.dilutedValuation ? "incorrect" : "input"
@@ -135,7 +141,7 @@ const ListingInfoForm = () => {
                       type="date"
                       id="tokenGenerationEven"
                       placeholder="25/05/2022"
-                      defaultValue="25/05/2022"
+                      defaultValue={listingInfo.tokenGenerationEven}
                       {...register("tokenGenerationEven", { required: true })}
                       className={
                         errors.tokenGenerationEven ? "incorrect" : "input"
@@ -159,6 +165,7 @@ const ListingInfoForm = () => {
                       type="text"
                       id="listingPrice"
                       placeholder="Enter Listing Price"
+                      defaultValue={listingInfo.listingPrice}
                       {...register("listingPrice", { required: true })}
                       className={errors.listingPrice ? "incorrect" : "input"}
                     />
@@ -182,6 +189,7 @@ const ListingInfoForm = () => {
                       type="text"
                       id="pitchshowsAllocationSize"
                       placeholder="Enter diluted valuation "
+                      defaultValue={listingInfo.pitchshowsAllocationSize}
                       {...register("pitchshowsAllocationSize", {
                         required: true,
                       })}
@@ -209,6 +217,7 @@ const ListingInfoForm = () => {
                       id="pitchshowsTokenPrice"
                       placeholder="Enter Pitchshows Token
                       Price"
+                      defaultValue={listingInfo.pitchshowsTokenPrice}
                       {...register("pitchshowsTokenPrice", { required: true })}
                       className={
                         errors.pitchshowsTokenPrice ? "incorrect" : "input"
@@ -232,8 +241,9 @@ const ListingInfoForm = () => {
                     </label>
                     <input
                       type="text"
-                      id="facebook"
+                      id="IDOTimeFrame"
                       placeholder="Enter  IDO Time Frame "
+                      defaultValue={listingInfo.IDOTimeFrame}
                       {...register("IDOTimeFrame", { required: true })}
                       className={errors.IDOTimeFrame ? "incorrect" : "input"}
                     />
@@ -254,13 +264,12 @@ const ListingInfoForm = () => {
                     </label>
                     <h4>Upload Vesting Terms </h4>
                     <div className="input-file">
-                      <input 
-                        type="file" 
-                        accept=""
-                        />
+                      <input type="file" accept="" />
                       <button>Upload File</button>
                     </div>
-                    <p className="file-size">Pdf/Word/Jpeg/Png (50MB max size)</p>
+                    <p className="file-size">
+                      Pdf/Word/Jpeg/Png (50MB max size)
+                    </p>
                   </div>
                 </div>
                 <div className="col-md-5 ms-auto">
@@ -280,7 +289,7 @@ const ListingInfoForm = () => {
                   </div>
                 </div>
               </div>
-              <div className="row mt-5">
+              <div className="row mt-5 mb-3">
                 <div className="col-md-5">
                   <div className="upload-pitch-deck">
                     <label htmlFor="">
@@ -288,12 +297,12 @@ const ListingInfoForm = () => {
                     </label>
                     <h4>Upload Pitchshows Vesting Terms</h4>
                     <div className="input-file">
-                      <input 
-                        type="file" 
-                      />
+                      <input type="file" />
                       <button>Upload File</button>
                     </div>
-                    <p className="file-size">Pdf/Word/Jpeg/Png (50MB max size)</p>
+                    <p className="file-size">
+                      Pdf/Word/Jpeg/Png (50MB max size)
+                    </p>
                   </div>
                 </div>
                 <div className="col-md-5 ms-auto">
@@ -318,8 +327,10 @@ const ListingInfoForm = () => {
               Next
             </button>
             <button className="back-btn mt-3">
-              <img src="./img/back-icon.svg" alt="" />
-              Back
+              <Link to="/metricsinfo">
+                <img src="./img/back-icon.svg" alt="" />
+                Back
+              </Link>
             </button>
           </form>
         </div>

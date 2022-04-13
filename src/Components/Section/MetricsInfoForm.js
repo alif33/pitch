@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {  setMetricsInfo } from "../../store/users/actions";
 
 const MetricsInfoForm = () => {
@@ -14,7 +14,9 @@ const MetricsInfoForm = () => {
   } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const onSubmit = (data) => {
+  const { users } = useSelector(state => state);
+  const { metricsInfo} = users
+   const onSubmit = (data) => {
     dispatch(setMetricsInfo(data));
     navigate("/listinginfo");
   };
@@ -36,6 +38,7 @@ const MetricsInfoForm = () => {
                       Blockchain Network<span>*</span>
                     </label>
                     <select
+                    defaultValue={metricsInfo.blockchainNetwork}
                       {...register("blockchainNetwork", { required: true })}
                       className={
                         errors.blockchainNetwork ? "incorrect" : "input"
@@ -64,6 +67,7 @@ const MetricsInfoForm = () => {
                       type="text"
                       id="totalSupply"
                       placeholder="Enter total supply "
+                      defaultValue={metricsInfo.totalSupply}
                       {...register("totalSupply", { required: true })}
                       className={
                         errors.totalSupply ? "incorrect" : "input"
@@ -78,7 +82,7 @@ const MetricsInfoForm = () => {
                   </div>
                 </div>
               </div>
-              <div className="row mt-2">
+              <div className="row mt-3">
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="dilutedValuation">
@@ -88,6 +92,7 @@ const MetricsInfoForm = () => {
                       type="text"
                       id="dilutedValuation1"
                       placeholder="Enter diluted valuation "
+                      defaultValue={metricsInfo.dilutedValuation}
                       {...register("dilutedValuation", { required: true })}
                       className={
                         errors.dilutedValuation ? "incorrect" : "input"
@@ -111,6 +116,7 @@ const MetricsInfoForm = () => {
                       type="text"
                       id="TGEMarketCap"
                       placeholder="Enter TGE Market Cap"
+                      defaultValue={metricsInfo.TGEMarketCap}
                       {...register("TGEMarketCap", { required: true })}
                       className={
                         errors.TGEMarketCap ? "incorrect" : "input"
@@ -125,7 +131,7 @@ const MetricsInfoForm = () => {
                   </div>
                 </div>
               </div>
-              <div className="row mt-5 pt-4">
+              <div className="row mt-5 pt-4 mb-3">
                 <div className="col-md-5">
                   <div className="upload-pitch-deck">
                     <label htmlFor="">
@@ -161,8 +167,8 @@ const MetricsInfoForm = () => {
               Next
             </button>
             <button className="back-btn mt-3">
-              <img src="./img/back-icon.svg" alt="" />
-              Back
+              <Link to="/companyinfo"><img src="./img/back-icon.svg" alt="" />
+              Back</Link>
             </button>
           </form>
         </div>

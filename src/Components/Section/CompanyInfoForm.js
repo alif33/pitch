@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import FromPagination from "./FromPagination";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { setCompanyInfo } from "../../store/users/actions";
 
 const CompanyInfoForm = () => {
-  const [upload] =useState(true);
+  const [upload] = useState(true);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { users } = useSelector(state=>state);
+  const {companyInfo} = users
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     dispatch(setCompanyInfo(data));
     navigate("/metricsinfo");
-    
   };
   return (
     <div className="container">
@@ -35,7 +36,8 @@ const CompanyInfoForm = () => {
               </label>
               <textarea
                 id="projectDiscerption"
-                placeholder="Enter your team background  "
+                placeholder="Enter your team background "
+                defaultValue={companyInfo.projectDiscerption}
                 {...register("projectDiscerption", { required: true })}
                 className={errors.projectDiscerption ? "incorrect" : "input"}
               />
@@ -47,13 +49,14 @@ const CompanyInfoForm = () => {
               )}
             </div>
 
-            <div className="form-group">
+            <div className="form-group mt-5">
               <label htmlFor="teamBackground">
                 Team background<span>*</span>
               </label>
               <textarea
                 id="teamBackground"
-                placeholder="Enter your team background "
+                placeholder="Enter your team background"
+                defaultValue={companyInfo.teamBackground}
                 {...register("teamBackground", { required: true })}
                 className={errors.teamBackground ? "incorrect" : "input"}
               />
@@ -65,7 +68,7 @@ const CompanyInfoForm = () => {
               )}
             </div>
 
-            <div className="social-lick">
+            <div className="social-lick mb-4">
               <div className="row mt-4">
                 <h5>links for Socials: </h5>
               </div>
@@ -78,10 +81,11 @@ const CompanyInfoForm = () => {
                     <input
                       type="text"
                       id="facebook"
-                      placeholder="Enter your Facebook page "
+                      placeholder="Enter your Facebook page"
+                      defaultValue={companyInfo.socialsLink.facebook}
                       {...register("facebook", {
                         pattern:
-                        /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\\-]*\/)*([\w\\-]*)/,
+                          /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\\-]*\/)*([\w\\-]*)/,
                         required: true,
                       })}
                       className={errors.facebook ? "incorrect" : "input"}
@@ -103,9 +107,11 @@ const CompanyInfoForm = () => {
                     <input
                       type="text"
                       id="instagram"
-                      placeholder="Enter your Instagram page "
+                      placeholder="Enter your Instagram page"
+                      defaultValue={companyInfo.socialsLink.instagram}
                       {...register("instagram", {
-                        pattern:/(?:(?:http|https):\/\/)?(?:www\.)?(?:instagram\.com|instagr\.am)\/([A-Za-z0-9-_\\.]+)/im,
+                        pattern:
+                          /(?:(?:http|https):\/\/)?(?:www\.)?(?:instagram\.com|instagr\.am)\/([A-Za-z0-9-_\\.]+)/im,
                         required: true,
                       })}
                       className={errors.instagram ? "incorrect" : "input"}
@@ -119,7 +125,7 @@ const CompanyInfoForm = () => {
                   </div>
                 </div>
               </div>
-              <div className="row mt-2">
+              <div className="row mt-4 ">
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="linkedIn">
@@ -128,10 +134,11 @@ const CompanyInfoForm = () => {
                     <input
                       type="text"
                       id="linkedIn"
-                      placeholder="Enter your LinkedIn page  "
+                      placeholder="Enter your LinkedIn page "
+                      defaultValue={companyInfo.socialsLink.linkedIn}
                       {...register("linkedIn", {
                         pattern:
-                        /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\\/]))?/,
+                          /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\\/]))?/,
                         required: true,
                       })}
                       className={errors.linkedIn ? "incorrect" : "input"}
@@ -154,7 +161,9 @@ const CompanyInfoForm = () => {
                       type="text"
                       id="discord"
                       placeholder="Enter your Discord page "
-                      {...register("discord", 
+                      defaultValue={companyInfo.socialsLink.discord}
+                      {...register(
+                        "discord"
                         // {
                         //   pattern:
                         //   /discordapp.com\/api\/webhooks\/([^\\/]+)\/([^\\/]+)/,
@@ -254,11 +263,14 @@ const CompanyInfoForm = () => {
               </div>
             </div>
             <button className="main-btn mt-5">Next</button>
-            <button type="submit" className="back-btn mt-3">
+             <button className="back-btn mt-3">
+            <Link to="/contact">
               <img src="./img/back-icon.svg" alt="" />
               Back
-            </button>
+            </Link>
+          </button>
           </form>
+         
         </div>
       </div>
     </div>

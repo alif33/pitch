@@ -16,9 +16,14 @@ import PartnersInfluencers from "./Components/PartnersInfluencers";
 import ListingStrategy from "./Components/ListingStrategy";
 import DataProcessing from "./Components/DataProcessing";
 import Congratulations from "./Components/Congratulations ";
+import { useSelector } from "react-redux";
 
 const App = () => {
   
+  const {users} = useSelector(state=>state);
+
+  console.log(users)
+
   return (
     <BrowserRouter>
       <Routes>

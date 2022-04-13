@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
 import { useSelector, useDispatch } from  "react-redux";
 import { setListingStrategy } from "../../store/users/actions";
@@ -16,6 +16,7 @@ const ListingStrategyForm = () => {
     formState: { errors },
   } = useForm();
    const { users } = useSelector(state=>state);
+   const {listingStrategy} = users;
    const navigate = useNavigate();
    const dispatch = useDispatch();
    const onSubmit = async(data) => {
@@ -32,6 +33,7 @@ const ListingStrategyForm = () => {
       ...users.companyInfo.socialsLink
     });
 
+    navigate("/dataprocessing");
    };
   return (
     <div className="container">
@@ -39,7 +41,7 @@ const ListingStrategyForm = () => {
         <div className="col-md-10 m-auto">
           <form onSubmit={ handleSubmit(onSubmit) } className="contact-form">
             <FromPagination page={[1, 2, 3, 4, 5, 6]} />
-            <h2 className="main-title mt-3 py-3">Listing Strategy</h2>
+            <h2 className="main-title mt-3 py-3 mb-3">Listing Strategy</h2>
 
             <div className="social-lick">
               <div className="row mt-2">
@@ -69,6 +71,7 @@ const ListingStrategyForm = () => {
                         type="radio"
                         id="choiceTitleSelection2"
                         value="CEX"
+                        
                         {...register("choiceTitleSelection", { required: true })}
                         className={errors.choiceTitleSelection ? "incorrect form-check-input" : "input form-check-input"}
                       />
@@ -89,7 +92,7 @@ const ListingStrategyForm = () => {
                   </div>
                 </div>
               </div>
-              <div className="row mt-2">
+              <div className="row mt-4">
                 <div className="col-md-5 m-auto">
                   {" "}
                   <div className="form-group">
@@ -100,6 +103,7 @@ const ListingStrategyForm = () => {
                       type="text"
                       id="liquidity"
                       placeholder="Enter Amount"
+                      defaultValue={listingStrategy.liquidity}
                       {...register("liquidity", { required: true })}
                       className={errors.liquidity ? "incorrect" : "input"}
                     />
@@ -123,6 +127,7 @@ const ListingStrategyForm = () => {
                       type="text"
                       id="marketMaker"
                       placeholder="Enter IDO Size"
+                      defaultValue={listingStrategy.marketMaker}
                       {...register("marketMaker", { required: true })}
                       className={errors.marketMaker ? "incorrect" : "input"}
                     />
@@ -143,8 +148,9 @@ const ListingStrategyForm = () => {
               Submit
             </button>
             <button className="back-btn mt-3">
-              <img src="./img/back-icon.svg" alt="" />
-              Back
+             <Link to="/partnersinfluencers">
+             <img src="./img/back-icon.svg" alt="" />
+              Back</Link>
             </button>
           </form>
         </div>
