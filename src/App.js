@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
@@ -15,13 +15,25 @@ import ListingInfo from "./Components/ListingInfo";
 import PartnersInfluencers from "./Components/PartnersInfluencers";
 import ListingStrategy from "./Components/ListingStrategy";
 import Congratulations from "./Components/Congratulations ";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "./helpers/HttpService";
+import { setProjects } from "./store/projects/actions";
 
 const App = () => {
   
-  const {users} = useSelector(state=>state);
+  const { projects } = useSelector(state=>state);
+  const dispatch = useDispatch();
 
-  console.log(users);
+  useEffect(()=>{
+    fetchData()
+      .then(data=>{
+        console.log(data);
+        dispatch(setProjects(data));
+      })
+  }, [])
+
+
+  console.log(projects);
 
   return (
     <BrowserRouter>

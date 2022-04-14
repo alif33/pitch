@@ -87,11 +87,11 @@ const CompanyInfoForm = () => {
             </h2>
             <div className="form-group">
               <label htmlFor="projectDiscerption">
-                Project discerption<span>*</span>
+                Project description<span>*</span>
               </label>
               <textarea
                 id="projectDiscerption"
-                placeholder="Enter your team background "
+                placeholder="Enter your Project description"
                 defaultValue={companyInfo.projectDiscerption}
                 {...register("projectDiscerption", { required: true })}
                 className={errors.projectDiscerption ? "incorrect" : "input"}
