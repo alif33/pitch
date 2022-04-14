@@ -6,7 +6,7 @@ import PartnersInfluencersForm from './Section/PartnersInfluencersForm';
 const PartnersInfluencers = () => {
     return (
       <div>
-        <Navbar active={"submit"} />
+        <Navbar status={"submit"} />
         <PartnersInfluencersForm />
         <Footer />
       </div>

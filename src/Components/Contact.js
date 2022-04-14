@@ -6,7 +6,7 @@ import Navbar from "./Section/Navbar";
 const Contact = () => {
   return (
     <div className="contact">
-      <Navbar active={"submit"} />
+      <Navbar status={"submit"} />
         <ContactForm />
       <Footer />
     </div>

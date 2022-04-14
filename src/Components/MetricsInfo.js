@@ -6,7 +6,7 @@ import Navbar from './Section/Navbar';
 const MetricsInfo = () => {
     return (
       <div>
-        <Navbar active={"submit"} />
+        <Navbar status={"submit"} />
         <MetricsInfoForm />
         <Footer />
       </div>

@@ -11,7 +11,7 @@ import UpcomingProjects from './Section/UpcomingProjects';
 const Home = () => {
     return (
       <div className="home">
-        <Navbar active={"home"} />
+        <Navbar status={"home"} />
         <Header/>
         <NewProjects/>
         <UpcomingProjects/>

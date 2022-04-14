@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { injected } from "../../utils/connectors";
 
-const Navbar = ({ active }) => {
+const Navbar = ({ status }) => {
   const [navbarShow, setNavbarShow] = useState(false);
-  const { account, library, connector, activate, deactivate } = useWeb3React();
+  const { active, account, library, connector, activate, deactivate } = useWeb3React();
   const walletConnect = async()=>{
     try {
       await activate(injected)
@@ -39,12 +39,12 @@ const Navbar = ({ active }) => {
               </div>
             )}
             <ul className="navbar-nav ms-auto">
-              <li className={`nav-item ${active === "home" && "active"}`}>
+              <li className={`nav-item ${status === "home" && "active"}`}>
                 <Link className="nav-link" to="/">
                   Home
                 </Link>
               </li>
-              <li className={`nav-item ${active === "submit" && "active"}`}>
+              <li className={`nav-item ${status === "submit" && "active"}`}>
                 <Link className="nav-link" to="/contact">
                   Submit IDO
                 </Link>

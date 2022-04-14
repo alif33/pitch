@@ -6,7 +6,7 @@ import Navbar from './Section/Navbar';
 const ListingInfo = () => {
     return (
       <div>
-        <Navbar active={"submit"} />
+        <Navbar status={"submit"} />
         <ListingInfoForm />
         <Footer />
       </div>
