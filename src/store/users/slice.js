@@ -9,13 +9,15 @@ export const userSlice = createSlice({
 
   reducers: {
     setContact: (state, action) => {
-      const { name, email, phoneNumber } = action.payload;
+      const { name, email, phoneNumber, code, phoneCode } = action.payload;
       return {
         ...state,
         contactInfo: {
           name,
           email,
-          phoneNumber: phoneNumber,
+          phoneNumber,
+          code,
+          phoneCode,
         },
       };
     },

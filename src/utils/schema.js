@@ -3,6 +3,8 @@ export const userData = {
     email: "",
     name: "",
     phoneNumber: "",
+    code: "",
+    phoneCode: "",
   },
   companyInfo: {
     projectDiscerption: "",
