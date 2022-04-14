@@ -4,15 +4,19 @@
 
 // navbar.....
 a {
-  color: #fff;
-  text-decoration: none;
+  color: $text-color;
   &:hover {
-    color: #fff;
-    text-decoration: none;
+    color: $text-color;
   }
 }
 body {
   color: $text-color;
+}
+p.sub-title {
+  font-size: 16px;
+  width: 78%;
+  margin-top: 18px;
+  opacity: 0.8;
 }
 h2.main-title {
   font-weight: 600;
@@ -134,9 +138,16 @@ img {
       font-size: 12px;
       line-height: 12px;
       padding: 12px 18px;
+      margin-top: -5px;
+      img {
+        width: 29px;
+      }
     }
     @media (max-width: 368px) {
-      padding: 11px 8px;
+      padding: 8px 7px;
+    }
+    @media (max-width: 285px) {
+      padding: 8px 6px;
     }
   }
   button.menu-btn {
@@ -242,9 +253,13 @@ img {
       position: relative;
       width: 439px;
       @media (max-width: 600px) {
-        width: auto;
         font-size: 30px;
-        width: 228px;
+        width: 270px;
+        margin-bottom: 18px;
+      }
+      @media (max-width: 275px) {
+        width: auto;
+        margin-bottom: 18px;
       }
 
       img {
@@ -314,7 +329,10 @@ img {
     padding-top: 150px;
   }
   @media (max-width: 600px) {
-    padding-top: 75px;
+    padding-top: 112px;
+  }
+  @media (max-width: 375px) {
+    padding-top: 90px;
   }
 }
 
@@ -551,6 +569,9 @@ img {
     @media (max-width: 600px) {
       width: 282px;
     }
+    @media (max-width: 285px) {
+      width: auto;
+    }
   }
 }
 .model-section {
@@ -567,8 +588,6 @@ img {
   .model-img {
     position: relative;
     img {
-      &:first-child {
-      }
       &:last-child {
         position: absolute;
         width: 52px;
@@ -582,6 +601,7 @@ img {
   button.main-btn {
     background: $button-bg2;
     color: $light-color;
+    margin-top: 24px;
     &:hover {
       background: $button-bg2;
       color: $light-color;
@@ -617,12 +637,18 @@ img {
   p {
     font-weight: 300;
     font-size: 20px;
+    line-height: 20px;
     color: #ffffff;
     width: 70%;
+    margin-top: 10px;
+    @media (max-width: 375px) {
+      width: auto;
+    }
   }
   button.main-btn {
     background: #ff2853;
     border-radius: 7px;
+    margin-top: 20px;
     &:hover {
       background: #ff2853;
     }
@@ -1326,6 +1352,9 @@ img {
     text-align: center;
     color: #000f3c;
     margin-top: 20px;
+    @media (max-width: 475px) {
+      font-size: 28px;
+    }
   }
   h5 {
     margin-top: 20px;
@@ -1333,7 +1362,6 @@ img {
     font-size: 23px;
     line-height: 23px;
     text-align: center;
-
     color: #000f3b;
   }
   p {
@@ -1344,6 +1372,9 @@ img {
     text-align: center;
     margin-top: 8px;
     color: #000f3b;
+    @media (max-width: 457px) {
+      width: auto;
+    }
   }
   button.main-btn {
     @include button($button-bg2, $light-color);
