@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useWeb3React } from "@web3-react/core";
+import { injected } from "../../utils/connectors";
 
-const Navbar = ({active}) => {
+const Navbar = ({ active }) => {
   const [navbarShow, setNavbarShow] = useState(false);
+  const { account, library, connector, activate, deactivate } = useWeb3React();
+  const walletConnect = async()=>{
+    try {
+      await activate(injected)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  console.log(account);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -50,7 +61,9 @@ const Navbar = ({active}) => {
               </li>
             </ul>
           </div>
-          <button className="main-btn">Connect Wallet</button>{" "}
+          <button
+            onClick={walletConnect} 
+            className="main-btn">Connect Wallet</button>{" "}
           <button
             className="menu-btn"
             onClick={() => setNavbarShow(!navbarShow)}
