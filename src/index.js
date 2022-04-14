@@ -1,5 +1,7 @@
 import React from 'react';
 import { createRoot } from "react-dom/client";
+import Web3 from 'web3';
+import { Web3ReactProvider } from "@web3-react/core";
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
@@ -10,13 +12,17 @@ import reportWebVitals from './reportWebVitals';
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
+const getLibrary = provider => new Web3(provider);
+
 root.render(
   <React.StrictMode>
+    <Web3ReactProvider getLibrary={getLibrary}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <App />
         </PersistGate>
       </Provider>
+    </Web3ReactProvider>
   </React.StrictMode>
 );
 
