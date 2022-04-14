@@ -1,50 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Slider from "react-slick";
+import { newProSlider } from "../../config/settings";
 
 const NewProjects = () => {
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    centerMode: true,
-    className: "center",
-    centerPadding: "20px",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: false,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          dots: false,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: false,
-          arrows: false,
-        },
-      },
-    ],
-  };
 
+  const { projects } = useSelector(state=>state);
+  console.log(projects);
+  
   return (
     <div className="new-project-section">
       <div className="container">
@@ -61,7 +24,7 @@ const NewProjects = () => {
           </div>
           <div className="col-lg-10 col-md-12">
             <div className="new-project-items all">
-              <Slider {...settings}>
+              <Slider {...newProSlider}>
                 <div>
                   <div className="px-2 mt-md-5">
                     <div className="new-project-item">

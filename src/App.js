@@ -15,25 +15,23 @@ import ListingInfo from "./Components/ListingInfo";
 import PartnersInfluencers from "./Components/PartnersInfluencers";
 import ListingStrategy from "./Components/ListingStrategy";
 import Congratulations from "./Components/Congratulations ";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchData } from "./helpers/HttpService";
 import { setProjects } from "./store/projects/actions";
 
 const App = () => {
   
-  const { projects } = useSelector(state=>state);
   const dispatch = useDispatch();
 
   useEffect(()=>{
     fetchData()
       .then(data=>{
-        console.log(data);
-        dispatch(setProjects(data));
+        dispatch(
+          setProjects(data)
+        );
       })
   }, [])
 
-
-  console.log(projects);
 
   return (
     <BrowserRouter>
