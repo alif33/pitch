@@ -14,7 +14,6 @@ import MetricsInfo from "./Components/MetricsInfo";
 import ListingInfo from "./Components/ListingInfo";
 import PartnersInfluencers from "./Components/PartnersInfluencers";
 import ListingStrategy from "./Components/ListingStrategy";
-import DataProcessing from "./Components/DataProcessing";
 import Congratulations from "./Components/Congratulations ";
 import { useSelector } from "react-redux";
 
@@ -30,12 +29,11 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/chaiport" element={<ChainPort />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/companyinfo" element={<CompanyInfo />} />
-        <Route path="/metricsinfo" element={<MetricsInfo />} />
-        <Route path="/listinginfo" element={<ListingInfo />} />
-        <Route path="/partnersinfluencers" element={<PartnersInfluencers />} />
-        <Route path="/listingstrategy" element={<ListingStrategy />} />
-        <Route path="/dataprocessing" element={<DataProcessing />} />
+        <Route path="/company-info" element={<CompanyInfo />} />
+        <Route path="/metrics-info" element={<MetricsInfo />} />
+        <Route path="/listing-info" element={<ListingInfo />} />
+        <Route path="/partnersin-fluencers" element={<PartnersInfluencers />} />
+        <Route path="/listing-strategy" element={<ListingStrategy />} />
         <Route path="/congratulations" element={<Congratulations />} />
       </Routes>
       <Modal />

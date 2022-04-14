@@ -22,7 +22,8 @@ export const userData = {
     totalSupply: "",
     dilutedValuation: "",
     TGEMarketCap: "",
-    SymbolURL: "",
+    symbolURL: "",
+    
   },
   listingInfo: {
     IDOSize: "",

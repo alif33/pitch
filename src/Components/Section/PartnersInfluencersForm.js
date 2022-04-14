@@ -18,7 +18,7 @@ const PartnersInfluencersForm = () => {
   const dispatch = useDispatch();
   const onSubmit = (data) => {
     dispatch(setPartnersInfluencers(data));
-    navigate("/listingstrategy");
+    navigate("/listing-strategy");
 
     //  console.log(data);
   };
@@ -82,7 +82,7 @@ const PartnersInfluencersForm = () => {
             </div>
             <button className="main-btn mt-5">Next</button>
             <button className="back-btn mt-3">
-              <Link to="/listinginfo">
+              <Link to="/listing-info">
                 <img src="./img/back-icon.svg" alt="" />
                 Back
               </Link>

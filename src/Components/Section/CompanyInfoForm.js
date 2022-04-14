@@ -23,7 +23,7 @@ const CompanyInfoForm = () => {
 
   const onSubmit = (data) => {
     dispatch(setCompanyInfo({ ...uploadFile, ...data }));
-    navigate("/metricsinfo");
+    navigate("/metrics-info");
   };
 
   const handlePitchDeckUpload = (file) => {
@@ -258,7 +258,7 @@ const CompanyInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload ? (
+                    {upload || companyInfo.pitchDeckURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
@@ -299,7 +299,7 @@ const CompanyInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload1 ? (
+                    {upload1 || companyInfo.tokenomicsFileURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
@@ -337,7 +337,7 @@ const CompanyInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload2 ? (
+                    {upload2 || companyInfo.LogoURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"

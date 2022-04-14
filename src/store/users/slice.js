@@ -55,7 +55,7 @@ export const userSlice = createSlice({
         totalSupply,
         dilutedValuation,
         TGEMarketCap,
-        SymbolURL,
+        symbolURL,
       } = action.payload;
       return {
         ...state,
@@ -64,7 +64,7 @@ export const userSlice = createSlice({
           totalSupply,
           dilutedValuation,
           TGEMarketCap,
-          SymbolURL,
+          symbolURL,
         },
       };
     },

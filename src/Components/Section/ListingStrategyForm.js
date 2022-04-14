@@ -176,7 +176,7 @@ const ListingStrategyForm = () => {
                     Submit
                   </button>
                   <button className="back-btn mt-3">
-                    <Link to="/partnersinfluencers">
+                    <Link to="/partnersin-fluencers">
                       <img src="./img/back-icon.svg" alt="" />
                       Back
                     </Link>

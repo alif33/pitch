@@ -19,7 +19,7 @@ const MetricsInfoForm = () => {
   const { metricsInfo} = users
    const onSubmit = (data) => {
     dispatch(setMetricsInfo({...uploadFile, ...data}));
-    navigate("/listinginfo");
+    navigate("/listing-info");
   };
 
 
@@ -34,13 +34,14 @@ const handleSymbolUpload = (file) => {
   })
     .then((res) => res.json())
     .then((result) => {
-      setUploadFile({SymbolURL: result.secure_url})
+      setUploadFile({ ...uploadFile, symbolURL: result.secure_url})
       setUpload(true);
     })
     .catch((err) => {console.log(err)
     });
 }
-  
+
+console.log(metricsInfo.symbolURL)
 
   return (
     <div className="container">
@@ -169,7 +170,7 @@ const handleSymbolUpload = (file) => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload ? (
+                    {upload || metricsInfo.symbolURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
@@ -189,7 +190,7 @@ const handleSymbolUpload = (file) => {
               Next
             </button>
             <button className="back-btn mt-3">
-              <Link to="/companyinfo"><img src="./img/back-icon.svg" alt="" />
+              <Link to="/company-info"><img src="./img/back-icon.svg" alt="" />
               Back</Link>
             </button>
           </form>

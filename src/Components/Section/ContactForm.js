@@ -19,7 +19,7 @@ const ContactForm = () => {
   } = useForm();
   const onSubmit = (data) => {
     dispatch(setContact(data));
-    navigate("/companyinfo");
+    navigate("/company-info");
     // console.log(data);
   };
 

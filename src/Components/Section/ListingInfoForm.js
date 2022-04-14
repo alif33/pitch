@@ -19,8 +19,8 @@ const ListingInfoForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onSubmit = (data) => {
-    dispatch(setListingInfo({...uploadFile, ...data}));
-    navigate("/partnersinfluencers");
+    dispatch(setListingInfo({ ...uploadFile, ...data }));
+    navigate("/partnersin-fluencers");
   };
 
   const handleVestingTermsUpload = (file) => {
@@ -319,7 +319,7 @@ const ListingInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload1 ? (
+                    {upload1 || listingInfo.vestingTermsURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
@@ -360,7 +360,7 @@ const ListingInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload2 ? (
+                    {upload2 || listingInfo.pitchshowsVestingTermsURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
@@ -385,7 +385,7 @@ const ListingInfoForm = () => {
               Next
             </button>
             <button className="back-btn mt-3">
-              <Link to="/metricsinfo">
+              <Link to="/metrics-info">
                 <img src="./img/back-icon.svg" alt="" />
                 Back
               </Link>
