@@ -309,6 +309,7 @@ const ListingInfoForm = () => {
                         onChange={(e) =>
                           handleVestingTermsUpload(e.target.files)
                         }
+                        accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                       />
                       <button>Upload File</button>
                     </div>
@@ -333,6 +334,7 @@ const ListingInfoForm = () => {
                     <input
                       type="file"
                       onChange={(e) => handleVestingTermsUpload(e.target.files)}
+                      accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                     />
                   </div>
                 </div>
@@ -350,6 +352,7 @@ const ListingInfoForm = () => {
                         onChange={(e) =>
                           handlePitchshowsVestingTermsUpload(e.target.files)
                         }
+                        accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                       />
                       <button>Upload File</button>
                     </div>
@@ -376,6 +379,7 @@ const ListingInfoForm = () => {
                       onChange={(e) =>
                         handlePitchshowsVestingTermsUpload(e.target.files)
                       }
+                      accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                     />
                   </div>
                 </div>

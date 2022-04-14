@@ -41,7 +41,6 @@ const handleSymbolUpload = (file) => {
     });
 }
 
-console.log(metricsInfo.symbolURL)
 
   return (
     <div className="container">
@@ -162,7 +161,7 @@ console.log(metricsInfo.symbolURL)
                     </label>
                     <h4>Upload Token Symbol Image</h4>
                     <div className="input-file">
-                      <input type="file" onChange={(e) => handleSymbolUpload(e.target.files)}/>
+                      <input type="file" onChange={(e) => handleSymbolUpload(e.target.files)}  accept=".jpg, .jpeg, .png, .svg"/>
                       <button>Upload File</button>
                     </div>
                     <p className="file-size">Svg/Jpeg/Png (50MB max size)</p>
@@ -175,13 +174,14 @@ console.log(metricsInfo.symbolURL)
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
                         alt=""
+
                       />
                     ) : (
                       <img src="./img/news-icon.svg" alt="" />
                     )}
 
                     <p>Drag & Drop File Here</p>
-                    <input type="file"  onChange={(e) => handleSymbolUpload(e.target.files)} />
+                    <input type="file"  onChange={(e) => handleSymbolUpload(e.target.files)}  accept=".jpg, .jpeg, .png, .svg" />
                   </div>
                 </div>
               </div>

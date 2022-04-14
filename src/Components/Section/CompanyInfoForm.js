@@ -248,6 +248,7 @@ const CompanyInfoForm = () => {
                       <input
                         type="file"
                         onChange={(e) => handlePitchDeckUpload(e.target.files)}
+                        accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                       />
                       <button>Upload Deck</button>
                     </div>
@@ -272,6 +273,7 @@ const CompanyInfoForm = () => {
                     <input
                       type="file"
                       onChange={(e) => handlePitchDeckUpload(e.target.files)}
+                      accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                     />
                   </div>
                 </div>
@@ -289,6 +291,7 @@ const CompanyInfoForm = () => {
                         onChange={(e) =>
                           handleTokenomicsFileUpload(e.target.files)
                         }
+                        accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                       />
                       <button>Upload Tokenomics</button>
                     </div>
@@ -314,6 +317,7 @@ const CompanyInfoForm = () => {
                       onChange={(e) =>
                         handleTokenomicsFileUpload(e.target.files)
                       }
+                      accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
                     />
                   </div>
                 </div>
@@ -329,6 +333,7 @@ const CompanyInfoForm = () => {
                       <input
                         type="file"
                         onChange={(e) => handleLogoUpload(e.target.files)}
+                        accept=".jpg, .jpeg, .png, .svg"
                       />
                       <button>Upload Logo</button>
                     </div>
@@ -350,6 +355,7 @@ const CompanyInfoForm = () => {
                     <input
                       type="file"
                       onChange={(e) => handleLogoUpload(e.target.files)}
+                      accept=".jpg, .jpeg, .png, .svg"
                     />
                   </div>
                 </div>
