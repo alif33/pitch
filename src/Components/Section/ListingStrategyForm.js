@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
 import { useSelector, useDispatch } from "react-redux";
 import { setListingStrategy, usersReset } from "../../store/users/actions";
-import { postData } from "../../helpers/HttpService";
 import { collection, addDoc } from "firebase/firestore";
 // import db from "firebase/app";
 import db from "../../utils/db";

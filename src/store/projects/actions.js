@@ -1,4 +1,4 @@
-import { projectSlice, userSlice } from "./slice";
+import { projectSlice } from "./slice";
 const { actions: slice } = projectSlice;
 
 export const setProjects = projects => (dispatch) => {
