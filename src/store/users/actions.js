@@ -20,6 +20,6 @@ export const setListingStrategy = info => (dispatch) => {
     dispatch(slice.setListingStrategy(info))
 }
 
-export const userLogout = () => (dispatch) => {
-    dispatch(slice.userLogout())
+export const usersReset = () => (dispatch) => {
+    dispatch(slice.usersReset());
 }

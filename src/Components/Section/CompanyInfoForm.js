@@ -6,21 +6,76 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCompanyInfo } from "../../store/users/actions";
 
 const CompanyInfoForm = () => {
-  const [upload] = useState(true);
+  const [upload, setUpload] = useState(false);
+  const [upload1, setUpload1] = useState(false);
+  const [upload2, setUpload2] = useState(false);
+  const [uploadFile, setUploadFile] = useState({});
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { users } = useSelector(state=>state);
-  const {companyInfo} = users
+  const { users } = useSelector((state) => state);
+  const { companyInfo } = users;
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(setCompanyInfo(data));
+    dispatch(setCompanyInfo({ ...uploadFile, ...data }));
     navigate("/metricsinfo");
   };
+
+  const handlePitchDeckUpload = (file) => {
+    const formDate = new FormData();
+    formDate.append("file", file[0]);
+    formDate.append("upload_preset", "pitchshow");
+
+    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+      method: "post",
+      body: formDate,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setUploadFile({ ...uploadFile, pitchDeckURL: result.secure_url });
+        setUpload(true);
+      })
+      .catch((err) => console.log(err));
+  };
+  const handleTokenomicsFileUpload = (file) => {
+    const formDate = new FormData();
+    formDate.append("file", file[0]);
+    formDate.append("upload_preset", "pitchshow");
+
+    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+      method: "post",
+      body: formDate,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setUploadFile({ ...uploadFile, tokenomicsFileURL: result.secure_url });
+        setUpload1(true);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleLogoUpload = (file) => {
+    const formDate = new FormData();
+    formDate.append("file", file[0]);
+    formDate.append("upload_preset", "pitchshow");
+
+    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+      method: "post",
+      body: formDate,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setUploadFile({ ...uploadFile, LogoURL: result.secure_url });
+        setUpload2(true);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -190,7 +245,10 @@ const CompanyInfoForm = () => {
                     </label>
                     <h4>Upload your Pitch Deck File</h4>
                     <div className="input-file">
-                      <input type="file" />
+                      <input
+                        type="file"
+                        onChange={(e) => handlePitchDeckUpload(e.target.files)}
+                      />
                       <button>Upload Deck</button>
                     </div>
                     <p className="file-size">
@@ -211,7 +269,10 @@ const CompanyInfoForm = () => {
                     )}
 
                     <p>Drag & Drop File Here</p>
-                    <input type="file" />
+                    <input
+                      type="file"
+                      onChange={(e) => handlePitchDeckUpload(e.target.files)}
+                    />
                   </div>
                 </div>
               </div>
@@ -223,7 +284,12 @@ const CompanyInfoForm = () => {
                     </label>
                     <h4>Upload your Tokenomics File</h4>
                     <div className="input-file">
-                      <input type="file" />
+                      <input
+                        type="file"
+                        onChange={(e) =>
+                          handleTokenomicsFileUpload(e.target.files)
+                        }
+                      />
                       <button>Upload Tokenomics</button>
                     </div>
                     <p className="file-size">
@@ -233,9 +299,22 @@ const CompanyInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    <img src="./img/news-icon.svg" alt="" />
+                    {upload1 ? (
+                      <img
+                        style={{ width: "46px", height: "46px" }}
+                        src="./img/uploaded-icon.svg"
+                        alt=""
+                      />
+                    ) : (
+                      <img src="./img/news-icon.svg" alt="" />
+                    )}
                     <p>Drag & Drop File Here</p>
-                    <input type="file" />
+                    <input
+                      type="file"
+                      onChange={(e) =>
+                        handleTokenomicsFileUpload(e.target.files)
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -247,7 +326,10 @@ const CompanyInfoForm = () => {
                     </label>
                     <h4>Upload Logo</h4>
                     <div className="input-file">
-                      <input type="file" accept="" />
+                      <input
+                        type="file"
+                        onChange={(e) => handleLogoUpload(e.target.files)}
+                      />
                       <button>Upload Logo</button>
                     </div>
                     <p className="file-size">*Svg/Jpeg/Png (50MB max size)</p>
@@ -255,22 +337,32 @@ const CompanyInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    <img src="./img/news-icon.svg" alt="" />
+                    {upload2 ? (
+                      <img
+                        style={{ width: "46px", height: "46px" }}
+                        src="./img/uploaded-icon.svg"
+                        alt=""
+                      />
+                    ) : (
+                      <img src="./img/news-icon.svg" alt="" />
+                    )}
                     <p>Drag & Drop File Here</p>
-                    <input type="file" />
+                    <input
+                      type="file"
+                      onChange={(e) => handleLogoUpload(e.target.files)}
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <button className="main-btn mt-5">Next</button>
-             <button className="back-btn mt-3">
-            <Link to="/contact">
-              <img src="./img/back-icon.svg" alt="" />
-              Back
-            </Link>
-          </button>
+            <button className="back-btn mt-3">
+              <Link to="/contact">
+                <img src="./img/back-icon.svg" alt="" />
+                Back
+              </Link>
+            </button>
           </form>
-         
         </div>
       </div>
     </div>

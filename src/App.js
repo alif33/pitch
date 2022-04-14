@@ -22,7 +22,7 @@ const App = () => {
   
   const {users} = useSelector(state=>state);
 
-  console.log(users)
+  console.log(users);
 
   return (
     <BrowserRouter>

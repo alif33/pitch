@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setListingInfo } from "../../store/users/actions";
 
 const ListingInfoForm = () => {
-  const [upload] = useState(false);
+  const [upload1, setUpload1] = useState(false);
+  const [upload2, setUpload2] = useState(false);
+  const [uploadFile, setUploadFile] = useState({});
   const { users } = useSelector((state) => state);
   const { listingInfo } = users;
   const {
@@ -17,9 +19,47 @@ const ListingInfoForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onSubmit = (data) => {
-    dispatch(setListingInfo(data));
+    dispatch(setListingInfo({...uploadFile, ...data}));
     navigate("/partnersinfluencers");
   };
+
+  const handleVestingTermsUpload = (file) => {
+    const formDate = new FormData();
+    formDate.append("file", file[0]);
+    formDate.append("upload_preset", "pitchshow");
+
+    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+      method: "post",
+      body: formDate,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setUploadFile({ ...uploadFile, vestingTermsURL: result.secure_url });
+        setUpload1(true);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handlePitchshowsVestingTermsUpload = (file) => {
+    const formDate = new FormData();
+    formDate.append("file", file[0]);
+    formDate.append("upload_preset", "pitchshow");
+
+    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+      method: "post",
+      body: formDate,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setUploadFile({
+          ...uploadFile,
+          pitchshowsVestingTermsURL: result.secure_url,
+        });
+        setUpload2(true);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -264,7 +304,12 @@ const ListingInfoForm = () => {
                     </label>
                     <h4>Upload Vesting Terms </h4>
                     <div className="input-file">
-                      <input type="file" accept="" />
+                      <input
+                        type="file"
+                        onChange={(e) =>
+                          handleVestingTermsUpload(e.target.files)
+                        }
+                      />
                       <button>Upload File</button>
                     </div>
                     <p className="file-size">
@@ -274,7 +319,7 @@ const ListingInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload ? (
+                    {upload1 ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
@@ -285,7 +330,10 @@ const ListingInfoForm = () => {
                     )}
 
                     <p>Drag & Drop File Here</p>
-                    <input type="file" />
+                    <input
+                      type="file"
+                      onChange={(e) => handleVestingTermsUpload(e.target.files)}
+                    />
                   </div>
                 </div>
               </div>
@@ -297,7 +345,12 @@ const ListingInfoForm = () => {
                     </label>
                     <h4>Upload Pitchshows Vesting Terms</h4>
                     <div className="input-file">
-                      <input type="file" />
+                      <input
+                        type="file"
+                        onChange={(e) =>
+                          handlePitchshowsVestingTermsUpload(e.target.files)
+                        }
+                      />
                       <button>Upload File</button>
                     </div>
                     <p className="file-size">
@@ -307,7 +360,7 @@ const ListingInfoForm = () => {
                 </div>
                 <div className="col-md-5 ms-auto">
                   <div className="drag-drop-file">
-                    {upload ? (
+                    {upload2 ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
                         src="./img/uploaded-icon.svg"
@@ -318,7 +371,12 @@ const ListingInfoForm = () => {
                     )}
 
                     <p>Drag & Drop File Here</p>
-                    <input type="file" />
+                    <input
+                      type="file"
+                      onChange={(e) =>
+                        handlePitchshowsVestingTermsUpload(e.target.files)
+                      }
+                    />
                   </div>
                 </div>
               </div>

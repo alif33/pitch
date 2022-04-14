@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {  setMetricsInfo } from "../../store/users/actions";
 
 const MetricsInfoForm = () => {
-  const [upload,] = useState(false);
-  const {
+  const [upload, setUpload] = useState(false);
+  const [uploadFile, setUploadFile]  = useState({})
+   const {
     register,
     handleSubmit,
     formState: { errors },
@@ -17,9 +18,30 @@ const MetricsInfoForm = () => {
   const { users } = useSelector(state => state);
   const { metricsInfo} = users
    const onSubmit = (data) => {
-    dispatch(setMetricsInfo(data));
+    dispatch(setMetricsInfo({...uploadFile, ...data}));
     navigate("/listinginfo");
   };
+
+
+const handleSymbolUpload = (file) => {
+  const formDate = new FormData();
+  formDate.append("file", file[0]);
+  formDate.append("upload_preset", "pitchshow");
+
+  fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+    method: "post",
+    body: formDate,
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      setUploadFile({SymbolURL: result.secure_url})
+      setUpload(true);
+    })
+    .catch((err) => {console.log(err)
+    });
+}
+  
+
   return (
     <div className="container">
       <div className="row">
@@ -139,7 +161,7 @@ const MetricsInfoForm = () => {
                     </label>
                     <h4>Upload Token Symbol Image</h4>
                     <div className="input-file">
-                      <input type="file" />
+                      <input type="file" onChange={(e) => handleSymbolUpload(e.target.files)}/>
                       <button>Upload File</button>
                     </div>
                     <p className="file-size">Svg/Jpeg/Png (50MB max size)</p>
@@ -158,7 +180,7 @@ const MetricsInfoForm = () => {
                     )}
 
                     <p>Drag & Drop File Here</p>
-                    <input type="file" />
+                    <input type="file"  onChange={(e) => handleSymbolUpload(e.target.files)} />
                   </div>
                 </div>
               </div>

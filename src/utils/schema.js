@@ -13,12 +13,16 @@ export const userData = {
       linkedIn: "",
       discord: "",
     },
+    pitchDeckURL: "",
+    tokenomicsFileURL: "",
+    LogoURL: "",
   },
   metricsInfo: {
     blockchainNetwork: "",
     totalSupply: "",
     dilutedValuation: "",
     TGEMarketCap: "",
+    SymbolURL: "",
   },
   listingInfo: {
     IDOSize: "",
@@ -30,6 +34,8 @@ export const userData = {
     pitchshowsAllocationSize: "",
     pitchshowsTokenPrice: "",
     IDOTimeFrame: "",
+    vestingTermsURL: "",
+    pitchshowsVestingTermsURL: "",
   },
   partnersInfluencers: {
     topPartners: "",

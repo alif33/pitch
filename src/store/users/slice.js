@@ -27,7 +27,11 @@ export const userSlice = createSlice({
         instagram,
         linkedIn,
         discord,
+        pitchDeckURL,
+        tokenomicsFileURL,
+        LogoURL,
       } = action.payload;
+      console.log(action.payload);
       return {
         ...state,
         companyInfo: {
@@ -39,12 +43,20 @@ export const userSlice = createSlice({
             linkedIn,
             discord,
           },
+          pitchDeckURL,
+          tokenomicsFileURL,
+          LogoURL,
         },
       };
     },
     setMetricsInfo: (state, action) => {
-      const { blockchainNetwork, totalSupply, dilutedValuation, TGEMarketCap } =
-        action.payload;
+      const {
+        blockchainNetwork,
+        totalSupply,
+        dilutedValuation,
+        TGEMarketCap,
+        SymbolURL,
+      } = action.payload;
       return {
         ...state,
         metricsInfo: {
@@ -52,6 +64,7 @@ export const userSlice = createSlice({
           totalSupply,
           dilutedValuation,
           TGEMarketCap,
+          SymbolURL,
         },
       };
     },
@@ -66,6 +79,8 @@ export const userSlice = createSlice({
         pitchshowsAllocationSize,
         pitchshowsTokenPrice,
         IDOTimeFrame,
+        vestingTermsURL,
+        pitchshowsVestingTermsURL,
       } = action.payload;
       return {
         ...state,
@@ -79,6 +94,8 @@ export const userSlice = createSlice({
           pitchshowsAllocationSize,
           pitchshowsTokenPrice,
           IDOTimeFrame,
+          vestingTermsURL,
+          pitchshowsVestingTermsURL,
         },
       };
     },
@@ -97,12 +114,9 @@ export const userSlice = createSlice({
       };
     },
 
-    userLogout: (state, action) => {
+    usersReset: (state, action) => {
       return {
-        ...state,
-        isUser: false,
-        token: "",
-        user: null,
+        ...userData,
       };
     },
   },
