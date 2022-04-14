@@ -53,16 +53,17 @@ export const userSlice = createSlice({
     },
     setMetricsInfo: (state, action) => {
       const {
-        blockchainNetwork,
+        value,
         totalSupply,
         dilutedValuation,
         TGEMarketCap,
         symbolURL,
       } = action.payload;
+      // console.log()
       return {
         ...state,
         metricsInfo: {
-          blockchainNetwork,
+          blockchainNetwork: value,
           totalSupply,
           dilutedValuation,
           TGEMarketCap,

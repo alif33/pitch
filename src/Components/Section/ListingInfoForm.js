@@ -4,6 +4,7 @@ import FromPagination from "./FromPagination";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { setListingInfo } from "../../store/users/actions";
+import toast from "react-hot-toast";
 
 const ListingInfoForm = () => {
   const [upload1, setUpload1] = useState(false);
@@ -34,8 +35,12 @@ const ListingInfoForm = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        setUploadFile({ ...uploadFile, vestingTermsURL: result.secure_url });
-        setUpload1(true);
+        if (result.secure_url) {
+          setUploadFile({ ...uploadFile, vestingTermsURL: result.secure_url });
+          setUpload1(true);
+        } else {
+          toast.error("Please try again.");
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -51,11 +56,16 @@ const ListingInfoForm = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        setUploadFile({
-          ...uploadFile,
-          pitchshowsVestingTermsURL: result.secure_url,
-        });
-        setUpload2(true);
+        if (result.secure_url) {
+          setUploadFile({
+            ...uploadFile,
+            pitchshowsVestingTermsURL: result.secure_url,
+          });
+
+          setUpload2(true);
+        } else {
+          toast.error("Please try again.");
+        }
       })
       .catch((err) => console.log(err));
   };

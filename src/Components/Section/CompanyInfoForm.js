@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCompanyInfo } from "../../store/users/actions";
+import toast from "react-hot-toast";
 
 const CompanyInfoForm = () => {
   const [upload, setUpload] = useState(false);
@@ -23,7 +24,13 @@ const CompanyInfoForm = () => {
 
   const onSubmit = (data) => {
     dispatch(setCompanyInfo({ ...uploadFile, ...data }));
-    navigate("/metrics-info");
+    if (
+      companyInfo.pitchDeckURL &&
+      companyInfo.tokenomicsFileURL &&
+      companyInfo.LogoURL
+    ) {
+      navigate("/metrics-info");
+    }
   };
 
   const handlePitchDeckUpload = (file) => {
@@ -37,8 +44,12 @@ const CompanyInfoForm = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        setUploadFile({ ...uploadFile, pitchDeckURL: result.secure_url });
-        setUpload(true);
+        if (result.secure_url) {
+          setUploadFile({ ...uploadFile, pitchDeckURL: result.secure_url });
+          setUpload(true);
+        } else {
+          toast.error("Please try again.");
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -53,8 +64,15 @@ const CompanyInfoForm = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        setUploadFile({ ...uploadFile, tokenomicsFileURL: result.secure_url });
-        setUpload1(true);
+        if (result.secure_url) {
+          setUploadFile({
+            ...uploadFile,
+            tokenomicsFileURL: result.secure_url,
+          });
+          setUpload1(true);
+        } else {
+          toast.error("Please try again.");
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -70,8 +88,12 @@ const CompanyInfoForm = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        setUploadFile({ ...uploadFile, LogoURL: result.secure_url });
-        setUpload2(true);
+        if (result.secure_url) {
+          setUploadFile({ ...uploadFile, LogoURL: result.secure_url });
+          setUpload2(true);
+        } else {
+          toast.error("Please try again.");
+        }
       })
       .catch((err) => console.log(err));
   };
