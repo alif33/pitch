@@ -19,6 +19,7 @@ import { useDispatch } from "react-redux";
 import { fetchData } from "./helpers/HttpService";
 import { setProjects } from "./store/projects/actions";
 import { Toaster } from "react-hot-toast";
+import 'reactjs-popup/dist/index.css';
 
 const App = () => {
   const dispatch = useDispatch();

@@ -63,7 +63,7 @@ const Navbar = ({ status }) => {
           </div>
           {active ? <button
             onClick={ ()=>deactivate() } 
-            className="main-btn">Disconnected { account.substring(0,6) }... { account.substring(account.length-4, account.length) }</button>: <button
+            className="main-btn">Disconnect { account.substring(0,6) }... { account.substring(account.length-4, account.length) }</button>: <button
             onClick={walletConnect} 
             className="main-btn">Connect Wallet</button>}
           

@@ -291,6 +291,9 @@ img {
         color: $main-color !important;
         box-shadow: 0 0 9px 0px #00000024;
       }
+      &:focus-visible {
+        outline: none !important;
+      }
       @media (max-width: 600px) {
         margin-top: 12px;
       }
@@ -1449,5 +1452,76 @@ img {
       color: inherit;
       text-decoration: none;
     }
+  }
+}
+
+// scbscribe modal
+.popup-content {
+  height: 500px;
+  border: none !important;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px 10px rgb(87 128 255 / 12%);
+}
+
+.modal {
+  font-size: 12px;
+  position: absolute;
+  display: block;
+}
+
+.contact-form.modal-form {
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+  border-radius: 0;
+  .form-group .input-number .number-dropdon ul {
+    position: absolute;
+    top: -232%;
+    left: -242%;
+    width: 150px;
+    height: 240px;
+  }
+}
+
+.modal > .modal-title {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: 20px;
+  top: 12px;
+  font-size: 42px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 0;
+  &:focus-visible {
+    outline: none !important;
+  }
+}
+button,
+button.main-btn {
+  &:focus-visible {
+    outline: none !important;
   }
 }

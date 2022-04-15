@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import SubscribeModal from "./allModal/SubscribeModal";
 
 const Header = () => {
+  const [email, setEmail] = useState("");
   return (
     <div className="header d-flex justify-content-center align-items-center">
       <div className="container">
@@ -14,15 +17,31 @@ const Header = () => {
                   Driven By Its Community
                 </h2>
                 <p className="sub-Title">
-                PitchShow helps and facilitates the connection between Founders and Investor. To rise funds through a pre-listed token.<Link to="/"> Learn More</Link>
+                  PitchShow helps and facilitates the connection between
+                  Founders and Investor. To rise funds through a pre-listed
+                  token.<Link to="/"> Learn More</Link>
                 </p>
               </div>
               <div className="header-search">
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Join the Community with your Email"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 />
-                <button className="header-search-btn">Get Started</button>
+                {email.match(
+                  /^(([^<>()[\]\\.,;:\s@\\"]+(\.[^<>()[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                ) ? (
+                  <SubscribeModal email={email} btnName={"Get Started"} />
+                ) : (
+                  <button
+                    className="header-search-btn"
+                    onClick={() => toast.error("Please enter your email")}
+                  >
+                    Get Started
+                  </button>
+                )}
               </div>
             </div>
           </div>

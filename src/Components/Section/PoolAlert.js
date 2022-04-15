@@ -1,4 +1,5 @@
 import React from 'react';
+import SubscribeModal from './allModal/SubscribeModal';
 
 const PoolAlert = () => {
     return (
@@ -10,7 +11,7 @@ const PoolAlert = () => {
               <p>
                 Subscribe to be the first to know the new pools and relevant events.
               </p>
-              <button className="main-btn">SUBSCRIBE</button>
+              <SubscribeModal btnName={"SUBSCRIBE"}/>
             </div>
             <div className="col-md-6">
               <div className="pool-alert-right">
