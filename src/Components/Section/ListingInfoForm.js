@@ -184,7 +184,7 @@ const ListingInfoForm = () => {
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="tokenGenerationEven">
-                      Token Generation Even
+                      Token Generation Event
                       <span>*</span>
                     </label>
                     <input
