@@ -1454,7 +1454,7 @@ img {
 // scbscribe modal
 .popup-overlay {
   animation: fadeIn 0.7s ease-in-out;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
 }
 .popup-overlay.fadeOut-overlay {
   animation: fadeOut 0.7s ease-in-out;
@@ -1491,6 +1491,15 @@ img {
   border-radius: 10px;
   background: #ffffff;
   box-shadow: 0px 4px 20px 10px rgb(87 128 255 / 12%);
+  @media (max-width: 992px) {
+    width: 60% !important;
+  }
+  @media (max-width: 768px) {
+    width: 80% !important;
+  }
+  @media (max-width: 580px) {
+    height: 390px;
+  }
 }
 
 .modal {
@@ -1505,12 +1514,67 @@ img {
   margin-bottom: 0;
   box-shadow: none;
   border-radius: 0;
-  .form-group .input-number .number-dropdon ul {
-    position: absolute;
-    top: -232%;
-    left: -242%;
-    width: 150px;
-    height: 240px;
+  height: 100%;
+  .form-group .input-number .number-dropdon {
+    .input-country-value {
+      span {
+        margin-left: 5px;
+      }
+      i {
+        width: 9px;
+        margin-left: 4px;
+      }
+    }
+    ul {
+      position: absolute;
+      top: -232%;
+      left: -242%;
+      width: 150px;
+      height: 240px;
+      @media (max-width: 580px) {
+        top: -512%;
+        left: -13%;
+        width: 107px;
+        height: 200px;
+      }
+    }
+  }
+  .form-group {
+    input {
+      @media (max-width: 580px) {
+        width: 243px;
+        padding-right: 0;
+        padding-top: 3px;
+        padding-bottom: 4px;
+        font-size: 14px;
+      }
+    }
+    .input-number {
+      input {
+        @media (max-width: 580px) {
+          padding-left: 107px;
+        }
+      }
+    }
+    @media (max-width: 992px) {
+      padding: 0 0;
+      width: auto;
+    }
+    @media (max-width: 580px) {
+      margin: 0 0;
+    }
+  }
+  button.main-btn {
+    @media (max-width: 580px) {
+      width: 168px;
+      height: 39px;
+      background: #ff2853;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5px;
+    }
   }
 }
 

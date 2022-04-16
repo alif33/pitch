@@ -37,8 +37,8 @@ const InputFiled = ({ close, email, setFadeOut, setEmail }) => {
         onSubmit={handleSubmit(onSubmit)}
         className="contact-form modal-form"
       >
-        <h2 className="main-title my-3">Contact info</h2>
-        <div className="form-group mt-3">
+        <h2 className="main-title my-1 my-sm-3">Contact info</h2>
+        <div className="form-group mt-sm-3 mt-1">
           <label htmlFor="name">
             Full Name <span>*</span>
           </label>
@@ -56,7 +56,7 @@ const InputFiled = ({ close, email, setFadeOut, setEmail }) => {
             </span>
           )}
         </div>
-        <div className="form-group mt-3">
+        <div className="form-group mt-sm-3 mt-1">
           <label htmlFor="email">
             Email<span>*</span>
           </label>
@@ -79,7 +79,7 @@ const InputFiled = ({ close, email, setFadeOut, setEmail }) => {
             </span>
           )}
         </div>
-        <div className="form-group mt-3">
+        <div className="form-group mt-sm-3 mt-1">
           <label htmlFor="number">
             Phone Number<span>*</span>
           </label>
@@ -140,7 +140,7 @@ const InputFiled = ({ close, email, setFadeOut, setEmail }) => {
             </span>
           )}
         </div>
-        <button type="submit" className="main-btn mt-3">
+        <button type="submit" className="main-btn mt-sm-3 mt-1">
           Subscribe
         </button>
       </form>
