@@ -871,8 +871,6 @@ img {
         justify-content: space-between;
         color: $light-color;
         border-bottom: 1px solid rgba(0, 15, 60, 0.2);
-        p {
-        }
       }
     }
   }
@@ -1040,8 +1038,6 @@ img {
             cursor: pointer;
             img {
               width: 30px;
-            }
-            span {
             }
           }
         }
@@ -1456,6 +1452,38 @@ img {
 }
 
 // scbscribe modal
+.popup-overlay {
+  animation: fadeIn 0.7s ease-in-out;
+  background: rgba(0, 0, 0, 0);
+}
+.popup-overlay.fadeOut-overlay {
+  animation: fadeOut 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    background: rgba(0, 0, 0, 0);
+    transform: translate(-150%, -150%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes fadeOut {
+  from {
+    // opacity: 0;
+  }
+  to {
+    transform: translate(-150%, -150%);
+    opacity: 0;
+    // display: none;
+    background: transparent;
+  }
+}
+
 .popup-content {
   height: 500px;
   border: none !important;

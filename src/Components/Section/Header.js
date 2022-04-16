@@ -5,6 +5,7 @@ import SubscribeModal from "./allModal/SubscribeModal";
 
 const Header = () => {
   const [email, setEmail] = useState("");
+  
   return (
     <div className="header d-flex justify-content-center align-items-center">
       <div className="container">
@@ -26,6 +27,7 @@ const Header = () => {
                 <input
                   type="email"
                   placeholder="Join the Community with your Email"
+                  value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
@@ -33,7 +35,7 @@ const Header = () => {
                 {email.match(
                   /^(([^<>()[\]\\.,;:\s@\\"]+(\.[^<>()[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                 ) ? (
-                  <SubscribeModal email={email} btnName={"Get Started"} />
+                  <SubscribeModal email={email} setEmail={setEmail} btnName={"Get Started"} />
                 ) : (
                   <button
                     className="header-search-btn"

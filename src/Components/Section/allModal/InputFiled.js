@@ -5,17 +5,16 @@ import { collection, addDoc } from "firebase/firestore";
 import db from "../../../utils/db";
 import toast from "react-hot-toast";
 
-const InputFiled = ({ close, email }) => {
+const InputFiled = ({ close, email, setFadeOut, setEmail }) => {
   const [showList, setShowList] = useState(false);
   const [numberCode, setNumberCode] = useState({ code: "Bd", phoneCode: "88" });
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
-
     const subscribe = await addDoc(collection(db, "subscribes"), {
       name: data.name,
       email: data.email,
@@ -23,10 +22,14 @@ const InputFiled = ({ close, email }) => {
       code: numberCode.phoneCode,
     });
     if (subscribe) {
+      setEmail && setEmail("");
       toast.success("Subscribed");
-      close();
+      setFadeOut(true);
+      setTimeout(function () {
+        close();
+        setFadeOut(false);
+      }, 600);
     }
-    console.log(subscribe);
   };
   return (
     <>
@@ -83,7 +86,7 @@ const InputFiled = ({ close, email }) => {
           <div className="input-number">
             <input
               id="number"
-              type="number"
+              type="tel"
               {...register("phoneNumber", { required: true })}
               className={errors.phoneNumber ? "incorrect" : "input"}
             />
