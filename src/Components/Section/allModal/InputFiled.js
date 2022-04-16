@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { countries } from "../AllCountry";
+import { collection, addDoc } from "firebase/firestore";
+import db from "../../../utils/db";
+import toast from "react-hot-toast";
 
 const InputFiled = ({ close, email }) => {
   const [showList, setShowList] = useState(false);
@@ -10,9 +13,20 @@ const InputFiled = ({ close, email }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
-    close();
+
+    const subscribe = await addDoc(collection(db, "subscribes"), {
+      name: data.name,
+      email: data.email,
+      phone: data.phoneNumber,
+      code: numberCode.phoneCode,
+    });
+    if (subscribe) {
+      toast.success("Subscribed");
+      close();
+    }
+    console.log(subscribe);
   };
   return (
     <>
