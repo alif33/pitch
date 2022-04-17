@@ -97,7 +97,7 @@ const InputFiled = ({ close, email, setFadeOut, setEmail }) => {
               <div className="input-country-value">
                 <img
                   src={`https://flagcdn.com/${(numberCode?.code).toLocaleLowerCase()}.svg`}
-                  alt=""
+                  alt={numberCode?.code}
                 />
                 <span>
                   (+{numberCode?.phoneCode}){" "}
