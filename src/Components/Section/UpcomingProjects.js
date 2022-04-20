@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { upcomingProSlider } from "../../config/settings";
 
@@ -14,6 +15,7 @@ const UpcomingProjects = () => {
           <Slider {...upcomingProSlider}>
             <div className="px-2 mt-md-5">
               <div className="up-project">
+              <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -31,10 +33,12 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
             <div className="px-2 mt-md-5">
               <div className="up-project">
+              <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -52,10 +56,12 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
             <div className="px-2 mt-md-5">
               <div className="up-project">
+              <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -73,10 +79,12 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
             <div className="px-2 mt-md-5">
               <div className="up-project">
+              <Link to="sale-will-start-soon">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -92,6 +100,7 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
           </Slider>
@@ -100,6 +109,7 @@ const UpcomingProjects = () => {
           <div className="row">
             <div className="col-6 mt-5">
               <div className="up-project">
+              <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -118,10 +128,12 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
             <div className="col-6 mt-5">
               <div className="up-project">
+              <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -140,10 +152,12 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
             <div className="col-6 mt-5">
               <div className="up-project">
+              <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -162,10 +176,12 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
             <div className="col-6 mt-5">
               <div className="up-project">
+              <Link to="sale-will-start-soon">
                 <div className="card">
                   <div className="up-p-card-header">
                     <img src="./img/roadstarter.svg" alt="" />
@@ -181,6 +197,7 @@ const UpcomingProjects = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
             </div>
           </div>

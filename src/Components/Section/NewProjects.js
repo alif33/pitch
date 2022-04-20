@@ -1,13 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import { newProSlider } from "../../config/settings";
 
 const NewProjects = () => {
-
-  const { projects } = useSelector(state=>state);
+  const { projects } = useSelector((state) => state);
   console.log(projects);
-  
+
   return (
     <div className="new-project-section">
       <div className="container">
@@ -28,16 +28,18 @@ const NewProjects = () => {
                 <div>
                   <div className="px-2 mt-md-5">
                     <div className="new-project-item">
-                      <div className="card">
-                        <img src="./img/roadstarter.svg" alt="" />
-                        <h4> RoadStarter</h4>
-                        <p>
-                          total raise :<span> 200,000$</span>
-                        </p>
-                        <p>
-                          Max allocation :<span> TBA</span>
-                        </p>
-                      </div>
+                      <Link to="chaiport">
+                        <div className="card">
+                          <img src="./img/roadstarter.svg" alt="" />
+                          <h4> RoadStarter</h4>
+                          <p>
+                            total raise :<span> 200,000$</span>
+                          </p>
+                          <p>
+                            Max allocation :<span> TBA</span>
+                          </p>
+                        </div>
+                      </Link>
                       <div className="new-item-progass">
                         <div
                           className="progass-complate"
@@ -50,6 +52,7 @@ const NewProjects = () => {
                 <div>
                   <div className="px-2 mt-md-5">
                     <div className="new-project-item">
+                    <Link to="chaiport">
                       <div className="card">
                         <img src="./img/roadstarter2.svg" alt="" />
                         <h4> RoadStarter</h4>
@@ -59,7 +62,7 @@ const NewProjects = () => {
                         <p>
                           Max allocation :<span> TBA</span>
                         </p>
-                      </div>
+                      </div></Link>
                       <div className="new-item-progass">
                         <div
                           className="progass-complate"
@@ -72,6 +75,7 @@ const NewProjects = () => {
                 <div>
                   <div className="px-2 mt-md-5">
                     <div className="new-project-item">
+                    <Link to="chaiport">
                       <div className="card">
                         <img src="./img/roadstarter.svg" alt="" />
                         <h4> RoadStarter</h4>
@@ -81,7 +85,7 @@ const NewProjects = () => {
                         <p>
                           Max allocation :<span> TBA</span>
                         </p>
-                      </div>
+                      </div></Link>
                       <div className="new-item-progass">
                         <div
                           className="progass-complate"
@@ -94,6 +98,7 @@ const NewProjects = () => {
                 <div>
                   <div className="px-2 mt-md-5">
                     <div className="new-project-item">
+                    <Link to="chaiport">
                       <div className="card">
                         <img src="./img/roadstarter2.svg" alt="" />
                         <h4> RoadStarter</h4>
@@ -104,6 +109,7 @@ const NewProjects = () => {
                           Max allocation :<span> TBA</span>
                         </p>
                       </div>
+                      </Link>
                       <div className="new-item-progass">
                         <div
                           className="progass-complate"
@@ -119,16 +125,18 @@ const NewProjects = () => {
               <div className="row">
                 <div className="col-6 mt-5">
                   <div className="new-project-item">
-                    <div className="card">
-                      <img src="./img/roadstarter.svg" alt="" />
-                      <h4> RoadStarter</h4>
-                      <p>
-                        total raise :<span> 200,000$</span>
-                      </p>
-                      <p>
-                        Max allocation :<span> TBA</span>
-                      </p>
-                    </div>
+                    <Link to="/chaiport">
+                      <div className="card">
+                        <img src="./img/roadstarter.svg" alt="" />
+                        <h4> RoadStarter</h4>
+                        <p>
+                          total raise :<span> 200,000$</span>
+                        </p>
+                        <p>
+                          Max allocation :<span> TBA</span>
+                        </p>
+                      </div>
+                    </Link>
                     <div className="new-item-progass">
                       <div
                         className="progass-complate"
@@ -139,6 +147,7 @@ const NewProjects = () => {
                 </div>
                 <div className="col-6 mt-5">
                   <div className="new-project-item">
+                  <Link to="chaiport">
                     <div className="card">
                       <img src="./img/roadstarter.svg" alt="" />
                       <h4> RoadStarter</h4>
@@ -149,6 +158,7 @@ const NewProjects = () => {
                         Max allocation :<span> TBA</span>
                       </p>
                     </div>
+                    </Link>
                     <div className="new-item-progass">
                       <div
                         className="progass-complate"
@@ -159,6 +169,7 @@ const NewProjects = () => {
                 </div>
                 <div className="col-6 mt-5">
                   <div className="new-project-item">
+                  <Link to="chaiport">
                     <div className="card">
                       <img src="./img/roadstarter.svg" alt="" />
                       <h4> RoadStarter</h4>
@@ -169,6 +180,7 @@ const NewProjects = () => {
                         Max allocation :<span> TBA</span>
                       </p>
                     </div>
+                    </Link>
                     <div className="new-item-progass">
                       <div
                         className="progass-complate"
@@ -179,6 +191,7 @@ const NewProjects = () => {
                 </div>
                 <div className="col-6 mt-5">
                   <div className="new-project-item">
+                  <Link to="chaiport">
                     <div className="card">
                       <img src="./img/roadstarter.svg" alt="" />
                       <h4> RoadStarter</h4>
@@ -189,6 +202,7 @@ const NewProjects = () => {
                         Max allocation :<span> TBA</span>
                       </p>
                     </div>
+                    </Link>
                     <div className="new-item-progass">
                       <div
                         className="progass-complate"

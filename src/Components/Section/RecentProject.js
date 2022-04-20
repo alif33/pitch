@@ -1,6 +1,8 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const RecentProject = () => {
+  const navigate = useNavigate();
   return (
     <div className="recent-project">
       <div className="d-flex justify-content-center aling-items-center">
@@ -18,10 +20,12 @@ const RecentProject = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr onClick={() => navigate("sale-closed")}>
               <td>
-                <img src="./img/project-icon.svg" alt="" />
-                <span>Cricflix</span>
+                <div>
+                  <img src="./img/project-icon.svg" alt="" />
+                  <span>Cricflix</span>
+                </div>
               </td>
               <td>200,000$</td>
               <td>18.03.22</td>
@@ -30,10 +34,12 @@ const RecentProject = () => {
                 <button className="main-btn">0%</button>
               </td>
             </tr>
-            <tr>
+            <tr onClick={() => navigate("sale-closed")}>
               <td>
-                <img src="./img/project-icon.svg" alt="" />
-                <span>Cricflix</span>
+                <div>
+                  <img src="./img/project-icon.svg" alt="" />
+                  <span>Cricflix</span>
+                </div>
               </td>
               <td>200,000$</td>
               <td>18.03.22</td>
@@ -42,10 +48,12 @@ const RecentProject = () => {
                 <button className="main-btn dicrease"> -50%</button>
               </td>
             </tr>
-            <tr>
+            <tr onClick={() => navigate("sale-closed")}>
               <td>
-                <img src="./img/project-icon.svg" alt="" />
-                <span>Cricflix</span>
+                <div>
+                  <img src="./img/project-icon.svg" alt="" />
+                  <span>Cricflix</span>
+                </div>
               </td>
               <td>200,000$</td>
               <td>18.03.22</td>

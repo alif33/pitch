@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
 
-const Counter = () => {
-  const [rangeValue, setRangeValue] = useState(300000);
+const SaleWillStartSection = () => {
+  const [rangeValue, setRangeValue] = useState(0);
 
   const handleChange = (value) => {
     setRangeValue(value);
   };
-
   return (
     <div className="counter-section">
       <div className="container">
@@ -30,8 +29,8 @@ const Counter = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <div className="counter-card">
-              <p className="couter-title mb-3">Sale is now live</p>
+            <div className="counter-card token-purchase">
+              <p className="couter-title mb-3">Sale will start in</p>
               <div className="count-items">
                 <div className="count-item">
                   <h4>03</h4>
@@ -51,56 +50,25 @@ const Counter = () => {
                 </div>
               </div>
               <small className="chacker">1 Token=0.002 UDTS</small>
-            </div>
+              <div className="couter-progass w-75">
+                <p className="text-center">Recruitment progress</p>
 
-            <div className="couter-progass">
-              <p className="text-center">Recruitment progress</p>
-
-            <div className="slider">
-              <Slider
-                min={0}
-                max={2000000}
-                value={rangeValue}
-                onChange={handleChange}
-              />
-              <div className="main-value">
-                <span>
-                $2000000
-                </span>
-              </div>
-            </div>
-            </div>
-
-            <h2 className="mt-3">Token purchase calculator</h2>
-            <div className="token-purchase mt-3">
-              <div className="row w-100">
-                <div className="col-6">
-                  <div className="amount-of-tokens">
-                    <label htmlFor="">Amount of Tokens</label>
-                    <input type="tel" />
-                    <span></span>
-                  </div>
-                  <div className="amount-of-tokens mt-2 USTD">
-                    <label htmlFor="">Amount of USTD</label>
-                    <input type="tel" />
-                    <span></span>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="balance">
-                    <div className="balance-header">
-                      <p>BALANCE: 0.0539535</p>
-                      <img src="./img/loader-icon.svg" alt="" />
-                    </div>
-                    <a>1 Token=0.002 USDT</a>
-                    <p>
-                      NETWOTK: <img src="./img/balance-icon.svg" alt="" />{" "}
-                      BINANCE
-                    </p>
+                <div className="slider w-100">
+                  <Slider
+                    min={0}
+                    max={2000000}
+                    value={rangeValue}
+                    onChange={handleChange}
+                  />
+                  <div className="main-value">
+                    <span>$2000000</span>
                   </div>
                 </div>
               </div>
-              <button className="main-btn mt-4">swap</button>
+            </div>
+
+            <div className="text-center mt-4">
+            <button className="main-btn2">Join Whitelist</button>
             </div>
           </div>
         </div>
@@ -109,4 +77,4 @@ const Counter = () => {
   );
 };
 
-export default Counter;
+export default SaleWillStartSection;

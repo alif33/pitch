@@ -20,6 +20,9 @@ import { fetchData } from "./helpers/HttpService";
 import { setProjects } from "./store/projects/actions";
 import { Toaster } from "react-hot-toast";
 import 'reactjs-popup/dist/index.css';
+import SaleWillStart from "./Components/SaleWillStart";
+import SaleWillStartSoon from "./Components/SaleWillStartSoon";
+import SaleIsClosed from "./Components/SaleIsClosed";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -37,6 +40,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/chaiport" element={<ChainPort />} />
+          <Route path="/sale-will-start" element={<SaleWillStart />} />
+          <Route path="/sale-will-start-soon" element={<SaleWillStartSoon />} />
+          <Route path="/sale-closed" element={<SaleIsClosed />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/company-info" element={<CompanyInfo />} />
           <Route path="/metrics-info" element={<MetricsInfo />} />
