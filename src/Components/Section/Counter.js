@@ -3,12 +3,15 @@ import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
 
 const Counter = () => {
-  const [rangeValue, setRangeValue] = useState(300000);
+  const [rangeValue, setRangeValue] = useState(10);
+  const price = .22;
 
   const handleChange = (value) => {
     setRangeValue(value);
   };
-
+  const handleUsdt = e => {
+    setRangeValue(e.target.value/price) 
+  }
   return (
     <div className="counter-section">
       <div className="container">
@@ -50,7 +53,7 @@ const Counter = () => {
                   <span>Seconds</span>
                 </div>
               </div>
-              <small className="chacker">1 Token=0.002 UDTS</small>
+              <small className="chacker">1 Token={ price } UDTS</small>
             </div>
 
             <div className="couter-progass">
@@ -61,7 +64,7 @@ const Counter = () => {
                 min={0}
                 max={2000000}
                 value={rangeValue}
-                onChange={handleChange}
+                onChange={ e=>handleChange(e) }
               />
               <div className="main-value">
                 <span>
@@ -77,12 +80,20 @@ const Counter = () => {
                 <div className="col-6">
                   <div className="amount-of-tokens">
                     <label htmlFor="">Amount of Tokens</label>
-                    <input type="tel" />
+                    <input 
+                      type="number" 
+                      value={rangeValue}
+                      onChange={ e=>setRangeValue(e.target.value) } 
+                    />
                     <span></span>
                   </div>
                   <div className="amount-of-tokens mt-2 USTD">
                     <label htmlFor="">Amount of USTD</label>
-                    <input type="tel" />
+                    <input
+                      type="number"
+                      value={ price*rangeValue }
+                      onChange={ e=>handleUsdt(e) } 
+                    />
                     <span></span>
                   </div>
                 </div>
@@ -92,7 +103,7 @@ const Counter = () => {
                       <p>BALANCE: 0.0539535</p>
                       <img src="./img/loader-icon.svg" alt="" />
                     </div>
-                    <a>1 Token=0.002 USDT</a>
+                    <a>1 Token={ price } USDT</a>
                     <p>
                       NETWOTK: <img src="./img/balance-icon.svg" alt="" />{" "}
                       BINANCE
