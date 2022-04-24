@@ -120,7 +120,7 @@ const CompanyInfoForm = () => {
               />
               {errors.projectDiscerption && (
                 <span>
-                  <img src="./img/false-icon.svg" alt="" />
+                  <img src="/img/false-icon.svg" alt="" />
                   Project discerption is required
                 </span>
               )}
@@ -139,7 +139,7 @@ const CompanyInfoForm = () => {
               />
               {errors.teamBackground && (
                 <span>
-                  <img src="./img/false-icon.svg" alt="" />
+                  <img src="/img/false-icon.svg" alt="" />
                   Team background is required
                 </span>
               )}
@@ -169,7 +169,7 @@ const CompanyInfoForm = () => {
                     />
                     {errors.facebook && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Incorrect Facebook
                       </span>
                     )}
@@ -195,7 +195,7 @@ const CompanyInfoForm = () => {
                     />
                     {errors.instagram && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Incorrect Instagram
                       </span>
                     )}
@@ -222,7 +222,7 @@ const CompanyInfoForm = () => {
                     />
                     {errors.linkedIn && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Incorrect LinkedIn
                       </span>
                     )}
@@ -251,7 +251,7 @@ const CompanyInfoForm = () => {
                     />
                     {errors.discord && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Incorrect Discord
                       </span>
                     )}
@@ -284,11 +284,11 @@ const CompanyInfoForm = () => {
                     {upload || companyInfo.pitchDeckURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
-                        src="./img/uploaded-icon.svg"
+                        src="/img/uploaded-icon.svg"
                         alt=""
                       />
                     ) : (
-                      <img src="./img/news-icon.svg" alt="" />
+                      <img src="/img/news-icon.svg" alt="" />
                     )}
 
                     <p>Drag & Drop File Here</p>
@@ -327,11 +327,11 @@ const CompanyInfoForm = () => {
                     {upload1 || companyInfo.tokenomicsFileURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
-                        src="./img/uploaded-icon.svg"
+                        src="/img/uploaded-icon.svg"
                         alt=""
                       />
                     ) : (
-                      <img src="./img/news-icon.svg" alt="" />
+                      <img src="/img/news-icon.svg" alt="" />
                     )}
                     <p>Drag & Drop File Here</p>
                     <input
@@ -367,11 +367,11 @@ const CompanyInfoForm = () => {
                     {upload2 || companyInfo.LogoURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
-                        src="./img/uploaded-icon.svg"
+                        src="/img/uploaded-icon.svg"
                         alt=""
                       />
                     ) : (
-                      <img src="./img/news-icon.svg" alt="" />
+                      <img src="/img/news-icon.svg" alt="" />
                     )}
                     <p>Drag & Drop File Here</p>
                     <input
@@ -386,7 +386,7 @@ const CompanyInfoForm = () => {
             <button className="main-btn mt-5">Next</button>
             <button className="back-btn mt-3">
               <Link to="/contact">
-                <img src="./img/back-icon.svg" alt="" />
+                <img src="/img/back-icon.svg" alt="" />
                 Back
               </Link>
             </button>

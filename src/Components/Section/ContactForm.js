@@ -47,7 +47,7 @@ const ContactForm = () => {
               {errors.name && (
                 <span>
                   {" "}
-                  <img src="./img/false-icon.svg" alt="" /> Name is required
+                  <img src="/img/false-icon.svg" alt="" /> Name is required
                 </span>
               )}
             </div>
@@ -69,7 +69,7 @@ const ContactForm = () => {
               />
               {errors.email && (
                 <span>
-                  <img src="./img/false-icon.svg" alt="" />
+                  <img src="/img/false-icon.svg" alt="" />
                   Incorrect email
                 </span>
               )}
@@ -99,9 +99,9 @@ const ContactForm = () => {
                       (+{numberCode?.phoneCode}){" "}
                       <i>
                         {!showList ? (
-                          <img src="./img/down-arrow.svg" alt="" />
+                          <img src="/img/down-arrow.svg" alt="" />
                         ) : (
-                          <img src="./img/up-arrow.svg" alt="" />
+                          <img src="/img/up-arrow.svg" alt="" />
                         )}
                       </i>
                     </span>
@@ -131,7 +131,7 @@ const ContactForm = () => {
               </div>
               {errors.phoneNumber && (
                 <span>
-                  <img src="./img/false-icon.svg" alt="" />
+                  <img src="/img/false-icon.svg" alt="" />
                   Incorrect number
                 </span>
               )}

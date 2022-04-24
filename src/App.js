@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/live/:projectId" element={<ChainPort />} />
           <Route path="/upcoming/:projectId" element={<SaleWillStart />} />
           <Route path="/sale-will-start-soon" element={<SaleWillStartSoon />} />
-          <Route path="/sale-closed" element={<SaleIsClosed />} />
+          <Route path="/closed/:projectId" element={<SaleIsClosed />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/company-info" element={<CompanyInfo />} />
           <Route path="/metrics-info" element={<MetricsInfo />} />

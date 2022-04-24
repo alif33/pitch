@@ -9,10 +9,10 @@ import { timeFormatter } from "../../helpers/TimeCounter";
 const SaleWillStartSection = () => {
   const [ project, setProject ] = useState();
   const [rangeValue, setRangeValue] = useState(0);
+  const [ timer, setTimer ] = useState();
   const { projectId } = useParams();
   const { projects } = useSelector(state=>state);
   const { projectsList } = projects;
-  const [ timer, setTimer ] = useState();
 
 
   const timeCounter = ()=>{
@@ -44,7 +44,7 @@ const SaleWillStartSection = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="counter-section-leftside">
-              <img src="./img/chainport.svg" alt="" />
+              <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title">Chainport</h2>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -79,7 +79,8 @@ const SaleWillStartSection = () => {
                   <span>Seconds</span>
                 </div>
               </div>
-              <small className="chacker">1 Token=0.002 UDTS</small>
+              <small className="chacker">1 USDT = {projectsList[projectId].swap_rate} 
+                { projectsList[projectId].symbol}</small>
               <div className="couter-progass w-75">
                 <p className="text-center">Recruitment progress</p>
 

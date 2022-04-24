@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import {  PITCHSHOW_ABI, ERC20_ABI } from '../utils/config'
+import {  PITCHSHOW_ABI, ERC20_ABI, APP_ABI } from '../utils/config'
 import detectEthereumProvider from '@metamask/detect-provider';
 import Web3 from 'web3';
 
@@ -57,7 +57,6 @@ export const _getBaseCoinAddress = async() =>{
 
 
 export const HandleApprove = async(_address, _amount, _from) =>{
-    // debugger
     const provider = await detectEthereumProvider();
     let web3 = new Web3(provider);
 
@@ -65,10 +64,34 @@ export const HandleApprove = async(_address, _amount, _from) =>{
         ERC20_ABI, 
         _address
     );
-    return await erc20.methods.approve(
-        process.env.REACT_APP_PITCHSHOW_ADDRESS, 
+    try {
+        const approve = await erc20.methods.approve(
+            process.env.REACT_APP_PITCHSHOW_ADDRESS, 
+            _amount*10^18
+            ).send({ from: _from });
+    
+        return approve;
+    } catch (error) {
+        return false;
+    }
+}
+
+
+export const _invest = async(_id, _amount, _from) =>{
+    const provider = await detectEthereumProvider();
+    let web3 = new Web3(provider);
+
+    const app = new web3.eth.Contract(
+        APP_ABI, 
+        process.env.REACT_APP_APP_ADDRESS
+    );
+    return await app.methods.invest(
+        _id,
         _amount*10^18
-        ).send({ from: _from });
+     ).send({ 
+         from: _from,
+         gasLimit: 300000 
+        });
 }
 
 export const _isWhitelisted = async(_id) =>{

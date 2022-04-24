@@ -85,7 +85,7 @@ const ListingInfoForm = () => {
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="IDOSize">
-                      <img src="./img/label-icon.svg" alt="" /> IDO Size
+                      <img src="/img/label-icon.svg" alt="" /> IDO Size
                       <span>*</span>
                     </label>
                     <input
@@ -98,7 +98,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.IDOSize && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         IDO Size is required{" "}
                       </span>
                     )}
@@ -108,7 +108,7 @@ const ListingInfoForm = () => {
                   {" "}
                   <div className="form-group">
                     <label htmlFor="additionalPlatforms">
-                      <img src="./img/label-icon.svg" alt="" /> Additional
+                      <img src="/img/label-icon.svg" alt="" /> Additional
                       platforms
                       <span>*</span>
                     </label>
@@ -125,7 +125,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.additionalPlatforms && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Additional platforms is required{" "}
                       </span>
                     )}
@@ -136,7 +136,7 @@ const ListingInfoForm = () => {
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="pitchshowSize">
-                      <img src="./img/label-icon.svg" alt="" /> Pitchshow Size
+                      <img src="/img/label-icon.svg" alt="" /> Pitchshow Size
                       <span>*</span>
                     </label>
                     <input
@@ -149,7 +149,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.pitchshowSize && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Pitchshow Size is required{" "}
                       </span>
                     )}
@@ -173,7 +173,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.dilutedValuation && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Diluted Valuation is required{" "}
                       </span>
                     )}
@@ -199,7 +199,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.tokenGenerationEven && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Token Generation Even is required{" "}
                       </span>
                     )}
@@ -221,7 +221,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.listingPrice && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Listing Price is required
                       </span>
                     )}
@@ -249,7 +249,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.pitchshowsAllocationSize && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Pitchshows Allocation Size is required
                       </span>
                     )}
@@ -259,7 +259,7 @@ const ListingInfoForm = () => {
                   {" "}
                   <div className="form-group">
                     <label htmlFor="pitchshowsTokenPrice">
-                      <img src="./img/label-icon.svg" alt="" /> Pitchshows Token
+                      <img src="/img/label-icon.svg" alt="" /> Pitchshows Token
                       Price<span>*</span>
                     </label>
                     <input
@@ -275,7 +275,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.pitchshowsTokenPrice && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Pitchshows Token Price is required
                       </span>
                     )}
@@ -299,7 +299,7 @@ const ListingInfoForm = () => {
                     />
                     {errors.IDOTimeFrame && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         IDO Time Frame is required
                       </span>
                     )}
@@ -333,11 +333,11 @@ const ListingInfoForm = () => {
                     {upload1 || listingInfo.vestingTermsURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
-                        src="./img/uploaded-icon.svg"
+                        src="/img/uploaded-icon.svg"
                         alt=""
                       />
                     ) : (
-                      <img src="./img/news-icon.svg" alt="" />
+                      <img src="/img/news-icon.svg" alt="" />
                     )}
 
                     <p>Drag & Drop File Here</p>
@@ -376,11 +376,11 @@ const ListingInfoForm = () => {
                     {upload2 || listingInfo.pitchshowsVestingTermsURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
-                        src="./img/uploaded-icon.svg"
+                        src="/img/uploaded-icon.svg"
                         alt=""
                       />
                     ) : (
-                      <img src="./img/news-icon.svg" alt="" />
+                      <img src="/img/news-icon.svg" alt="" />
                     )}
 
                     <p>Drag & Drop File Here</p>
@@ -400,7 +400,7 @@ const ListingInfoForm = () => {
             </button>
             <button className="back-btn mt-3">
               <Link to="/metrics-info">
-                <img src="./img/back-icon.svg" alt="" />
+                <img src="/img/back-icon.svg" alt="" />
                 Back
               </Link>
             </button>

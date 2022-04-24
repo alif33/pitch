@@ -20,10 +20,10 @@ const RecentProject = () => {
             </tr>
           </thead>
           <tbody>
-            <tr onClick={() => navigate("sale-closed")}>
+            <tr onClick={() => navigate("/closed/1")}>
               <td>
                 <div>
-                  <img src="./img/project-icon.svg" alt="" />
+                  <img src="/img/project-icon.svg" alt="" />
                   <span>Cricflix</span>
                 </div>
               </td>
@@ -34,10 +34,10 @@ const RecentProject = () => {
                 <button className="main-btn">0%</button>
               </td>
             </tr>
-            <tr onClick={() => navigate("sale-closed")}>
+            <tr onClick={() => navigate("/closed/1")}>
               <td>
                 <div>
-                  <img src="./img/project-icon.svg" alt="" />
+                  <img src="/img/project-icon.svg" alt="" />
                   <span>Cricflix</span>
                 </div>
               </td>
@@ -48,10 +48,10 @@ const RecentProject = () => {
                 <button className="main-btn dicrease"> -50%</button>
               </td>
             </tr>
-            <tr onClick={() => navigate("sale-closed")}>
+            <tr onClick={() => navigate("/closed/1")}>
               <td>
                 <div>
-                  <img src="./img/project-icon.svg" alt="" />
+                  <img src="/img/project-icon.svg" alt="" />
                   <span>Cricflix</span>
                 </div>
               </td>

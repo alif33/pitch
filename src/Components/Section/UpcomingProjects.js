@@ -56,7 +56,7 @@ const UpcomingProjects = () => {
               <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
+                    <img src="/img/roadstarter.svg" alt="" />
                     <h4> RoadStarter</h4>
                     <p className="count">
                       In <span>3</span> Days
@@ -79,7 +79,7 @@ const UpcomingProjects = () => {
               <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
+                    <img src="/img/roadstarter.svg" alt="" />
                     <h4> RoadStarter</h4>
                     <p className="count">
                       In <span>3</span> Days
@@ -102,7 +102,7 @@ const UpcomingProjects = () => {
               <Link to="sale-will-start-soon">
                 <div className="card">
                   <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
+                    <img src="/img/roadstarter.svg" alt="" />
                     <h4> RoadStarter</h4>
                     <p className="count active">soon</p>
                   </div>
@@ -127,7 +127,7 @@ const UpcomingProjects = () => {
               <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
+                    <img src="/img/roadstarter.svg" alt="" />
                     <h4> RoadStarter</h4>
                     <p className="count">
                       {" "}
@@ -151,7 +151,7 @@ const UpcomingProjects = () => {
               <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
+                    <img src="/img/roadstarter.svg" alt="" />
                     <h4> RoadStarter</h4>
                     <p className="count">
                       {" "}
@@ -175,7 +175,7 @@ const UpcomingProjects = () => {
               <Link to="sale-will-start">
                 <div className="card">
                   <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
+                    <img src="/img/roadstarter.svg" alt="" />
                     <h4> RoadStarter</h4>
                     <p className="count">
                       {" "}
@@ -199,7 +199,7 @@ const UpcomingProjects = () => {
               <Link to="sale-will-start-soon">
                 <div className="card">
                   <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
+                    <img src="/img/roadstarter.svg" alt="" />
                     <h4> RoadStarter</h4>
                     <p className="count active">soon</p>
                   </div>

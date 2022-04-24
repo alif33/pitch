@@ -101,7 +101,7 @@ const MetricsInfoForm = () => {
                     </select> */}
                     {errors.blockchainNetwork && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Blockchain Network is required{" "}
                       </span>
                     )}
@@ -123,7 +123,7 @@ const MetricsInfoForm = () => {
                     />
                     {errors.totalSupply && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         supply is required{" "}
                       </span>
                     )}
@@ -148,7 +148,7 @@ const MetricsInfoForm = () => {
                     />
                     {errors.dilutedValuation && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Diluted Valuation is required{" "}
                       </span>
                     )}
@@ -170,7 +170,7 @@ const MetricsInfoForm = () => {
                     />
                     {errors.TGEMarketCap && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Diluted Valuation is required{" "}
                       </span>
                     )}
@@ -200,11 +200,11 @@ const MetricsInfoForm = () => {
                     {upload || metricsInfo.symbolURL ? (
                       <img
                         style={{ width: "46px", height: "46px" }}
-                        src="./img/uploaded-icon.svg"
+                        src="/img/uploaded-icon.svg"
                         alt=""
                       />
                     ) : (
-                      <img src="./img/news-icon.svg" alt="" />
+                      <img src="/img/news-icon.svg" alt="" />
                     )}
 
                     <p>Drag & Drop File Here</p>
@@ -222,7 +222,7 @@ const MetricsInfoForm = () => {
             </button>
             <button className="back-btn mt-3">
               <Link to="/company-info">
-                <img src="./img/back-icon.svg" alt="" />
+                <img src="/img/back-icon.svg" alt="" />
                 Back
               </Link>
             </button>

@@ -113,7 +113,7 @@ const ListingStrategyForm = () => {
 
                           {errors.choiceTitleSelection && (
                             <span>
-                              <img src="./img/false-icon.svg" alt="" />
+                              <img src="/img/false-icon.svg" alt="" />
                               Title of the selection choice is required{" "}
                             </span>
                           )}
@@ -137,7 +137,7 @@ const ListingStrategyForm = () => {
                           />
                           {errors.liquidity && (
                             <span>
-                              <img src="./img/false-icon.svg" alt="" />
+                              <img src="/img/false-icon.svg" alt="" />
                               Liquidity is required{" "}
                             </span>
                           )}
@@ -163,7 +163,7 @@ const ListingStrategyForm = () => {
                           />
                           {errors.marketMaker && (
                             <span>
-                              <img src="./img/false-icon.svg" alt="" />
+                              <img src="/img/false-icon.svg" alt="" />
                               Market Maker is required{" "}
                             </span>
                           )}
@@ -176,7 +176,7 @@ const ListingStrategyForm = () => {
                   </button>
                   <button className="back-btn mt-3">
                     <Link to="/partnersin-fluencers">
-                      <img src="./img/back-icon.svg" alt="" />
+                      <img src="/img/back-icon.svg" alt="" />
                       Back
                     </Link>
                   </button>

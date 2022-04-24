@@ -20,8 +20,8 @@ const Modal = () => {
               <button className="namage"> Manage Settings</button>
               <button className="main-btn">dismiss</button>
               <span onClick={() => setModalShow(false)}>
-                <img src="./img/modal-close.svg" alt="" />
-                <img src="./img/modal-close2.svg" alt="" />
+                <img src="/img/modal-close.svg" alt="" />
+                <img src="/img/modal-close2.svg" alt="" />
               </span>
             </div>
           </div>

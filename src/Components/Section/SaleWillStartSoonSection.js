@@ -15,7 +15,7 @@ const SaleWillStartSoonSection = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="counter-section-leftside">
-              <img src="./img/chainport.svg" alt="" />
+              <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title">Chainport</h2>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

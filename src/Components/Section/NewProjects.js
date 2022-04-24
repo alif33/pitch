@@ -18,12 +18,12 @@ const NewProjects = () => {
         <div className="row">
           <div className="col-lg-2 col-md-12">
             <div className="new-project-title">
-              <img src="./img/frame.svg" alt="" />
+              <img src="/img/frame.svg" alt="" />
               <h2 className="main-title">
                 Our new
                 <br /> projects
               </h2>
-              <img src="./img/frame.svg" alt="" />
+              <img src="/img/frame.svg" alt="" />
             </div>
           </div>
           <div className="col-lg-10 col-md-12">
@@ -37,7 +37,7 @@ const NewProjects = () => {
                           <div className="new-project-item">
                             <Link to={`/live/${item.project_id}`}>
                               <div className="card">
-                                <img src="./img/roadstarter.svg" alt="" />
+                                <img src="/img/roadstarter.svg" alt="" />
                                 <h4> RoadStarter</h4>
                                 <p>
                                   total raise :<span> 200,000$</span>
@@ -64,7 +64,7 @@ const NewProjects = () => {
                     <div className="new-project-item">
                       <Link to="chaiport">
                         <div className="card">
-                          <img src="./img/roadstarter.svg" alt="" />
+                          <img src="/img/roadstarter.svg" alt="" />
                           <h4> RoadStarter</h4>
                           <p>
                             total raise :<span> 200,000$</span>
@@ -88,7 +88,7 @@ const NewProjects = () => {
                     <div className="new-project-item">
                     <Link to="chaiport">
                       <div className="card">
-                        <img src="./img/roadstarter2.svg" alt="" />
+                        <img src="/img/roadstarter2.svg" alt="" />
                         <h4> RoadStarter</h4>
                         <p>
                           total raise :<span> 200,000$</span>
@@ -111,7 +111,7 @@ const NewProjects = () => {
                     <div className="new-project-item">
                     <Link to="chaiport">
                       <div className="card">
-                        <img src="./img/roadstarter.svg" alt="" />
+                        <img src="/img/roadstarter.svg" alt="" />
                         <h4> RoadStarter</h4>
                         <p>
                           total raise :<span> 200,000$</span>
@@ -134,7 +134,7 @@ const NewProjects = () => {
                     <div className="new-project-item">
                     <Link to="chaiport">
                       <div className="card">
-                        <img src="./img/roadstarter2.svg" alt="" />
+                        <img src="/img/roadstarter2.svg" alt="" />
                         <h4> RoadStarter</h4>
                         <p>
                           total raise :<span> 200,000$</span>
@@ -161,7 +161,7 @@ const NewProjects = () => {
                   <div className="new-project-item">
                     <Link to="/chaiport">
                       <div className="card">
-                        <img src="./img/roadstarter.svg" alt="" />
+                        <img src="/img/roadstarter.svg" alt="" />
                         <h4> RoadStarter</h4>
                         <p>
                           total raise :<span> 200,000$</span>
@@ -183,7 +183,7 @@ const NewProjects = () => {
                   <div className="new-project-item">
                   <Link to="chaiport">
                     <div className="card">
-                      <img src="./img/roadstarter.svg" alt="" />
+                      <img src="/img/roadstarter.svg" alt="" />
                       <h4> RoadStarter</h4>
                       <p>
                         total raise :<span> 200,000$</span>
@@ -205,7 +205,7 @@ const NewProjects = () => {
                   <div className="new-project-item">
                   <Link to="chaiport">
                     <div className="card">
-                      <img src="./img/roadstarter.svg" alt="" />
+                      <img src="/img/roadstarter.svg" alt="" />
                       <h4> RoadStarter</h4>
                       <p>
                         total raise :<span> 200,000$</span>
@@ -227,7 +227,7 @@ const NewProjects = () => {
                   <div className="new-project-item">
                   <Link to="chaiport">
                     <div className="card">
-                      <img src="./img/roadstarter.svg" alt="" />
+                      <img src="/img/roadstarter.svg" alt="" />
                       <h4> RoadStarter</h4>
                       <p>
                         total raise :<span> 200,000$</span>
@@ -254,7 +254,7 @@ const NewProjects = () => {
             <button>
               ALL PROJECTS{" "}
               <span>
-                <img src="./img/arrow-right.svg" alt="" />
+                <img src="/img/arrow-right.svg" alt="" />
               </span>
             </button>
           </div>

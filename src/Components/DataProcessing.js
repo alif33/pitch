@@ -7,7 +7,7 @@ const DataProcessing = () => {
   return (
     <div>
       <div className="data-processing">
-        <img src="./img/animation2.gif" alt="" />
+        <img src="/img/animation2.gif" alt="" />
         <h2>Data Processing</h2>
         <p>Please wait...</p>
       </div>

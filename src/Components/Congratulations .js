@@ -8,7 +8,7 @@ const Congratulations = () => {
     <div>
       <Navbar />
       <div className="congratulatjions">
-      <img src="./img/flag.svg" alt="" />
+      <img src="/img/flag.svg" alt="" />
         <h2> Congratulations </h2>
         <h5> The registration was completed successfully</h5>
         <p>

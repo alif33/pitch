@@ -48,7 +48,7 @@ const PartnersInfluencersForm = () => {
                     />
                     {errors.topPartners && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Top Partners is required{" "}
                       </span>
                     )}
@@ -72,7 +72,7 @@ const PartnersInfluencersForm = () => {
                     />
                     {errors.topInfluencers && (
                       <span>
-                        <img src="./img/false-icon.svg" alt="" />
+                        <img src="/img/false-icon.svg" alt="" />
                         Top influencers is required{" "}
                       </span>
                     )}
@@ -83,7 +83,7 @@ const PartnersInfluencersForm = () => {
             <button className="main-btn mt-5">Next</button>
             <button className="back-btn mt-3">
               <Link to="/listing-info">
-                <img src="./img/back-icon.svg" alt="" />
+                <img src="/img/back-icon.svg" alt="" />
                 Back
               </Link>
             </button>

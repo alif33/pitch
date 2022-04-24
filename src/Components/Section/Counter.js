@@ -4,19 +4,20 @@ import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { HandleApprove } from "../../helpers/HttpService";
+import { HandleApprove, _invest } from "../../helpers/HttpService";
 import { timeFormatter } from "../../helpers/TimeCounter";
 import { persentage } from "../../helpers/Formatter";
 import { NetworkHandler, NetworkDetector, _getBalance } from "../../helpers/NetworkHandler";
 
 const Counter = () => {
   const [ project, setProject ] = useState();
+  const [ reload, setReload ] = useState(1);
+  const [ disable, setDisable ] = useState(false);
+  const [ rangeValue, setRangeValue ] = useState(10);
   const [ balance, setBalance ] = useState({
     status: true,
     amount: 0
   });
-  const [ reload, setReload ] = useState(1);
-  const [ rangeValue, setRangeValue ] = useState(10);
   const { projects } = useSelector(state=>state);
   const { projectsList } = projects;
   const { projectId } = useParams();
@@ -52,25 +53,31 @@ const Counter = () => {
     })
   }, [reload])
 
- 
-  const handleChange = (value) => {
-    setRangeValue(parseInt(value));
-  };
-
   const handleUsdt = e => {
     setRangeValue(
       parseInt(e.target.value) / parseInt(project?.swap_rate)
     ) 
   };
   const handleInvest = async()=>{
-    
+    setDisable(true)
     const { status, message } = await NetworkHandler();
     if(status){
       HandleApprove(
         projectsList[projectId].token_address,
         parseInt(project?.available_token_amount) * parseInt(project?.swap_rate),
         window.ethereum.selectedAddress
-      )
+      ).then(status=>{
+        if (status) {
+          console.log('calling');
+          _invest(
+            projectsList[projectId].project_id,
+            parseInt(project?.available_token_amount) * parseInt(project?.swap_rate),
+            window.ethereum.selectedAddress,
+          ).then(res=>{
+            console.log(res);
+          })
+        }
+      })
     }else{
       toast.error(`${ message }`)
     }
@@ -154,7 +161,7 @@ const Counter = () => {
                     <span></span>
                   </div>
                   <div className="amount-of-tokens mt-2 USTD">
-                    <label htmlFor="">Amount of USTD</label>
+                    <label htmlFor="">Amount of USDT</label>
                     <input
                       type="number"
                       value={ project?.swap_rate?project?.swap_rate*rangeValue: 0 }
@@ -166,7 +173,9 @@ const Counter = () => {
                 <div className="col-6">
                   <div className="balance">
                     <div className="balance-header">
-                      <p>BALANCE: 0.0539535</p>
+                      {
+                        balance.status && <p>BALANCE: { balance.amount/ 10^18}</p>
+                      }
                       <img 
                         style={{ cursor: 'pointer'}} 
                         onClick={ ()=>setReload(reload+1) } 
@@ -187,7 +196,7 @@ const Counter = () => {
                   </div>
                 </div>
               </div>
-              <button onClick={handleInvest} className="main-btn mt-4">swap</button>
+              <button disabled={ disable } onClick={handleInvest} className="main-btn mt-4">swap</button>
             </div>
           </div>
         </div>

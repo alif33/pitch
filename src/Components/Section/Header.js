@@ -14,7 +14,7 @@ const Header = () => {
             <div className="header-leftside">
               <div className="header-title">
                 <h2>
-                  <img src="./img/flag.svg" alt="" />A CrowdFunding Platform
+                  <img src="/img/flag.svg" alt="" />A CrowdFunding Platform
                   Driven By Its Community
                 </h2>
                 <p className="sub-Title">
@@ -49,11 +49,11 @@ const Header = () => {
           </div>
           <div className="col-lg-6 col-md-12">
             <div className="header-rightside">
-              <img src="./img/header-img.svg" alt="" />
-              <img src="./img/header-img1.svg" alt="" />
+              <img src="/img/header-img.svg" alt="" />
+              <img src="/img/header-img1.svg" alt="" />
 
               <span>
-                <img src="./img/frame.svg" alt="" />
+                <img src="/img/frame.svg" alt="" />
               </span>
             </div>
           </div>

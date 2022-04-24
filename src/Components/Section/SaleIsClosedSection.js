@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "react-rangeslider/lib/index.css";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const SaleIsClosedSection = () => {
+  const [ project, setProject ] = useState();
+  const { projectId } = useParams();
+  const { projects } = useSelector(state=>state);
+  const { projectsList } = projects;
+
+  useEffect(()=>{
+    setProject(projectsList[projectId]);
+  },[])
+
   return (
     <div className="counter-section">
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <div className="counter-section-leftside">
-              <img src="./img/chainport.svg" alt="" />
+              <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title">Chainport</h2>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -25,15 +36,16 @@ const SaleIsClosedSection = () => {
           <div className="col-md-6">
             <div className="counter-card">
               <p className="couter-title">Sale is closed</p>
-              <small className="chacker">1 Token=0.002 UDTS</small>
+              <small className="chacker">1 USDT = {projectsList[projectId].swap_rate} 
+                { projectsList[projectId].symbol}</small>
               <div className="closed-card mt-3">
-                <img src="./img/closed-card.svg" alt="" />
+                <img src="/img/closed-card.svg" alt="" />
                 <div className="total-earning">
                   <h2>total earning</h2>
                   <p>
                     $10M
                     <span>
-                      <img src="./img/polygon.svg" alt="" /> 10%
+                      <img src="/img/polygon.svg" alt="" /> 10%
                     </span>
                   </p>
                 </div>

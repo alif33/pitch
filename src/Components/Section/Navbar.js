@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { injected } from "../../utils/connectors";
+import { NetworkHandler } from "../../helpers/NetworkHandler";
+import toast from "react-hot-toast";
 
 const Navbar = ({ status }) => {
   const [navbarShow, setNavbarShow] = useState(false);
   const { active, account, library, connector, activate, deactivate } = useWeb3React();
   const walletConnect = async()=>{
     try {
-      await activate(injected)
+      const { status, message } = await NetworkHandler();
+      if(status){
+        await activate(injected)
+      }else{
+        toast.error(`${message}`)
+      }
     } catch (error) {
       console.log(error);
     }

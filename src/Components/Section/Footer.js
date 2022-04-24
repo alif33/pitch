@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="col-md-3 col-sm-12">
             <div className="footer-logo">
               <Link to="/">
-                <img src="./img/footer-logo.svg" alt="" />
+                <img src="/img/footer-logo.svg" alt="" />
               </Link>
             </div>
           </div>
