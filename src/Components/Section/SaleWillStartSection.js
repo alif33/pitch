@@ -1,13 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-rangeslider";
+import { useParams } from "react-router-dom";
 import "react-rangeslider/lib/index.css";
+import { _isWhitelisted } from "../../helpers/HttpService";
+import { useSelector } from "react-redux";
+import { timeFormatter } from "../../helpers/TimeCounter";
 
 const SaleWillStartSection = () => {
+  const [ project, setProject ] = useState();
   const [rangeValue, setRangeValue] = useState(0);
+  const { projectId } = useParams();
+  const { projects } = useSelector(state=>state);
+  const { projectsList } = projects;
+  const [ timer, setTimer ] = useState();
+
+
+  const timeCounter = ()=>{
+    setInterval( async()=>{
+      const _timer = await timeFormatter(projectsList[projectId].end_time);
+      if (_timer) {
+        setTimer(_timer); 
+      }
+    }, 1000)
+  }
+
+  useEffect(()=>{
+    setProject(projectsList[projectId]);
+    _isWhitelisted(projectId)
+    .then(status=>{
+      console.log(status);
+    })
+    timeCounter();
+  }, [])
 
   const handleChange = (value) => {
     setRangeValue(value);
   };
+
+  console.log(timer);
   return (
     <div className="counter-section">
       <div className="container">
@@ -33,19 +63,19 @@ const SaleWillStartSection = () => {
               <p className="couter-title mb-3">Sale will start in</p>
               <div className="count-items">
                 <div className="count-item">
-                  <h4>03</h4>
+                  <h4>{ timer?.days? timer.days: "0"}</h4>
                   <span>Day</span>
                 </div>
                 <div className="count-item">
-                  <h4>03</h4>
+                  <h4>{ timer?.hours? timer.hours: "0"}</h4>
                   <span>Hours</span>
                 </div>
                 <div className="count-item">
-                  <h4>03</h4>
+                  <h4>{ timer?.minutes? timer.minutes: "0"}</h4>
                   <span>Minutes</span>
                 </div>
                 <div className="count-item">
-                  <h4>03</h4>
+                  <h4>{ timer?.seconds? timer.seconds: "0"}</h4>
                   <span>Seconds</span>
                 </div>
               </div>

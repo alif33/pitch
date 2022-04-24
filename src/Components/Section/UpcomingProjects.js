@@ -1,9 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { upcomingProSlider } from "../../config/settings";
 
 const UpcomingProjects = () => {
+
+  const { projects } = useSelector((state) => state);
+  const { projectsList } = projects;
+
+
+  let upcomingProjects = projectsList.filter( el=> 
+    el.start_time < +new Date/1000 && el.end_time > +new Date/1000 
+  );
 
   return (
     <div className="upcoming-projects">
@@ -13,30 +22,36 @@ const UpcomingProjects = () => {
       <div className="container">
         <div className="new-project-items all">
           <Slider {...upcomingProSlider}>
-            <div className="px-2 mt-md-5">
-              <div className="up-project">
-              <Link to="sale-will-start">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="./img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count">
-                      In <span>3</span> Days
-                    </p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
+          {
+            upcomingProjects && upcomingProjects.slice(0, 4).map((item, index)=>{
+              return(
+                <div key={ index } className="px-2 mt-md-5">
+                  <div className="up-project">
+                  <Link to={`upcoming/${ item.project_id }`}>
+                    <div className="card">
+                      <div className="up-p-card-header">
+                        <img src="/img/roadstarter.svg" alt="" />
+                        <h4> RoadStarter</h4>
+                        <p className="count">
+                          In <span>3</span> Days
+                        </p>
+                      </div>
+                      <div className="up-p-card-body">
+                        <p>
+                          total raise :<span> 200,000$</span>
+                        </p>
+                        <p>
+                          Max allocation :<span> TBA</span>
+                        </p>
+                      </div>
+                    </div>
+                    </Link>
                   </div>
                 </div>
-                </Link>
-              </div>
-            </div>
-            <div className="px-2 mt-md-5">
+              )
+            })
+          }
+            {/* <div className="px-2 mt-md-5">
               <div className="up-project">
               <Link to="sale-will-start">
                 <div className="card">
@@ -102,7 +117,7 @@ const UpcomingProjects = () => {
                 </div>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </Slider>
         </div>
         <div className="new-project-items tablet">

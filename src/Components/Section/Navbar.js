@@ -18,7 +18,7 @@ const Navbar = ({ status }) => {
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src="./img/logo.svg" alt="" />
+          <img src="/img/logo.svg" alt="" />
         </Link>
 
         <div className="navbar-div">
@@ -27,14 +27,14 @@ const Navbar = ({ status }) => {
               <div className="mobile-show-navbar">
                 
                 <Link to="/">
-                  <img src="./img/logo.svg" alt="" />
+                  <img src="/img/logo.svg" alt="" />
                 </Link>
 
                 <button
                   className="close"
                   onClick={() => setNavbarShow(!navbarShow)}
                 >
-                  <img src="./img/close.svg" alt="" />
+                  <img src="/img/close.svg" alt="" />
                 </button>
               </div>
             )}
@@ -71,7 +71,7 @@ const Navbar = ({ status }) => {
             className="menu-btn"
             onClick={() => setNavbarShow(!navbarShow)}
           >
-            <img src="./img/menu-icon.svg" alt="" />
+            <img src="/img/menu-icon.svg" alt="" />
           </button>
         </div>
       </div>

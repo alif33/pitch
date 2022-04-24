@@ -6,7 +6,11 @@ import { newProSlider } from "../../config/settings";
 
 const NewProjects = () => {
   const { projects } = useSelector((state) => state);
-  console.log(projects);
+  const { projectsList } = projects;
+
+  let newProject = projectsList.filter( el=> 
+      el.start_time < +new Date/1000 && el.end_time > +new Date/1000 
+    );
 
   return (
     <div className="new-project-section">
@@ -25,7 +29,37 @@ const NewProjects = () => {
           <div className="col-lg-10 col-md-12">
             <div className="new-project-items all">
               <Slider {...newProSlider}>
-                <div>
+                {
+                  newProject && newProject.slice(0, 4).map((item, index)=>{
+                    return(
+                      <div key={ index }>
+                        <div className="px-2 mt-md-5">
+                          <div className="new-project-item">
+                            <Link to={`/live/${item.project_id}`}>
+                              <div className="card">
+                                <img src="./img/roadstarter.svg" alt="" />
+                                <h4> RoadStarter</h4>
+                                <p>
+                                  total raise :<span> 200,000$</span>
+                                </p>
+                                <p>
+                                  Max allocation :<span> TBA</span>
+                                </p>
+                              </div>
+                            </Link>
+                            <div className="new-item-progass">
+                              <div
+                                className="progass-complate"
+                                style={{ width: "50%" }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+                {/* <div>
                   <div className="px-2 mt-md-5">
                     <div className="new-project-item">
                       <Link to="chaiport">
@@ -118,7 +152,7 @@ const NewProjects = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </Slider>
             </div>
             <div className="new-project-items tablet">
