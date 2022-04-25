@@ -41,7 +41,7 @@ const Counter = () => {
   };
 
   useEffect(() => {
-    console.log(Web3.utils.toHex('56')); 
+
     setProject(projectsList[projectId]);
     setProgressValue(
       persentage(
