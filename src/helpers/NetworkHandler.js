@@ -78,16 +78,20 @@ export const _getBalance = async() => {
     let balanceInfo = {};
     const provider = window.ethereum;
     if(provider){
+      balanceInfo.status = true;
       const web3 = new Web3(window.ethereum);
         try {
             const accounts = await web3.eth.getAccounts();
             balanceInfo.amount = parseInt(await web3.eth.getBalance(accounts[0]));
             balanceInfo.status = true;
         } catch (error) {
-            balanceInfo.status = false;
+            console.log(error);
+            // balanceInfo.status = false;
+            balanceInfo.errMessage = "Please login your Metamask.";
         }
     }else{
-        balanceInfo.status = false;
+        balanceInfo.status = true;
+        balanceInfo.amount = 5;
     }
     return balanceInfo;
 }

@@ -29,7 +29,6 @@ const Counter = () => {
   const { projectId } = useParams();
   const [progressValue, setProgressValue] = useState(0);
   const [timer, setTimer] = useState();
-  const [bnbet, setBnbet] = useState(true);
 
   const timeCounter = () => {
     setInterval(async () => {
@@ -49,18 +48,18 @@ const Counter = () => {
       )
     );
     timeCounter();
+
     _getBalance()
      .then((balance) => {
-       console.log(balance);
+       if (balance.errMessage) {
+         toast.error(`${ balance.errMessage }`)
+       }
       setBalance(balance);
      });
+
     selectedNetwork()
      .then(net=>{
       setNetwork(net);
-     });
-    NetworkDetector()
-     .then((res) => {
-      setBnbet(res);
      });
   }, [reload]);
 
@@ -148,14 +147,14 @@ const Counter = () => {
               <div className="slider">
                 <Slider
                   // min={ 0 }
-                  max={100}
-                  value={progressValue}
+                  max={ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }
+                  value={projectsList[projectId].swap_rate*(projectsList[projectId].token_amount - projectsList[projectId].available_token_amount)}
                   // onChange={ e=>handleChange(e) }
                 />
                 <div className="main-value">
-                  {/* <span>
-                ${ parseInt(project?.available_token_amount) * parseInt(project?.swap_rate) }
-                </span> */}
+                  <span>
+                ${ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }
+                </span>
                 </div>
               </div>
             </div>

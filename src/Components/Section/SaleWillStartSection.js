@@ -8,7 +8,6 @@ import { timeFormatter } from "../../helpers/TimeCounter";
 
 const SaleWillStartSection = () => {
   const [ project, setProject ] = useState();
-  const [rangeValue, setRangeValue] = useState(0);
   const [ timer, setTimer ] = useState();
   const { projectId } = useParams();
   const { projects } = useSelector(state=>state);
@@ -33,11 +32,6 @@ const SaleWillStartSection = () => {
     timeCounter();
   }, [])
 
-  const handleChange = (value) => {
-    setRangeValue(value);
-  };
-
-  console.log(timer);
   return (
     <div className="counter-section">
       <div className="container">
@@ -87,12 +81,11 @@ const SaleWillStartSection = () => {
                 <div className="slider w-100">
                   <Slider
                     min={0}
-                    max={2000000}
-                    value={rangeValue}
-                    onChange={handleChange}
+                    max={ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }
+                    value={ projectsList[projectId].swap_rate*(projectsList[projectId].token_amount - projectsList[projectId].available_token_amount) }
                   />
                   <div className="main-value">
-                    <span>$2000000</span>
+                    <span>${ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }</span>
                   </div>
                 </div>
               </div>
