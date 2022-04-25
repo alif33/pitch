@@ -11,6 +11,7 @@ import {
   NetworkHandler,
   NetworkDetector,
   _getBalance,
+  selectedNetwork,
 } from "../../helpers/NetworkHandler";
 
 const Counter = () => {
@@ -47,12 +48,18 @@ const Counter = () => {
       )
     );
     timeCounter();
-    _getBalance().then((balance) => {
+    _getBalance()
+     .then((balance) => {
       setBalance(balance);
-    });
-    NetworkDetector().then((res) => {
+     });
+    selectedNetwork()
+     .then(network=>{
+        console.log(network);
+     });
+    NetworkDetector()
+     .then((res) => {
       setBnbet(res);
-    });
+     });
   }, [reload]);
 
   const handleUsdt = (e) => {

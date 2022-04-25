@@ -1,4 +1,5 @@
 import Web3 from "web3";
+import chainInfo from "../utils/chainInfo";
 
 export const NetworkHandler = async() => {
     const round = {};
@@ -33,7 +34,26 @@ export const NetworkHandler = async() => {
     return round;
 }
 
-
+export const selectedNetwork = async() => {
+    let isWallet;
+    let _chain;
+    const provider = window.ethereum;
+    if(provider){
+      const chainId = await provider.request({ 
+        method: 'eth_chainId' 
+      });
+      const _id = Web3.utils.hexToNumberString(chainId);
+      const _info = await chainInfo.find(chain => chain.chainID === parseInt(_id));
+      _chain = _info;
+      isWallet = true;
+    }else{
+      isWallet = false;
+    }
+  return {
+    isWallet,
+    _chain
+  }
+}
 
 export const NetworkDetector = async() => {
     let networkStatus;
