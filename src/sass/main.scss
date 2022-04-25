@@ -820,7 +820,9 @@ img {
       .count-item {
         margin: 0 16px;
         text-align: center;
-
+        @media (max-width: 375px) {
+          margin: 0 8px;
+        }
         h4 {
           padding: 14px;
           background: #eef2fe;
@@ -829,6 +831,10 @@ img {
           font-size: 25px;
           color: #000f3c;
           @extend .flex-basic;
+          @media (max-width: 375px) {
+            padding: 9px;
+            font-size: 18px;
+          }
         }
         span {
           font-weight: 400;
@@ -863,7 +869,7 @@ img {
     box-shadow: 0px 4px 20px 10px rgba(87, 128, 255, 0.12);
     border-radius: 10px;
     @extend .flex-basic;
-    padding: 25px 0;
+    padding: 40px 25px;
     .amount-of-tokens {
       position: relative;
       display: flex;
@@ -933,12 +939,13 @@ img {
           text-align: center;
           margin-bottom: 7px;
         }
-        img {
+        img.reload-img {
           width: 15.99px;
           height: 16px;
           position: absolute;
-          top: 21%;
-          left: 91%;
+          top: -20%;
+          left: 100%;
+          cursor: pointer;
         }
       }
       a {
@@ -1810,7 +1817,7 @@ button.main-btn {
   .main-value {
     position: absolute;
     top: -21%;
-    left: 96%;
+    left: 97%;
     background: #fff;
     height: 18px;
     width: 18px;

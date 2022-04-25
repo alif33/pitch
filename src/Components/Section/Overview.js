@@ -20,7 +20,7 @@ const Overview = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 mt-4 mt-md-0">
               <div className="pool-details">
                 <h5>Pool Details</h5>
                 <h4>Pool Information</h4>
