@@ -8,7 +8,7 @@ export const NetworkHandler = async() => {
       const chainId = await provider.request({ 
         method: 'eth_chainId' 
       });
-      const BTCId = '0x61';
+      const BTCId = '0x38';
       if (chainId === BTCId) {
         round.status = true;
         round.message = 'You\'re current network';
@@ -62,7 +62,7 @@ export const NetworkDetector = async() => {
       const chainId = await provider.request({ 
         method: 'eth_chainId' 
       });
-      const BTCId = '0x61';
+      const BTCId = '0x38';
       if (chainId === BTCId) {
         networkStatus = true;
       }else{
@@ -86,8 +86,8 @@ export const _getBalance = async() => {
             balanceInfo.status = true;
         } catch (error) {
             console.log(error);
-            // balanceInfo.status = false;
-            balanceInfo.errMessage = "Please login your Metamask.";
+            balanceInfo.status = false;
+            // balanceInfo.errMessage = "Please login your Metamask.";
         }
     }else{
         balanceInfo.status = true;

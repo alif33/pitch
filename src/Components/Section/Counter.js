@@ -13,6 +13,7 @@ import {
   _getBalance,
   selectedNetwork,
 } from "../../helpers/NetworkHandler";
+import Web3 from "web3";
 
 const Counter = () => {
   const [project, setProject] = useState();
@@ -40,6 +41,7 @@ const Counter = () => {
   };
 
   useEffect(() => {
+    console.log(Web3.utils.toHex('56')); 
     setProject(projectsList[projectId]);
     setProgressValue(
       persentage(
@@ -146,10 +148,8 @@ const Counter = () => {
 
               <div className="slider">
                 <Slider
-                  // min={ 0 }
                   max={ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }
-                  value={projectsList[projectId].swap_rate*(projectsList[projectId].token_amount - projectsList[projectId].available_token_amount)}
-                  // onChange={ e=>handleChange(e) }
+                  value={ projectsList[projectId].swap_rate*(projectsList[projectId].token_amount - projectsList[projectId].available_token_amount) }
                 />
                 <div className="main-value">
                   <span>
@@ -188,7 +188,7 @@ const Counter = () => {
                   <div className="balance">
                     <div className="balance-header">
                       {balance.status && (
-                          <p>BALANCE: {( balance.amount / 10) ^ 18 }</p>
+                          <p>BALANCE: {( balance.amount ) }</p>
                       )}
                       <img
                         onClick={() => setReload(reload + 1)}
