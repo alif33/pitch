@@ -78,22 +78,14 @@ export const _getBalance = async() => {
     let balanceInfo = {};
     const provider = window.ethereum;
     if(provider){
-      const chainId = await provider.request({ 
-        method: 'eth_chainId' 
-      });
-      const BTCId = '0x61';
-      if (chainId === BTCId) {
-        const web3 = new Web3(window.ethereum);
+      const web3 = new Web3(window.ethereum);
         try {
             const accounts = await web3.eth.getAccounts();
             balanceInfo.amount = parseInt(await web3.eth.getBalance(accounts[0]));
+            balanceInfo.status = true;
         } catch (error) {
             balanceInfo.status = false;
         }
-        balanceInfo.status = true;
-      }else{
-        balanceInfo.status = false;
-      }
     }else{
         balanceInfo.status = false;
     }

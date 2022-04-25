@@ -9,6 +9,11 @@ const _data = [
         currency: "BNB",
         logo: "/img/chain/BNB.png"
     },
+	{
+        chainID: 97,
+        currency: "tBNB",
+        logo: "/img/chain/BNB.png"
+    },
     
   ];
 

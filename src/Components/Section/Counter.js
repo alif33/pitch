@@ -19,6 +19,7 @@ const Counter = () => {
   const [reload, setReload] = useState(1);
   const [disable, setDisable] = useState(false);
   const [rangeValue, setRangeValue] = useState(10);
+  const [network, setNetwork] = useState();
   const [balance, setBalance] = useState({
     status: true,
     amount: 0,
@@ -50,11 +51,12 @@ const Counter = () => {
     timeCounter();
     _getBalance()
      .then((balance) => {
+       console.log(balance);
       setBalance(balance);
      });
     selectedNetwork()
-     .then(network=>{
-        console.log(network);
+     .then(net=>{
+      setNetwork(net);
      });
     NetworkDetector()
      .then((res) => {
@@ -92,6 +94,7 @@ const Counter = () => {
     }
   };
 
+  console.log(balance);
   return (
     <div className="counter-section">
       <div className="container">
@@ -186,7 +189,7 @@ const Counter = () => {
                   <div className="balance">
                     <div className="balance-header">
                       {balance.status && (
-                        <p>BALANCE: {(balance.amount / 10) ^ 18}</p>
+                          <p>BALANCE: {( balance.amount / 10) ^ 18 }</p>
                       )}
                       <img
                         onClick={() => setReload(reload + 1)}
@@ -199,20 +202,13 @@ const Counter = () => {
                         1 USDT = {projectsList[projectId].swap_rate}{" "}
                         {projectsList[projectId].symbol}
                       </a>
-                      <p>
-                        {bnbet ? (
-                          <>
-                            {" "}
+                      {
+                        network?._chain &&<p>
+                          {" "}
                             NETWOTK: &nbsp;{" "}
-                            <img src="/img/balance-icon.svg" alt="" /> BINANCE
-                          </>
-                        ) : (
-                          <del>
-                            NETWOTK: &nbsp;{" "}
-                            <img src="/img/balance-icon.svg" alt="" /> BINANCE
-                          </del>
-                        )}
-                      </p>
+                          <img src={ network._chain.logo } alt="" /> { network._chain.currency }
+                        </p>
+                      }
                     </div>
                   </div>
                 </div>
