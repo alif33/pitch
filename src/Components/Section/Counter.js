@@ -53,9 +53,6 @@ const Counter = () => {
 
     _getBalance()
      .then((balance) => {
-       if (balance.errMessage) {
-         toast.error(`${ balance.errMessage }`)
-       }
       setBalance(balance);
      });
 
@@ -95,7 +92,6 @@ const Counter = () => {
     }
   };
 
-  console.log(balance);
   return (
     <div className="counter-section">
       <div className="container">

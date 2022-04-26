@@ -87,7 +87,6 @@ export const _getBalance = async() => {
         } catch (error) {
             console.log(error);
             balanceInfo.status = false;
-            // balanceInfo.errMessage = "Please login your Metamask.";
         }
     }else{
         balanceInfo.status = true;
