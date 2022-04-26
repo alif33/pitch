@@ -241,12 +241,13 @@ img {
 }
 
 .header {
-  padding-top: 150px;
-  height: 100vh;
+  padding-top: 120px;
+  height: 120vh;
   background: linear-gradient(101.01deg, #d3deff -21.7%, $light-color 46.47%);
 
   .header-leftside {
     height: 100%;
+    margin-left: 13%;
     @extend .flex-basic;
     .header-search {
       width: 100%;
@@ -267,10 +268,14 @@ img {
       width: 100%;
     }
     h2 {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 50px;
       position: relative;
-      width: 439px;
+      width: 495px;
+      margin-bottom: 15px;
+      @media (min-width: 1280px) {
+        font-size: 60px;
+      }
       @media (max-width: 600px) {
         font-size: 30px;
         width: 270px;
@@ -291,11 +296,22 @@ img {
         }
       }
     }
+    p {
+      width: 475px;
+      font-family: "Sofia Pro";
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #000f3c;
+    }
     input {
       @extend .input-basic;
       border-radius: 5px !important;
       padding: 10px 18px !important;
       margin-bottom: 12px !important;
+      &::placeholder {
+        color: #b5c2e3;
+      }
       @media (max-width: 600px) {
         width: 100%;
         height: 46px;
@@ -325,8 +341,8 @@ img {
     }
     span {
       position: absolute;
-      bottom: 0;
-      right: 0%;
+      bottom: 5%;
+      right: 7%;
       @media (max-width: 992px) {
         bottom: 8%;
         right: 0%;
@@ -383,7 +399,7 @@ img {
   }
 
   .new-project-title {
-    text-align: center;
+    text-align: left;
     h2 {
       margin: 55px 0;
       @media (max-width: 600px) {
@@ -406,7 +422,7 @@ img {
     }
 
     .new-project-item {
-      a{
+      a {
         text-decoration: none;
       }
       .card {
@@ -472,7 +488,7 @@ img {
   }
   .up-project {
     margin: 40px 0;
-    a{
+    a {
       text-decoration: none;
     }
     .card {
@@ -646,8 +662,9 @@ img {
     color: $light-color;
     margin-top: 24px;
     &:hover {
-      background: $button-bg2;
-      color: $light-color;
+      background-color: #ffffff;
+      color: #09216a !important;
+      box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.1411764706);
     }
     @media (max-width: 600px) {
       padding: 16px 17px;
@@ -656,8 +673,12 @@ img {
   }
   h2 {
     margin-top: 38px;
+    font-size: 40px;
   }
   P {
+    font-weight: 300;
+    font-size: 25px;
+    color: #000f3c;
     @media (max-width: 600px) {
       font-weight: 300;
       font-size: 18px;
@@ -693,7 +714,9 @@ img {
     border-radius: 7px;
     margin-top: 20px;
     &:hover {
-      background: #ff2853;
+      background-color: #ffffff;
+      color: #09216a !important;
+      box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.1411764706);
     }
   }
   .col-md-6 {
@@ -742,6 +765,8 @@ img {
   padding: 50px 0;
   background: linear-gradient(90.13deg, #e5ecff -15.4%, #ffffff 48.07%);
   .footer-logo {
+    margin-top: -20px;
+
     @media (max-width: 767px) {
       img {
         width: 160px;
@@ -762,11 +787,13 @@ img {
     .footer-menu-item {
       a {
         text-decoration: none;
-        font-weight: 600;
-        font-size: 15px;
+        font-weight: 400;
+        font-size: 18px;
         line-height: 20px;
         text-transform: uppercase;
         color: #001246ad;
+        margin: 5px 0;
+        display: inline-block;
       }
     }
     @media (max-width: 767px) {
@@ -1936,7 +1963,7 @@ button.main-btn {
       justify-content: space-between;
       align-items: center;
       margin: 16px 0;
-  
+
       p {
         font-weight: 500;
         font-size: 16px !important;
