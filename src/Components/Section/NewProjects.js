@@ -14,7 +14,7 @@ const NewProjects = () => {
 
   return (
     <div className="new-project-section">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-lg-2 col-md-12">
             <div className="new-project-title">
@@ -40,7 +40,7 @@ const NewProjects = () => {
                                 <img src="/img/roadstarter.svg" alt="" />
                                 <h4> RoadStarter</h4>
                                 <p>
-                                  total raise :<span> 200,000$</span>
+                                  total raise :<span> $200,000</span>
                                 </p>
                                 <p>
                                   Max allocation :<span> TBA</span>
