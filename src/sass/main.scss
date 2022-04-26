@@ -3,7 +3,7 @@
 @import "./partials/classes";
 
 // navbar.....
-.container-fluid{
+.container-fluid {
   padding: 0 40px;
 }
 a {
@@ -324,7 +324,9 @@ img {
     }
     button {
       @include button($button-bg2, $light-color);
-      height: 56px;border-radius: 7px;    padding: 20px 34px;
+      height: 56px;
+      border-radius: 7px;
+      padding: 20px 34px;
       &:hover {
         background-color: $light-color;
         color: $main-color !important;
@@ -347,7 +349,7 @@ img {
     }
     span {
       position: absolute;
-      bottom: 0%;
+      bottom: -12%;
       right: 7%;
       @media (max-width: 992px) {
         bottom: 8%;
