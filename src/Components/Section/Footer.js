@@ -15,52 +15,53 @@ const Footer = () => {
           </div>
           <div className="col-md-3 col-sm-4 col-6">
             <ul className="footer-menu">
-              <h4 className="footer-menu-title">COMPANY</h4>
+              <h4 className="footer-menu-title">company</h4>
               <li className="footer-menu-item">
-                <Link to="/chaiport">ABOUT</Link>
+                <Link to="/chaiport">about</Link>
+              </li>
+
+              <li className="footer-menu-item">
+                <Link to="/">blog</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">BLOG</Link>
+                <Link to="/">wallet</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">WALLET</Link>
+                <Link to="/">merchant</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">MeRCHANT</Link>
-              </li>
-              <li className="footer-menu-item">
-                <Link to="/">TOOLS</Link>
+                <Link to="/">tools</Link>
               </li>
             </ul>
           </div>
           <div className="col-md-3 col-sm-4 col-6">
             <ul className="footer-menu">
-              <h4 className="footer-menu-title">SUPPORT</h4>
+              <h4 className="footer-menu-title">support</h4>
               <li className="footer-menu-item">
-                <Link to="/">HELP</Link>
+                <Link to="/">help</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/contact">CONTACT US</Link>
+                <Link to="/contact">contact us</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">CREATE ACCOUNT</Link>
+                <Link to="/">create account</Link>
               </li>
             </ul>
           </div>
           <div className="col-md-3 col-sm-4">
             <ul className="footer-menu">
-              <h4 className="footer-menu-title">SUPPORT</h4>
+              <h4 className="footer-menu-title">support</h4>
               <li className="footer-menu-item">
-                <Link to="/">LEGAL & PRIVACY</Link>
+                <Link to="/">legal & privacy</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">TERMS & CONDITIONS</Link>
+                <Link to="/">terms & conditions</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">COOKIE POLICY</Link>
+                <Link to="/">cookie policy</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">COOKIE PREFERENCES</Link>
+                <Link to="/">cookie preferences</Link>
               </li>
             </ul>
           </div>

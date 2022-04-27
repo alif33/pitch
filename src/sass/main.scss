@@ -5,6 +5,9 @@
 // navbar.....
 .container-fluid {
   padding: 0 40px;
+  @media (max-width: 600px) {
+    padding: 0 5px;
+  }
 }
 a {
   color: $text-color;
@@ -252,6 +255,12 @@ img {
   .header-leftside {
     height: 100%;
     margin-left: 13%;
+    @media (max-width: 992px) {
+      margin-left: 7%;
+    }
+    @media (max-width: 580px) {
+      margin-left: 0%;
+    }
     @extend .flex-basic;
     .header-search {
       width: 100%;
@@ -307,6 +316,9 @@ img {
       font-size: 18px;
       line-height: 22px;
       color: #000f3c;
+      @media (max-width: 580px) {
+        width: auto;
+      }
     }
     input {
       @extend .input-basic;
@@ -412,6 +424,10 @@ img {
       margin: 55px 0;
       @media (max-width: 600px) {
         margin: 40px 0;
+        text-align: center;
+      }
+      @media (max-width: 991px) {
+        text-align: center;
       }
     }
     img {
@@ -616,7 +632,9 @@ img {
                 color: $light-color;
               }
             }
-
+            @media (max-width: 991px) {
+              padding: 8px 20px;
+            }
             @media (max-width: 675px) {
               display: none;
               padding: 8px 6px;
@@ -632,6 +650,10 @@ img {
           }
         }
       }
+    }
+
+    @media (max-width: 992px) {
+      margin: auto 20px;
     }
     @media (max-width: 600px) {
       width: 282px;
@@ -669,6 +691,7 @@ img {
     background: $button-bg2;
     color: $light-color;
     margin-top: 24px;
+    padding: 20px 34px;
     &:hover {
       background-color: #ffffff;
       color: #09216a !important;
@@ -721,6 +744,7 @@ img {
     background: #ff2853;
     border-radius: 7px;
     margin-top: 20px;
+    padding: 20px 34px;
     &:hover {
       background-color: #ffffff;
       color: #09216a !important;
@@ -774,7 +798,9 @@ img {
   background: linear-gradient(90.13deg, #e5ecff -15.4%, #ffffff 48.07%);
   .footer-logo {
     margin-top: -20px;
-
+    img {
+      width: 80%;
+    }
     @media (max-width: 767px) {
       img {
         width: 160px;
@@ -791,6 +817,7 @@ img {
       font-size: 15px;
       line-height: 20px;
       color: #001246;
+      text-transform: capitalize;
     }
     .footer-menu-item {
       a {
@@ -1389,6 +1416,11 @@ img {
     background: #ff2853;
     border-radius: 10px;
     color: #fff;
+    &:hover {
+      background-color: #ffffff;
+      color: #09216a !important;
+      box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);
+    }
     a {
       color: #fff;
       text-decoration: none;
