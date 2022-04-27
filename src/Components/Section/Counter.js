@@ -41,7 +41,6 @@ const Counter = () => {
   };
 
   useEffect(() => {
-
     setProject(projectsList[projectId]);
     setProgressValue(
       persentage(
@@ -51,15 +50,13 @@ const Counter = () => {
     );
     timeCounter();
 
-    _getBalance()
-     .then((balance) => {
+    _getBalance().then((balance) => {
       setBalance(balance);
-     });
+    });
 
-    selectedNetwork()
-     .then(net=>{
+    selectedNetwork().then((net) => {
       setNetwork(net);
-     });
+    });
   }, [reload]);
 
   const handleUsdt = (e) => {
@@ -144,18 +141,29 @@ const Counter = () => {
 
               <div className="slider">
                 <Slider
-                  max={ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }
-                  value={ projectsList[projectId].swap_rate*(projectsList[projectId].token_amount - projectsList[projectId].available_token_amount) }
+                  max={
+                    projectsList[projectId].swap_rate *
+                    projectsList[projectId].token_amount
+                  }
+                  value={
+                    projectsList[projectId].swap_rate *
+                    (projectsList[projectId].token_amount -
+                      projectsList[projectId].available_token_amount)
+                  }
                 />
                 <div className="main-value">
                   <span>
-                ${ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }
-                </span>
+                    $
+                    {projectsList[projectId].swap_rate *
+                      projectsList[projectId].token_amount}
+                  </span>
                 </div>
               </div>
             </div>
 
-            <h2 className="mt-3">Token purchase calculator</h2>
+            <h2 className="mt-5 mt-md-3 mb-4 text-center text-md-left pt-3 pt-md-0">
+              Token purchase calculator
+            </h2>
             <div className="token-purchase mt-3">
               <div className="row w-100">
                 <div className="col-12 col-md-6 order-md-first order-last">
@@ -183,9 +191,7 @@ const Counter = () => {
                 <div className="col-12 col-md-6">
                   <div className="balance">
                     <div className="balance-header">
-                      {balance.status && (
-                          <p>BALANCE: {( balance.amount ) }</p>
-                      )}
+                      {balance.status && <p>BALANCE: {balance.amount}</p>}
                       <img
                         onClick={() => setReload(reload + 1)}
                         src="/img/loader-icon.svg"
@@ -197,13 +203,14 @@ const Counter = () => {
                         1 USDT = {projectsList[projectId].swap_rate}{" "}
                         {projectsList[projectId].symbol}
                       </a>
-                      {
-                        network?._chain &&<p>
+                      {network?._chain && (
+                        <p>
                           {" "}
-                            NETWOTK: &nbsp;{" "}
-                          <img src={ network._chain.logo } alt="" /> { network._chain.currency }
+                          NETWOTK: &nbsp;{" "}
+                          <img src={network._chain.logo} alt="" />{" "}
+                          {network._chain.currency}
                         </p>
-                      }
+                      )}
                     </div>
                   </div>
                 </div>

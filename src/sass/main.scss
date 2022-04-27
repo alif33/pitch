@@ -846,6 +846,27 @@ img {
     img {
       width: 150px;
     }
+    h2 {
+      font-weight: 600;
+      font-size: 35px;
+      color: #000f3c;
+      @media (max-width: 600px) {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 30px;
+      }
+    }
+    p {
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 30px;
+      color: #000f3c;
+      @media (max-width: 600px) {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
   }
   .counter-card {
     // background: $light-color;
@@ -891,7 +912,7 @@ img {
           border-radius: 3px;
           font-weight: 600;
           font-size: 25px;
-          color: #000f3c;
+          color: #09216a;
           @extend .flex-basic;
           @media (max-width: 375px) {
             padding: 9px;
@@ -905,6 +926,12 @@ img {
         }
       }
     }
+    .count-items.desable {
+      h4 {
+        color: #7284bb;
+      }
+    }
+
     @media (max-width: 767px) {
       margin-top: 30px;
     }
@@ -967,11 +994,25 @@ img {
         position: absolute;
         top: 57%;
         left: 15px;
+        @media (max-width: 600px) {
+          left: 26%;
+        }
+        @media (max-width: 480px) {
+          left: 10%;
+        }
+        @media (max-width: 375px) {
+          left: -2%;
+        }
       }
     }
     button.main-btn {
       background: #ff2853;
       text-transform: capitalize;
+      width: 153px;
+      text-align: center;
+      &:hover{background: #FFFFFF;
+        box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);}
+        color: #08216E;
     }
     .amount-of-tokens.USTD {
       input {
@@ -1064,7 +1105,7 @@ img {
     }
     p {
       font-size: 19px;
-      margin-top: 30px;
+      margin-top: 50px;
       font-weight: 300;
       line-height: 30px;
       display: flex;
@@ -1079,7 +1120,9 @@ img {
     border-radius: 10px;
 
     padding: 28px 48px;
-
+    @media (max-width: 600px) {
+      padding: 28px 15px;
+    }
     h5 {
       font-weight: 500;
       font-size: 20px;
@@ -1103,6 +1146,7 @@ img {
       padding: 0;
       margin: 0;
       li {
+        margin-top: 10px;
         font-weight: 400;
         font-size: 16px;
         line-height: 25px;
@@ -1111,6 +1155,18 @@ img {
         justify-content: space-between;
         color: $light-color;
         border-bottom: 1px solid rgba(0, 15, 60, 0.2);
+        @media (max-width: 600px) {
+          font-size: 13px;
+        }
+        P{
+          &:last-child{
+            margin-left: 109px;
+            @media (max-width: 375px) {
+              margin-left: 50px;
+              
+            }
+          }
+        }
       }
     }
   }

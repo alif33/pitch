@@ -31,7 +31,7 @@ const Overview = () => {
                   </li>
                   <li>
                     <p>Token Distribution</p>
-                    <p>50% at TGE, 60 days cliff then 5% monthly</p>
+                    <p >50% at TGE, 60 days cliff then 5% monthly</p>
                   </li>
                   <li>
                     <p>Token Price</p>
