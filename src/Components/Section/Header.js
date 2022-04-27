@@ -20,7 +20,7 @@ const Header = () => {
                 <p className="sub-Title">
                   PitchShow helps and facilitates the connection between
                   Founders and Investor. To rise funds through a pre-listed
-                  token.<Link to="/"> Learn More</Link>
+                  token. <Link to="/">Learn More</Link>
                 </p>
               </div>
               <div className="header-search">

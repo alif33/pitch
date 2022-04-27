@@ -11,7 +11,7 @@ const PoolAlert = () => {
               <p>
                 Subscribe to be the first to know the new pools and relevant events.
               </p>
-              <SubscribeModal btnName={"SUBSCRIBE"}/>
+              <SubscribeModal btnName={"Subscribe"}/>
             </div>
             <div className="col-md-6">
               <div className="pool-alert-right">
