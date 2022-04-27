@@ -1410,6 +1410,43 @@ img {
     }
   }
 
+  .label-tootip {
+    position: relative;
+    &:hover{
+      .label-tootip-card{
+        display: block;
+      }  
+    }
+    .label-tootip-card {
+      position: absolute;
+      top: -245%;
+      left: -55%;
+      width: 223px;
+      background: #ffffff;
+      box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);
+      border-radius: 10px;
+      padding: 15px 17px;
+      z-index: 9;
+      display:none;
+      p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 15px;
+      }
+      &::after{
+        position: absolute;
+        content: "";
+        left: 6%;
+        bottom: -23%;
+        background: #fff;
+        height: 15px;
+        width: 22px;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        z-index: -1;
+      }
+    }
+  }
+
   button.main-btn {
     width: 189px;
     height: 48px;

@@ -34,6 +34,7 @@ const CompanyInfoForm = () => {
   };
 
   const handlePitchDeckUpload = (file) => {
+    console.log(file);
     const formDate = new FormData();
     formDate.append("file", file[0]);
     formDate.append("upload_preset", "pitchshow");
@@ -270,7 +271,7 @@ const CompanyInfoForm = () => {
                       <input
                         type="file"
                         onChange={(e) => handlePitchDeckUpload(e.target.files)}
-                        accept=".jpg, .jpeg, .png, .doc, .docx,.ppt, .pptx,.txt,.pdf"
+                        accept=".jpg, .jpeg, .png,.ppt, .pptx,.txt,.pdf , .txt, text/plain, .doc, .docx, application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                       />
                       <button>Upload Deck</button>
                     </div>

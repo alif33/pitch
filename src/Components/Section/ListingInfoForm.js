@@ -85,7 +85,13 @@ const ListingInfoForm = () => {
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="IDOSize">
-                      <img src="/img/label-icon.svg" alt="" /> IDO Size
+                      <div className="label-tootip">
+                        <div className="label-tootip-card">
+                          <p>Total amount in USD to raise in price value</p>
+                        </div>
+                        <img src="/img/label-icon.svg" alt="" />
+                      </div>
+                      IDO Size
                       <span>*</span>
                     </label>
                     <input
@@ -108,7 +114,14 @@ const ListingInfoForm = () => {
                   {" "}
                   <div className="form-group">
                     <label htmlFor="additionalPlatforms">
-                      <img src="/img/label-icon.svg" alt="" /> Additional
+                    <div className="label-tootip">
+                        <div className="label-tootip-card">
+                          <p>Name of platform and amount of tokens 
+
+</p>
+                        </div>
+                        <img src="/img/label-icon.svg" alt="" />
+                      </div> Additional
                       platforms
                       <span>*</span>
                     </label>
@@ -136,7 +149,12 @@ const ListingInfoForm = () => {
                 <div className="col-md-5">
                   <div className="form-group">
                     <label htmlFor="pitchshowSize">
-                      <img src="/img/label-icon.svg" alt="" /> Pitchshow Size
+                    <div className="label-tootip">
+                        <div className="label-tootip-card text-center">
+                          <p>Token amount </p>
+                        </div>
+                        <img src="/img/label-icon.svg" alt="" />
+                      </div> Pitchshow Size
                       <span>*</span>
                     </label>
                     <input
@@ -259,7 +277,15 @@ const ListingInfoForm = () => {
                   {" "}
                   <div className="form-group">
                     <label htmlFor="pitchshowsTokenPrice">
-                      <img src="/img/label-icon.svg" alt="" /> Pitchshows Token
+                    <div className="label-tootip">
+                        <div className="label-tootip-card">
+                          <p>Discount price for Pitchshow in % and Number 
+
+
+</p>
+                        </div>
+                        <img src="/img/label-icon.svg" alt="" />
+                      </div> Pitchshows Token
                       Price<span>*</span>
                     </label>
                     <input
