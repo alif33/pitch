@@ -1010,9 +1010,11 @@ img {
       text-transform: capitalize;
       width: 153px;
       text-align: center;
-      &:hover{background: #FFFFFF;
-        box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);}
-        color: #08216E;
+      &:hover {
+        background: #ffffff;
+        box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);
+      }
+      color: #08216e;
     }
     .amount-of-tokens.USTD {
       input {
@@ -1158,12 +1160,11 @@ img {
         @media (max-width: 600px) {
           font-size: 13px;
         }
-        P{
-          &:last-child{
+        P {
+          &:last-child {
             margin-left: 109px;
             @media (max-width: 375px) {
               margin-left: 50px;
-              
             }
           }
         }
@@ -1754,6 +1755,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: #f0f4ff;
   img {
     width: 42px;
     height: 67px;
@@ -1793,6 +1795,11 @@ img {
     @include button($button-bg2, $light-color);
     background: #ff2853;
     margin-top: 20px;
+    &:hover {
+      background: #ffffff;
+      box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);
+      color: #08216E;
+    }
     a {
       color: inherit;
       text-decoration: none;
