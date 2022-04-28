@@ -39,12 +39,13 @@ const CompanyInfoForm = () => {
     formDate.append("file", file[0]);
     formDate.append("upload_preset", "pitchshow");
 
-    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+    fetch("https://api.cloudinary.com/v1_1/pitchshow/image/upload", {
       method: "post",
       body: formDate,
     })
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         if (result.secure_url) {
           setUploadFile({ ...uploadFile, pitchDeckURL: result.secure_url });
           setUpload(true);
@@ -59,7 +60,7 @@ const CompanyInfoForm = () => {
     formDate.append("file", file[0]);
     formDate.append("upload_preset", "pitchshow");
 
-    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+    fetch("https://api.cloudinary.com/v1_1/pitchshow/image/upload", {
       method: "post",
       body: formDate,
     })
@@ -83,7 +84,7 @@ const CompanyInfoForm = () => {
     formDate.append("file", file[0]);
     formDate.append("upload_preset", "pitchshow");
 
-    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+    fetch("https://api.cloudinary.com/v1_1/pitchshow/image/upload", {
       method: "post",
       body: formDate,
     })

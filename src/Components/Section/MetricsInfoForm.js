@@ -30,7 +30,7 @@ const MetricsInfoForm = () => {
     formDate.append("file", file[0]);
     formDate.append("upload_preset", "pitchshow");
 
-    fetch("https://api.cloudinary.com/v1_1/developeryeasin/image/upload", {
+    fetch("https://api.cloudinary.com/v1_1/pitchshow/image/upload", {
       method: "post",
       body: formDate,
     })
