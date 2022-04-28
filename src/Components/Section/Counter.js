@@ -73,7 +73,7 @@ const Counter = () => {
         window.ethereum.selectedAddress
       ).then((status) => {
         if (status) {
-          console.log("calling");
+          // console.log("calling");
           _invest(
             projectsList[projectId].project_id,
             parseInt(project?.available_token_amount) *

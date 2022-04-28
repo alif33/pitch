@@ -8,7 +8,7 @@ const NewProjects = () => {
   const { projects } = useSelector((state) => state);
   const { projectsList } = projects;
 
-  let newProject = projectsList.filter( el=> 
+  let newProjects = projectsList.filter( el=> 
       el.start_time < +new Date/1000 && el.end_time > +new Date/1000 
     );
 
@@ -30,27 +30,27 @@ const NewProjects = () => {
             <div className="new-project-items all">
               <Slider {...newProSlider}>
                 {
-                  newProject && newProject.slice(0, 4).map((item, index)=>{
+                  newProjects && newProjects.slice(0, 4).map((item, index)=>{
                     return(
                       <div key={ index }>
                         <div className="px-2 mt-md-5">
                           <div className="new-project-item">
                             <Link to={`/live/${item.project_id}`}>
                               <div className="card">
-                                <img src="/img/roadstarter.svg" alt="" />
-                                <h4> RoadStarter</h4>
+                                <img src={item.image} alt="" />
+                                <h4> {item.project_name}</h4>
                                 <p>
-                                  total raise :<span> $200,000</span>
+                                  Total Raise :<span> ${ item.swap_rate* (item.token_amount-item.available_token_amount) }</span>
                                 </p>
                                 <p>
-                                  Max allocation :<span> TBA</span>
+                                  Tokens Left : <span> { item.available_token_amount }</span>
                                 </p>
                               </div>
                             </Link>
                             <div className="new-item-progass">
                               <div
                                 className="progass-complate"
-                                style={{ width: "50%" }}
+                                style={{ width: `${100- (Math.round(parseInt(item.available_token_amount)/ parseInt(item.token_amount))*100)}%` }}
                               ></div>
                             </div>
                           </div>
@@ -59,127 +59,42 @@ const NewProjects = () => {
                     )
                   })
                 }
-                {/* <div>
-                  <div className="px-2 mt-md-5">
-                    <div className="new-project-item">
-                      <Link to="chaiport">
-                        <div className="card">
-                          <img src="/img/roadstarter.svg" alt="" />
-                          <h4> RoadStarter</h4>
-                          <p>
-                            total raise :<span> 200,000$</span>
-                          </p>
-                          <p>
-                            Max allocation :<span> TBA</span>
-                          </p>
-                        </div>
-                      </Link>
-                      <div className="new-item-progass">
-                        <div
-                          className="progass-complate"
-                          style={{ width: "50%" }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="px-2 mt-md-5">
-                    <div className="new-project-item">
-                    <Link to="chaiport">
-                      <div className="card">
-                        <img src="/img/roadstarter2.svg" alt="" />
-                        <h4> RoadStarter</h4>
-                        <p>
-                          total raise :<span> 200,000$</span>
-                        </p>
-                        <p>
-                          Max allocation :<span> TBA</span>
-                        </p>
-                      </div></Link>
-                      <div className="new-item-progass">
-                        <div
-                          className="progass-complate"
-                          style={{ width: "20%" }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="px-2 mt-md-5">
-                    <div className="new-project-item">
-                    <Link to="chaiport">
-                      <div className="card">
-                        <img src="/img/roadstarter.svg" alt="" />
-                        <h4> RoadStarter</h4>
-                        <p>
-                          total raise :<span> 200,000$</span>
-                        </p>
-                        <p>
-                          Max allocation :<span> TBA</span>
-                        </p>
-                      </div></Link>
-                      <div className="new-item-progass">
-                        <div
-                          className="progass-complate"
-                          style={{ width: "00%" }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="px-2 mt-md-5">
-                    <div className="new-project-item">
-                    <Link to="chaiport">
-                      <div className="card">
-                        <img src="/img/roadstarter2.svg" alt="" />
-                        <h4> RoadStarter</h4>
-                        <p>
-                          total raise :<span> 200,000$</span>
-                        </p>
-                        <p>
-                          Max allocation :<span> TBA</span>
-                        </p>
-                      </div>
-                      </Link>
-                      <div className="new-item-progass">
-                        <div
-                          className="progass-complate"
-                          style={{ width: "95%" }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </Slider>
             </div>
             <div className="new-project-items tablet">
               <div className="row">
-                <div className="col-6 mt-5">
-                  <div className="new-project-item">
-                    <Link to="/chaiport">
-                      <div className="card">
-                        <img src="/img/roadstarter.svg" alt="" />
-                        <h4> RoadStarter</h4>
-                        <p>
-                          total raise :<span> 200,000$</span>
-                        </p>
-                        <p>
-                          Max allocation :<span> TBA</span>
-                        </p>
+              {
+                newProjects && newProjects.slice(0, 4).map((item, index)=>{
+                  return(
+                    <div key={index} className="col-6 mt-5">
+                      <div className="new-project-item">
+                        <Link to={`/live/${item.project_id}`}>
+                          <div className="card">
+                            <img src={item.image} alt="" />
+                            <h4> {item.project_name}</h4>
+                            <p>
+                              Total Raise :<span> ${ item.swap_rate* (item.token_amount-item.available_token_amount) }</span>
+                            </p>
+                            <p>
+                              Tokens Left :<span> { item.available_token_amount }</span>
+                            </p>
+                          </div>
+                        </Link>
+                        <div className="new-item-progass">
+                          <div
+                            className="progass-complate"
+                            style={{ width: `${100- (Math.round(parseInt(item.available_token_amount)/ parseInt(item.token_amount))*100)}%` }}
+                            ></div>
+                        </div>
                       </div>
-                    </Link>
-                    <div className="new-item-progass">
-                      <div
-                        className="progass-complate"
-                        style={{ width: "50%" }}
-                      ></div>
                     </div>
-                  </div>
-                </div>
-                <div className="col-6 mt-5">
+                  )
+                })
+              }
+
+
+
+                {/* <div className="col-6 mt-5">
                   <div className="new-project-item">
                   <Link to="chaiport">
                     <div className="card">
@@ -244,7 +159,11 @@ const NewProjects = () => {
                       ></div>
                     </div>
                   </div>
-                </div>
+                </div> */}
+
+
+
+
               </div>
             </div>
           </div>
@@ -265,3 +184,5 @@ const NewProjects = () => {
 };
 
 export default NewProjects;
+
+

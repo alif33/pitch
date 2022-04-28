@@ -19,12 +19,12 @@ const formatArr = async( arr )=>{
         assignee.available_token_amount = obj[6];
         assignee.start_time = obj[7];
         assignee.end_time = obj[8];
+        assignee.description = obj[9];
         projects.push(assignee)
     });
     return projects; 
 }
 
 export const setProjects = projects => async(dispatch) => {
-    // dispatch(slice.setProjects(projects))
-    dispatch(slice.setProjects(await formatArr(projectData)));
+    dispatch(slice.setProjects(await formatArr(projects)));
 }

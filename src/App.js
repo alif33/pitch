@@ -29,6 +29,7 @@ const App = () => {
 
   useEffect(() => {
     fetchData().then((data) => {
+      console.log(data);
       dispatch(setProjects(data));
     });
   }, []);
