@@ -188,7 +188,7 @@ const Counter = () => {
                 <div className="col-12 col-md-6">
                   <div className="balance">
                     <div className="balance-header">
-                      {balance.status && <p>BALANCE: {balance.amount}</p>}
+                      {balance.status && <p>BALANCE: {balance.amount}</p>}<p></p>
                       <img
                         onClick={() => setReload(reload + 1)}
                         src="/img/loader-icon.svg"
