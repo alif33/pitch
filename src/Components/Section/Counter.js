@@ -100,14 +100,7 @@ const Counter = () => {
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2">Chainport</h2>
               <p className="mt-4">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard Lorem
-                Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry.
+                { projectsList[projectId].description }
               </p>
             </div>
           </div>
