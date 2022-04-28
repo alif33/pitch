@@ -329,7 +329,10 @@ img {
       &::placeholder {
         color: #b5c2e3;
       }
-      @media (max-width: 600px) {
+      @media (max-width: 1320px) and (min-width: 992px) {
+        width: 80%;
+      }
+      @media (max-width: 678px) {
         width: 100%;
         height: 46px;
       }
@@ -907,16 +910,20 @@ img {
           margin: 0 8px;
         }
         h4 {
-          padding: 14px;
           background: #eef2fe;
           border-radius: 3px;
           font-weight: 600;
           font-size: 25px;
           color: #09216a;
+          width: 73px;
+          height: 52px;
+
           @extend .flex-basic;
           @media (max-width: 375px) {
             padding: 9px;
             font-size: 18px;
+            width: 55px;
+            height: 41px;
           }
         }
         span {
@@ -1110,7 +1117,7 @@ img {
     box-shadow: 0px 4px 20px 10px rgba(87, 128, 255, 0.12);
     border-radius: 10px;
 
-    padding: 28px 48px;
+    padding: 28px 45px;
     @media (max-width: 600px) {
       padding: 28px 15px;
     }
@@ -1130,7 +1137,7 @@ img {
       display: flex;
       align-items: center;
       color: #ffffff;
-      margin-top: 20px;
+      margin-top: 30px;
     }
     ul {
       list-style: none;
@@ -1149,9 +1156,10 @@ img {
         @media (max-width: 600px) {
           font-size: 13px;
         }
-        P {
+        p {
           &:last-child {
             margin-left: 109px;
+            text-align: right;
             @media (max-width: 375px) {
               margin-left: 50px;
             }
@@ -1159,6 +1167,16 @@ img {
         }
       }
     }
+  }
+}
+
+.token-purchase-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: left;
+  @media (max-width: 676px) {
+    text-align: center;
   }
 }
 

@@ -93,18 +93,16 @@ const Counter = () => {
 
   return (
     <div className="counter-section">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-5">
+          <div className="col-lg-5 col-xl-4">
             <div className="counter-section-leftside">
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2">Chainport</h2>
-              <p className="mt-4">
-                { projectsList[projectId].description }
-              </p>
+              <p className="mt-4">{projectsList[projectId].description}</p>
             </div>
           </div>
-          <div className="col-lg-6 offset-lg-1">
+          <div className="col-xl-5 offset-xl-2 col-lg-6 offset-lg-1">
             <div className="counter-card">
               <p className="couter-title mb-3">Sale is now live</p>
               <div className="count-items">
@@ -156,7 +154,7 @@ const Counter = () => {
               </div>
             </div>
 
-            <h2 className="mt-5 mt-md-3 mb-4 text-center text-md-left pt-3 pt-md-0">
+            <h2 className="mt-5 mt-md-3 mb-4 pt-3 pt-md-0 token-purchase-title">
               Token purchase calculator
             </h2>
             <div className="token-purchase mt-3">
@@ -205,8 +203,8 @@ const Counter = () => {
                       {network?._chain && (
                         <p>
                           {" "}
-                          NETWOTK: &nbsp;{" "}
-                          <img src={network._chain.logo} alt="" />{" "}
+                          NETWOTK: &nbsp;
+                          <img src={network._chain.logo} alt="" /> &nbsp;
                           {network._chain.currency}
                         </p>
                       )}
