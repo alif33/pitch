@@ -17,7 +17,7 @@ const SaleIsClosedSection = () => {
     <div className="counter-section">
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-lg-5">
             <div className="counter-section-leftside">
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2 mb-4">Chainport</h2>
@@ -33,7 +33,7 @@ const SaleIsClosedSection = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-4">
             <div className="counter-card">
               <p className="couter-title">Sale is closed</p>
               <small className="chacker">1 USDT = {projectsList[projectId].swap_rate} 
