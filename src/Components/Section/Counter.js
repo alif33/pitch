@@ -30,6 +30,8 @@ const Counter = () => {
   const { projectId } = useParams();
   const [progressValue, setProgressValue] = useState(0);
   const [timer, setTimer] = useState();
+  const [tokenSpan, setTokenSpan] = useState(false);
+  const [usdt, setUsdt] = useState(false);
 
   const timeCounter = () => {
     setInterval(async () => {
@@ -93,7 +95,7 @@ const Counter = () => {
     <div className="counter-section">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <div className="counter-section-leftside">
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2">Chainport</h2>
@@ -109,7 +111,7 @@ const Counter = () => {
               </p>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 offset-lg-1">
             <div className="counter-card">
               <p className="couter-title mb-3">Sale is now live</p>
               <div className="count-items">
@@ -173,8 +175,10 @@ const Counter = () => {
                       type="number"
                       value={rangeValue}
                       onChange={(e) => setRangeValue(parseInt(e.target.value))}
+                      onFocus={() => setTokenSpan(!tokenSpan)}
+                      onBlur={() => setTokenSpan(!tokenSpan)}
                     />
-                    <span></span>
+                    {tokenSpan && <span></span>}
                   </div>
                   <div className="amount-of-tokens mt-2 USTD">
                     <label htmlFor="">Amount of USDT</label>
@@ -184,8 +188,10 @@ const Counter = () => {
                         project?.swap_rate ? project?.swap_rate * rangeValue : 0
                       }
                       onChange={(e) => handleUsdt(e)}
+                      onFocus={() => setUsdt(!usdt)}
+                      onBlur={() => setUsdt(!usdt)}
                     />
-                    <span></span>
+                    {usdt && <span></span>}
                   </div>
                 </div>
                 <div className="col-12 col-md-6">

@@ -974,15 +974,17 @@ img {
       input {
         padding: 10px 15px;
         height: 48px;
-        background: #d0dbfb;
+        background: #ffffff;
         border-radius: 5px;
+        border: 1px solid #e6e6e6;
+        box-sizing: border-box;
         width: 122px;
-        height: 48px;
-        border: none;
         &:focus {
           outline: none;
+          background: #d0dbfb;
         }
       }
+
       span {
         width: 13px;
         height: 13px;
@@ -1013,24 +1015,11 @@ img {
       &:hover {
         background: #ffffff;
         box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);
-      }
-      color: #08216e;
-    }
-    .amount-of-tokens.USTD {
-      input {
-        background: #ffffff;
-        border: 1px solid #e6e6e6;
-        box-sizing: border-box;
-        border-radius: 5px;
-      }
-      span {
-        background: #ffffff;
-        border: 1px solid #f8f8f8;
-        box-sizing: border-box;
-        width: 25px;
-        height: 25px;
+        color: #08216e !important;
       }
     }
+    // .amount-of-tokens.USTD {
+    // }
 
     .balance {
       .balance-header {
@@ -1798,7 +1787,7 @@ img {
     &:hover {
       background: #ffffff;
       box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);
-      color: #08216E !important;
+      color: #08216e !important;
     }
     a {
       color: inherit;

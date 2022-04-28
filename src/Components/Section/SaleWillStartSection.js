@@ -36,7 +36,7 @@ const SaleWillStartSection = () => {
     <div className="counter-section">
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-lg-5">
             <div className="counter-section-leftside">
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2 mb-4">Chainport</h2>
@@ -52,7 +52,7 @@ const SaleWillStartSection = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-4">
             <div className="counter-card token-purchase">
               <p className="couter-title mb-3">Sale will start in</p>
               <div className="count-items">
