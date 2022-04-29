@@ -30,7 +30,7 @@ const UpcomingProjects = () => {
                   <Link to={`upcoming/${ item.project_id }`}>
                     <div className="card">
                       <div className="up-p-card-header">
-                        <img src="/img/roadstarter.svg" alt="" />
+                        <img src={item.image} alt="" />
                         <h4> {item.project_name}</h4>
                         <p className="count">
                           In <span>3</span> Days
@@ -38,7 +38,7 @@ const UpcomingProjects = () => {
                       </div>
                       <div className="up-p-card-body">
                         <p>
-                          Total Raise :<span> ${item.swap_rate* (item.token_amount-item.available_token_amount) }</span>
+                          Total Raise :<span> ${item.swap_rate* (item.token_amount-item.available_token_amount)}</span>
                         </p>
                         <p>
                           Max allocation :<span> TBA</span>
@@ -55,99 +55,36 @@ const UpcomingProjects = () => {
         </div>
         <div className="new-project-items tablet">
           <div className="row">
-            <div className="col-6 mt-5">
-              <div className="up-project">
-              <Link to="sale-will-start">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="/img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count">
-                      {" "}
-                      In <span>3</span> Days
-                    </p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
-                  </div>
-                </div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-6 mt-5">
-              <div className="up-project">
-              <Link to="sale-will-start">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="/img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count">
-                      {" "}
-                      In <span>3</span> Days
-                    </p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
+          {
+            upcomingProjects && upcomingProjects.slice(0, 4).map((item, index)=>{
+              return(
+                <div key={index} className="col-6 mt-5">
+                  <div className="up-project">
+                  <Link to={`upcoming/${ item.project_id }`}>
+                    <div className="card">
+                      <div className="up-p-card-header">
+                        <img src={item.image} alt="" />
+                        <h4> {item.project_name}</h4>
+                        <p className="count">
+                          {" "}
+                          In <span>3</span> Days
+                        </p>
+                      </div>
+                      <div className="up-p-card-body">
+                        <p>
+                          Total Raise :<span> ${item.swap_rate* (item.token_amount-item.available_token_amount)}</span>
+                        </p>
+                        <p>
+                          Max allocation :<span> TBA</span>
+                        </p>
+                      </div>
+                    </div>
+                    </Link>
                   </div>
                 </div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-6 mt-5">
-              <div className="up-project">
-              <Link to="sale-will-start">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="/img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count">
-                      {" "}
-                      In <span>3</span> Days
-                    </p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
-                  </div>
-                </div>
-                </Link>
-              </div>
-            </div>
-            <div className="col-6 mt-5">
-              <div className="up-project">
-              <Link to="sale-will-start-soon">
-                <div className="card">
-                  <div className="up-p-card-header">
-                    <img src="/img/roadstarter.svg" alt="" />
-                    <h4> RoadStarter</h4>
-                    <p className="count active">soon</p>
-                  </div>
-                  <div className="up-p-card-body">
-                    <p>
-                      total raise :<span> 200,000$</span>
-                    </p>
-                    <p>
-                      Max allocation :<span> TBA</span>
-                    </p>
-                  </div>
-                </div>
-                </Link>
-              </div>
-            </div>
+              )
+            })
+          }
           </div>
         </div>
       </div>
