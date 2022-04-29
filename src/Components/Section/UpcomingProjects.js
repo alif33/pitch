@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { upcomingProSlider } from "../../config/settings";
+import { upcomingCounter } from "../../helpers/TimeCounter";
 
 const UpcomingProjects = () => {
 
@@ -24,6 +25,7 @@ const UpcomingProjects = () => {
           <Slider {...upcomingProSlider}>
           {
             upcomingProjects && upcomingProjects.slice(0, 4).map((item, index)=>{
+              const { days } = upcomingCounter(item.end_time);
               return(
                 <div key={ index } className="px-2 mt-md-5">
                   <div className="up-project">
@@ -33,7 +35,7 @@ const UpcomingProjects = () => {
                         <img src={item.image} alt="" />
                         <h4> {item.project_name}</h4>
                         <p className="count">
-                          In <span>3</span> Days
+                          In <span>{days}</span> Days
                         </p>
                       </div>
                       <div className="up-p-card-body">
