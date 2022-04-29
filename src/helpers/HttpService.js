@@ -87,7 +87,7 @@ export const _invest = async(_id, _amount, _from) =>{
     );
     return await app.methods.invest(
         _id,
-        _amount*10^18
+        _amount
      ).send({ 
          from: _from,
          gasLimit: 300000 

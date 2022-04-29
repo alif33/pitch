@@ -8,7 +8,7 @@ export const NetworkHandler = async() => {
       const chainId = await provider.request({ 
         method: 'eth_chainId' 
       });
-      const BTCId = '0x38';
+      const BTCId = '0x61';
       if (chainId === BTCId) {
         round.status = true;
         round.message = 'You\'re current network';
@@ -62,7 +62,7 @@ export const NetworkDetector = async() => {
       const chainId = await provider.request({ 
         method: 'eth_chainId' 
       });
-      const BTCId = '0x38';
+      const BTCId = '0x61';
       if (chainId === BTCId) {
         networkStatus = true;
       }else{
