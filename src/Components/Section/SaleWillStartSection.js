@@ -41,14 +41,7 @@ const SaleWillStartSection = () => {
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2 mb-4">Chainport</h2>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard Lorem
-                Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry.
+                {projectsList[projectId].description}
               </p>
             </div>
           </div>
