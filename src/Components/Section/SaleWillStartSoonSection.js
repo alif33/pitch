@@ -1,19 +1,13 @@
-import React, { useState } from "react";
-import Slider from "react-rangeslider";
+import ProgressBar from "@ramonak/react-progress-bar";
+import React from "react";
 import "react-rangeslider/lib/index.css";
 
 const SaleWillStartSoonSection = () => {
-  
-  const [rangeValue, setRangeValue] = useState(0);
-
-  const handleChange = (value) => {
-    setRangeValue(value);
-  };
   return (
     <div className="counter-section">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-5">
+          <div className="col-lg-5 col-xl-4">
             <div className="counter-section-leftside">
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2 mb-4">Chainport</h2>
@@ -29,7 +23,7 @@ const SaleWillStartSoonSection = () => {
               </p>
             </div>
           </div>
-          <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-4">
+          <div className="col-xl-5 offset-xl-2 col-lg-6 offset-lg-1 mt-lg-0 mt-4">
             <div className="counter-card token-purchase">
               <p className="couter-title mb-3">Sale will start in</p>
               <button className="main-btn-soon">Soon</button>
@@ -38,11 +32,12 @@ const SaleWillStartSoonSection = () => {
                 <p className="text-center">Recruitment progress</p>
 
                 <div className="slider w-100">
-                  <Slider
-                    min={0}
-                    max={2000000}
-                    value={rangeValue}
-                    onChange={handleChange}
+                  <ProgressBar
+                    completed={80}
+                    className="mt-3"
+                    bgColor="#FF2853"
+                    labelColor="#fff"
+                    height="15px"
                   />
                   <div className="main-value">
                     <span>$2000000</span>

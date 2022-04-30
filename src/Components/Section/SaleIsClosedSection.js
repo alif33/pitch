@@ -4,20 +4,20 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const SaleIsClosedSection = () => {
-  const [ project, setProject ] = useState();
+  const [project, setProject] = useState();
   const { projectId } = useParams();
-  const { projects } = useSelector(state=>state);
+  const { projects } = useSelector((state) => state);
   const { projectsList } = projects;
 
-  useEffect(()=>{
+  useEffect(() => {
     setProject(projectsList[projectId]);
-  },[])
+  }, []);
 
   return (
     <div className="counter-section">
       <div className="container">
         <div className="row">
-          <div className="col-lg-5">
+          <div className="col-lg-5 col-xl-4">
             <div className="counter-section-leftside">
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2 mb-4">Chainport</h2>
@@ -33,11 +33,13 @@ const SaleIsClosedSection = () => {
               </p>
             </div>
           </div>
-          <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-4">
+          <div className="col-xl-5 offset-xl-2 col-lg-6 offset-lg-1 mt-lg-0 mt-4">
             <div className="counter-card">
               <p className="couter-title">Sale is closed</p>
-              <small className="chacker">1 USDT = {projectsList[projectId].swap_rate} 
-                { projectsList[projectId].symbol}</small>
+              <small className="chacker">
+                1 USDT = {projectsList[projectId].swap_rate}
+                {projectsList[projectId].symbol}
+              </small>
               <div className="closed-card mt-3">
                 <img src="/img/closed-card.svg" alt="" />
                 <div className="total-earning">

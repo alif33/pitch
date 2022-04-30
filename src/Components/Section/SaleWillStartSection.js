@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Slider from "react-rangeslider";
 import { useParams } from "react-router-dom";
 import "react-rangeslider/lib/index.css";
 import { _isWhitelisted } from "../../helpers/HttpService";
 import { useSelector } from "react-redux";
 import { timeFormatter } from "../../helpers/TimeCounter";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const SaleWillStartSection = () => {
   const [ project, setProject ] = useState();
@@ -34,9 +34,9 @@ const SaleWillStartSection = () => {
 
   return (
     <div className="counter-section">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-5">
+          <div className="col-lg-5 col-xl-4">
             <div className="counter-section-leftside">
               <img src="/img/chainport.svg" alt="" />
               <h2 className="main-title mt-2 mb-4">Chainport</h2>
@@ -52,7 +52,7 @@ const SaleWillStartSection = () => {
               </p>
             </div>
           </div>
-          <div className="col-lg-6 offset-lg-1 mt-lg-0 mt-4">
+          <div className="col-xl-5 offset-xl-2 col-lg-6 offset-lg-1 mt-lg-0 mt-4">
             <div className="counter-card token-purchase">
               <p className="couter-title mb-3">Sale will start in</p>
               <div className="count-items">
@@ -79,11 +79,13 @@ const SaleWillStartSection = () => {
                 <p className="text-center">Recruitment progress</p>
 
                 <div className="slider w-100">
-                  <Slider
-                    min={0}
-                    max={ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }
-                    value={ projectsList[projectId].swap_rate*(projectsList[projectId].token_amount - projectsList[projectId].available_token_amount) }
-                  />
+                <ProgressBar
+                completed={80}
+                className="mt-3"
+                bgColor="#FF2853"
+                labelColor="#fff"
+                height="15px"
+              />
                   <div className="main-value">
                     <span>${ projectsList[projectId].swap_rate*projectsList[projectId].token_amount }</span>
                   </div>

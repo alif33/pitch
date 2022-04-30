@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import React, { useEffect, useState } from "react";
-import Slider from "react-rangeslider";
+import ProgressBar from "@ramonak/react-progress-bar";
 import "react-rangeslider/lib/index.css";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -133,27 +133,13 @@ const Counter = () => {
 
             <div className="couter-progass">
               <p className="text-center">Recruitment progress</p>
-
-              <div className="slider">
-                <Slider
-                  max={
-                    projectsList[projectId].swap_rate *
-                    projectsList[projectId].token_amount
-                  }
-                  value={
-                    projectsList[projectId].swap_rate *
-                    (projectsList[projectId].token_amount -
-                      projectsList[projectId].available_token_amount)
-                  }
-                />
-                <div className="main-value">
-                  <span>
-                    $
-                    {projectsList[projectId].swap_rate *
-                      projectsList[projectId].token_amount}
-                  </span>
-                </div>
-              </div>
+              <ProgressBar
+                completed={80}
+                className="mt-3"
+                bgColor="#FF2853"
+                labelColor="#fff"
+                height="15px"
+              />
             </div>
 
             <h2 className="mt-5 mt-md-3 mb-4 pt-3 pt-md-0 token-purchase-title">
@@ -190,7 +176,8 @@ const Counter = () => {
                 <div className="col-12 col-md-6">
                   <div className="balance">
                     <div className="balance-header">
-                      {balance.status && <p>BALANCE: {balance.amount}</p>}<p></p>
+                      {balance.status && <p>BALANCE: {balance.amount}</p>}
+                      <p></p>
                       <img
                         onClick={() => setReload(reload + 1)}
                         src="/img/loader-icon.svg"
