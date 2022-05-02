@@ -3,7 +3,7 @@ import chainInfo from "../utils/chainInfo";
 
 export const NetworkHandler = async() => {
     const round = {};
-    const provider = window.ethereum;
+  const provider = window.ethereum;
     if(provider){
       const chainId = await provider.request({ 
         method: 'eth_chainId' 
@@ -62,7 +62,7 @@ export const NetworkDetector = async() => {
       const chainId = await provider.request({ 
         method: 'eth_chainId' 
       });
-      const BTCId = '0x61';
+      const BTCId = '0x38';
       if (chainId === BTCId) {
         networkStatus = true;
       }else{

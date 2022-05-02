@@ -19,7 +19,7 @@ import { useDispatch } from "react-redux";
 import { fetchData } from "./helpers/HttpService";
 import { setProjects } from "./store/projects/actions";
 import { Toaster } from "react-hot-toast";
-import 'reactjs-popup/dist/index.css';
+import "reactjs-popup/dist/index.css";
 import SaleWillStart from "./Components/SaleWillStart";
 import SaleWillStartSoon from "./Components/SaleWillStartSoon";
 import SaleIsClosed from "./Components/SaleIsClosed";
@@ -34,9 +34,15 @@ const App = () => {
     });
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:5001/pitchshow-yeasin/us-central1/app")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }, []);
+
   return (
     <>
-    <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

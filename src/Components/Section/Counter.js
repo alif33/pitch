@@ -1,10 +1,13 @@
 import toast from "react-hot-toast";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
-import "react-rangeslider/lib/index.css";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { HandleApprove, _invest } from "../../helpers/HttpService";
+import {
+  HandleApprove,
+  getBaseCoinAddress,
+  _invest,
+} from "../../helpers/HttpService";
 import { timeFormatter } from "../../helpers/TimeCounter";
 import { persentage } from "../../helpers/Formatter";
 import {
@@ -28,10 +31,15 @@ const Counter = () => {
   const { projects } = useSelector((state) => state);
   const { projectsList } = projects;
   const { projectId } = useParams();
+
   const [progressValue, setProgressValue] = useState(0);
   const [timer, setTimer] = useState();
   const [tokenSpan, setTokenSpan] = useState(false);
   const [usdt, setUsdt] = useState(false);
+
+  const usdtAmountToInvest = useMemo(() => {
+    return rangeValue / project?.swap_rate;
+  }, [project, rangeValue]);
 
   const timeCounter = () => {
     setInterval(async () => {
@@ -43,8 +51,6 @@ const Counter = () => {
   };
 
   useEffect(() => {
-    // const web3 = new Web3();
-    // console.log(web3.utils.toHex(97));
     setProject(projectsList[projectId]);
     setProgressValue(
       persentage(
@@ -66,22 +72,22 @@ const Counter = () => {
   const handleUsdt = (e) => {
     setRangeValue(parseInt(e.target.value) / parseInt(project?.swap_rate));
   };
+
   const handleInvest = async () => {
     setDisable(true);
     const { status, message } = await NetworkHandler();
     if (status) {
+      const basecoinAddress = await getBaseCoinAddress();
+      //TODO: add a check if already approved
       HandleApprove(
-        projectsList[projectId].token_address,
-        parseInt(project?.available_token_amount) *
-          parseInt(project?.swap_rate),
+        basecoinAddress,
+        usdtAmountToInvest,
         window.ethereum.selectedAddress
       ).then((status) => {
         if (status) {
-          // console.log("calling");
-          _invest(
+          return _invest(
             projectsList[projectId].project_id,
-            parseInt(project?.available_token_amount) *
-              parseInt(project?.swap_rate),
+            usdtAmountToInvest,
             window.ethereum.selectedAddress
           ).then((res) => {
             console.log(res);
@@ -133,6 +139,7 @@ const Counter = () => {
 
             <div className="couter-progass">
               <p className="text-center">Recruitment progress</p>
+
               <ProgressBar
                 completed={80}
                 className="mt-3"
@@ -163,9 +170,7 @@ const Counter = () => {
                     <label htmlFor="">Amount of USDT</label>
                     <input
                       type="number"
-                      value={
-                        project?.swap_rate ? project?.swap_rate * rangeValue : 0
-                      }
+                      value={usdtAmountToInvest}
                       onChange={(e) => handleUsdt(e)}
                       onFocus={() => setUsdt(!usdt)}
                       onBlur={() => setUsdt(!usdt)}

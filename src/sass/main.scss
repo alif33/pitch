@@ -960,8 +960,6 @@ img {
       @extend .progress;
     }
   }
-
-
   .token-purchase {
     background: $light-color;
     box-shadow: 0px 4px 20px 10px rgba(87, 128, 255, 0.12);
@@ -1981,6 +1979,107 @@ button.main-btn {
   &:focus-visible {
     outline: none !important;
   }
+}
+
+.rangeslider {
+  background: #eef2fe !important;
+}
+
+.rangeslider-horizontal .rangeslider__handle:after {
+  display: none;
+}
+.rangeslider-horizontal .rangeslider__handle {
+  width: 22px !important;
+  height: 22px !important;
+  z-index: 9;
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+  background-color: #ff2853 !important;
+}
+
+.slider {
+  position: relative;
+  .main-value {
+    position: absolute;
+    top: -21%;
+    left: 97%;
+    background: #fff;
+    height: 18px;
+    width: 18px;
+    box-shadow: 0 0 2px 0 rgb(17 17 17 / 77%);
+    display: inline-block;
+    border-radius: 50%;
+    &:hover {
+      span {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    span {
+      position: absolute;
+      bottom: 198%;
+      right: 0;
+      background: #fff;
+      padding: 10px 10px;
+      box-shadow: 0 0 8px 0px #2d479859;
+      border-radius: 7px;
+      transition: all 0.3s ease-in-out;
+      z-index: 9;
+      opacity: 0;
+      visibility: hidden;
+      &::before {
+        content: "";
+        background: #fff;
+        box-shadow: 0 0 8px 0px #2d479859;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        right: 0;
+        top: 90%;
+        clip-path: polygon(0 0, 100% 0, 63% 92%);
+        z-index: 8;
+      }
+    }
+  }
+}
+
+.rangeslider .rangeslider__handle-tooltip {
+  text-align: center;
+  position: absolute;
+  background-color: #fff !important;
+  font-weight: normal;
+  font-size: 14px;
+  transition: all 100ms ease-in;
+  border-radius: 4px;
+  display: inline-block;
+  color: #111 !important;
+  padding: 10px 10px;
+  width: auto !important;
+  height: auto !important;
+  box-shadow: 0 0 8px 0px #2d479859;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+.rangeslider .rangeslider__handle-tooltip span {
+  margin-top: 12px;
+  display: inline-block;
+  line-height: 100%;
+}
+.rangeslider-horizontal .rangeslider__handle-tooltip:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fff !important;
+  left: 50%;
+  bottom: -8px;
+  transform: translate3d(-50%, 0, 0);
+}
+.rangeslider-vertical .rangeslider__handle-tooltip:after {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #fff !important;
+  left: 100%;
+  top: 12px;
 }
 
 .closed-card {
