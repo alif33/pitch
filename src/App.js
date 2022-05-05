@@ -23,6 +23,7 @@ import "reactjs-popup/dist/index.css";
 import SaleWillStart from "./Components/SaleWillStart";
 import SaleWillStartSoon from "./Components/SaleWillStartSoon";
 import SaleIsClosed from "./Components/SaleIsClosed";
+import About from "./Components/About";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,11 +35,11 @@ const App = () => {
     });
   }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:5001/pitchshow-yeasin/us-central1/app")
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5001/pitchshow-yeasin/us-central1/app")
+  //     .then((res) => res.json())
+  //     .then((res) => console.log(res));
+  // }, []);
 
   return (
     <>
@@ -46,6 +47,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/live/:projectId" element={<ChainPort />} />
           <Route path="/upcoming/:projectId" element={<SaleWillStart />} />
           <Route path="/sale-will-start-soon" element={<SaleWillStartSoon />} />
