@@ -6,7 +6,7 @@ const AboutHeader = () => {
   const [email, setEmail] = useState("");
   return (
     <div className="header d-flex justify-content-center align-items-center about-header">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-lg-7 col-md-12">
             <div className="header-leftside about-header-leftside">

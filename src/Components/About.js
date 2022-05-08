@@ -4,6 +4,7 @@ import Navbar from "./Section/Navbar";
 import Footer from "./Section/Footer";
 import Features from "./Section/Features";
 import ShowTime from "./Section/ShowTime";
+import Community from "./Section/Community";
 
 const About = () => {
   return (
@@ -12,6 +13,7 @@ const About = () => {
       <AboutHeader />
       <Features />
       <ShowTime/>
+      <Community/>
       <Footer /> 
     </div>
   );
