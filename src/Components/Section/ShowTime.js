@@ -7,7 +7,7 @@ const ShowTime = () => {
              <div className="row">
                  <div className="col-md-5 col-sm-6 m-auto text-center">
                    <div className="show-time-card">
-                   <img src="img/show-time.svg" alt="" />
+                   <img src="img/animation3.gif" alt="" />
                      <h3>Show Time!</h3>
                      <p>Before the bids, the Founders pitch their products to all the community! In a full AMA session. </p>
                    </div>

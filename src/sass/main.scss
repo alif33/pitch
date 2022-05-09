@@ -363,7 +363,7 @@ img {
       font-weight: 700;
       font-size: 50px;
       position: relative;
-      width: 495px;
+      width: 495px !important;
       margin-bottom: 15px;
       @media (min-width: 1280px) {
         font-size: 60px;
@@ -1258,13 +1258,24 @@ img {
     text-align: center;
   }
 }
-
+.form-background {
+  background: #f2f5ff;
+}
+.form-site-divide {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.onboarding {
+  padding-top: 150px;
+  padding-bottom: 100px;
+  background: #fff;
+}
 .contact-form {
   padding-bottom: 40px;
   margin-top: 150px;
   margin-bottom: 100px;
-  background: #ffffff;
-  box-shadow: 0px 4px 20px 10px rgba(87, 128, 255, 0.12);
+  // background: #ffffff;
+  // box-shadow: 0px 4px 20px 10px rgba(87, 128, 255, 0.12);
   border-radius: 10px;
   @extend .flex-basic;
   h2 {
@@ -2365,6 +2376,16 @@ button.main-btn {
 .community {
   padding: 80px 0;
   background: #09216a;
+  position: relative;
+  .community-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   h3 {
     font-weight: 600;
     font-size: 50px;
@@ -2492,6 +2513,168 @@ button.main-btn {
       }
       @media (max-width: 600px) {
         margin-top: 12px;
+      }
+    }
+  }
+}
+
+.follow-us {
+  height: 580px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #f5f8ff;
+  @media (max-width: 1280px) {
+    height: 381px;
+  }
+  @media (max-width: 991px) {
+    height: 294px;
+  }
+  @media (max-width: 600px) {
+    height: 363px;
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 37px;
+    line-height: 37px;
+    text-align: center;
+    color: #000f3b;
+    @media (max-width: 1280px) {
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 25px;
+    }
+    @media (max-width: 991px) {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 20px;
+    }
+    @media (max-width: 600px) {
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 25px;
+      width: 261px;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+  }
+  .follow-icons {
+    margin-top: 40px;
+    img {
+      width: 77px;
+      height: 77px;
+      margin: 20px;
+      @media (max-width: 1280px) {
+        width: 59.63px;
+        height: 59.63px;
+      }
+      @media (max-width: 991px) {
+        width: 47.52px;
+        height: 47.52px;
+      }
+      @media (max-width: 600px) {
+        width: 59.63px;
+        height: 59.63px;
+        margin: 4px 13px;
+      }
+    }
+    @media (max-width: 600px) {
+      max-width: 330px;
+      margin: auto;
+      text-align: center;
+      margin-top: 0;
+    }
+  }
+}
+
+.account-tap {
+  padding-top: 150px;
+  background: #e7edff;
+  .account-tap-heading {
+    h3 {
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 50px;
+      color: #000f3c;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.tokens {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  color: #000f3c;
+  width: 129px;
+  height: 48px;
+  background: transparent;
+  border-radius: 10px;
+  border: none;
+}
+.tokens.active {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+  color: #ffffff;
+  width: 129px;
+  height: 48px;
+  background: #ff2853;
+  border-radius: 10px;
+  border: none;
+}
+
+.token-table {
+  box-sizing: border-box;
+  margin-top: 30px;
+  table {
+    width: 100%;
+    box-sizing: border-box;
+    thead {
+      background: #2d4798;
+      tr {
+        th {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 40px;
+          color: #ffffff;
+          padding: 20px 40px;
+          box-sizing: border-box;
+          text-align: left;
+        }
+      }
+    }
+    tbody {
+      background: #3c5ab5;
+      tr {
+        td {
+          padding: 20px 40px;
+          box-sizing: border-box;
+          font-weight: 400;
+          font-size: 19px;
+          line-height: 40px;
+          color: #ffffff;
+          p {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+          }
+          img {
+            width: 39px;
+            height: 39px;
+          }
+          span {
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 40px;
+            color: #ffffff;
+            margin-left: 10px;
+          }
+        }
       }
     }
   }

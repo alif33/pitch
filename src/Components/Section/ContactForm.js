@@ -30,7 +30,7 @@ const ContactForm = () => {
       <div className="row">
         <div className="col-md-10 m-auto">
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <FromPagination page={[1]} />
+            {/* <FromPagination page={[1]} /> */}
             <h2 className="main-title my-4">Contact info</h2>
             <div className="form-group mt-3">
               <label htmlFor="name">

@@ -24,6 +24,7 @@ import SaleWillStart from "./Components/SaleWillStart";
 import SaleWillStartSoon from "./Components/SaleWillStartSoon";
 import SaleIsClosed from "./Components/SaleIsClosed";
 import About from "./Components/About";
+import Account from "./Components/Account";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/live/:projectId" element={<ChainPort />} />
           <Route path="/upcoming/:projectId" element={<SaleWillStart />} />
           <Route path="/sale-will-start-soon" element={<SaleWillStartSoon />} />

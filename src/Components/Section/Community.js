@@ -6,6 +6,10 @@ const Community = () => {
   const [email, setEmail] = useState("");
   return (
     <div className="community">
+      <div
+        className="community-bg"
+        style={{ backgroundImage: `url('img/desktop-1920.svg')` }}
+      ></div>
       <div className="container">
         <div className="row">
           <div className="col-12 text-lg-center text-left">
