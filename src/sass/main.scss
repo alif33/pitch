@@ -337,6 +337,16 @@ img {
   height: 100vh;
   @media (max-width: 991px) {
     height: 130vh;
+    padding-top: 0px;
+    margin-top: -100px;
+  }
+  @media (max-width: 600px) {
+    padding-top: 0px;
+    margin-top: -100px;
+  }
+  @media (max-width: 375px) {
+    padding-top: 0px;
+    margin-top: -100px;
   }
 }
 .header {
@@ -2463,6 +2473,7 @@ button.main-btn {
   padding: 80px 0;
   background: #09216a;
   position: relative;
+  z-index: 9;
   @media (max-width: 675px) {
     padding-bottom: 250px;
   }
@@ -2474,6 +2485,7 @@ button.main-btn {
     width: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
     @media (max-width: 1280px) {
       display: none;
     }
@@ -2764,6 +2776,10 @@ button.main-btn {
 .token-table {
   box-sizing: border-box;
   margin-top: 30px;
+  @media (max-width: 991px) {
+    overflow-x: scroll;
+  }
+  overflow-x: scroll;
   table {
     width: 100%;
     box-sizing: border-box;

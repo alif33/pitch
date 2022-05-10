@@ -7,10 +7,10 @@ import { setListingStrategy, usersReset } from "../../store/users/actions";
 import { collection, addDoc } from "firebase/firestore";
 // import db from "firebase/app";
 import db from "../../utils/db";
-import DataProcessing from "../DataProcessing";
 
-const ListingStrategyForm = () => {
-  const [dataProcessing, setDataProcessing] = useState(false);
+
+const ListingStrategyForm = ({setDataProcessing}) => {
+ 
   const {
     register,
     handleSubmit,
@@ -42,12 +42,6 @@ const ListingStrategyForm = () => {
 
   return (
     <>
-      {dataProcessing ? (
-        <>
-          <DataProcessing />
-        </>
-      ) : (
-        <>
           <div className="container">
             <div className="row">
               <div className="col-md-10 m-auto">
@@ -55,7 +49,6 @@ const ListingStrategyForm = () => {
                   onSubmit={handleSubmit(onSubmit)}
                   className="contact-form"
                 >
-                  <FromPagination page={[1, 2, 3, 4, 5, 6]} />
                   <h2 className="main-title mt-3 py-3 mb-3">
                     Listing Strategy
                   </h2>
@@ -184,8 +177,6 @@ const ListingStrategyForm = () => {
               </div>
             </div>
           </div>
-        </>
-      )}
     </>
   );
 };

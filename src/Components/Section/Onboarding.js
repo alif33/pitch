@@ -25,7 +25,8 @@ const Onboarding = ({ status, done }) => {
           />
           <span>Contact info</span>
         </li>
-        <li
+        
+        {/* <li
           className={`onbarding-item ${status === "founders" && "active"} ${
             done > 2 && "done"
           }`}
@@ -41,7 +42,8 @@ const Onboarding = ({ status, done }) => {
             alt=""
           />
           <span>Founders info</span>
-        </li>
+        </li> */}
+
         <li
           className={`onbarding-item ${status === "company" && "active"} ${
             done > 3 && "done"
@@ -127,7 +129,7 @@ const Onboarding = ({ status, done }) => {
           />
           <span>Listing Strategy</span>
         </li>
-        <li
+        {/* <li
           className={`onbarding-item ${
             status === "videoPitch" && "active"
           } ${done > 8 && "done"}`}
@@ -143,7 +145,7 @@ const Onboarding = ({ status, done }) => {
             alt=""
           />
           <span>video pitch</span>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

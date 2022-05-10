@@ -27,7 +27,6 @@ const PartnersInfluencersForm = () => {
       <div className="row">
         <div className="col-md-10 m-auto">
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <FromPagination page={[1, 2, 3, 4, 5]} />
             <h2 className="main-title mt-3 py-3">Partners & influencers</h2>
 
             <div className="social-lick">

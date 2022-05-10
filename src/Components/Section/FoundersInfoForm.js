@@ -1,14 +1,17 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const FoundersInfoForm = ({founderForm, setFounderForm}) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    navigate("/company-info");
+  };
 
   for (let i = 0; i < founderForm; i++) {
     
@@ -39,9 +42,9 @@ const FoundersInfoForm = ({founderForm, setFounderForm}) => {
                       {...register("founderName", {
                         required: true,
                       })}
-                      className={errors.facebook ? "incorrect" : "input"}
+                      className={errors.founderName ? "incorrect" : "input"}
                     />
-                    {errors.facebook && (
+                    {errors.founderName && (
                       <span>
                         <img src="/img/false-icon.svg" alt="" />
                         Incorrect founderName
@@ -63,9 +66,9 @@ const FoundersInfoForm = ({founderForm, setFounderForm}) => {
                       {...register("founderRole", {
                         required: true,
                       })}
-                      className={errors.instagram ? "incorrect" : "input"}
+                      className={errors.founderRole ? "incorrect" : "input"}
                     />
-                    {errors.instagram && (
+                    {errors.founderRole && (
                       <span>
                         <img src="/img/false-icon.svg" alt="" />
                         Incorrect Role
@@ -84,9 +87,9 @@ const FoundersInfoForm = ({founderForm, setFounderForm}) => {
                 placeholder="Enter Background ..."
                 // defaultValue={companyInfo.projectDiscerption}
                 {...register("founderDiscerption", { required: true })}
-                className={errors.projectDiscerption ? "incorrect" : "input"}
+                className={errors.founderDiscerption ? "incorrect" : "input"}
               />
-              {errors.projectDiscerption && (
+              {errors.founderDiscerption && (
                 <span>
                   <img src="/img/false-icon.svg" alt="" />
                   Project discerption is required
@@ -106,10 +109,10 @@ const FoundersInfoForm = ({founderForm, setFounderForm}) => {
                       // defaultValue={companyInfo.projectDiscerption}
                       {...register("founderLinkedin", { required: true })}
                       className={
-                        errors.projectDiscerption ? "incorrect" : "input"
+                        errors.founderLinkedin ? "incorrect" : "input"
                       }
                     />
-                    {errors.projectDiscerption && (
+                    {errors.founderLinkedin && (
                       <span>
                         <img src="/img/false-icon.svg" alt="" />
                         Linkedin is required
@@ -119,7 +122,7 @@ const FoundersInfoForm = ({founderForm, setFounderForm}) => {
                 </div>
               </div>
             </div>
-            
+
             <div className="social-lick">
               <div className="row mt-3">
                 <div className="col-sm-3">
@@ -128,7 +131,7 @@ const FoundersInfoForm = ({founderForm, setFounderForm}) => {
               </div>
             </div>
 
-            <button className="main-btn mt-5">Next</button>
+            <button type="submit" className="main-btn mt-5">Next</button>
             <button className="back-btn mt-3">
               <Link to="/contact">
                 <img src="/img/back-icon.svg" alt="" />

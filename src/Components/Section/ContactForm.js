@@ -20,7 +20,7 @@ const ContactForm = () => {
   } = useForm();
   const onSubmit = (data) => {
     dispatch(setContact({ ...numberCode, ...data }));
-    navigate("/founders-info");
+    navigate("/company-info");
     // console.log(data);
   };
   // console.log(numberCode);

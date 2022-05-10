@@ -384,7 +384,7 @@ const CompanyInfoForm = () => {
                 </div>
               </div>
             </div>
-            <button className="main-btn mt-5">Next</button>
+            <button type="submit" className="main-btn mt-5">Next</button>
             <button className="back-btn mt-3">
               <Link to="/contact">
                 <img src="/img/back-icon.svg" alt="" />

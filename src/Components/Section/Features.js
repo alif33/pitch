@@ -26,7 +26,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-5 offset-lg-2 offset-sm-1 mt-sm-0 mt-5">
+          <div className="col-sm-5 offset-lg-2 offset-sm-2 mt-sm-0 mt-5">
             <div className="features-card">
               <div className="card-icon">
                 <img src="img/high-qual.svg" alt="" />
@@ -54,7 +54,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-5 offset-lg-2 offset-sm-1 mt-sm-5 mt-5">
+          <div className="col-sm-5 offset-lg-2 offset-sm-2 mt-sm-5 mt-5">
             <div className="features-card">
               <div className="card-icon">
                 <img src="img/end-to-end-icon.svg" alt="" />
