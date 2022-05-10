@@ -10,6 +10,18 @@ const Community = () => {
         className="community-bg"
         style={{ backgroundImage: `url('img/desktop-1920.svg')` }}
       ></div>
+      <div
+        className="community-bg1"
+        style={{ backgroundImage: `url('img/desktop-1280.svg')` }}
+      ></div>
+      <div
+        className="community-bg2"
+        style={{ backgroundImage: `url('img/tablet-768.svg')` }}
+      ></div>
+      <div
+        className="community-bg3"
+        style={{ backgroundImage: `url('img/320mobile.svg')` }}
+      ></div>
       <div className="container">
         <div className="row">
           <div className="col-12 text-lg-center text-left">

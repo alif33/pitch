@@ -9,7 +9,7 @@ const Contact = () => {
     <div className="contact form-background">
       <Navbar status={"submit"} />
       <div className="form-site-divide">
-        <Onboarding />
+        <Onboarding status="contact" done="" />
         <ContactForm />
       </div>
       <Footer />
