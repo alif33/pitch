@@ -120,6 +120,18 @@ button.main-btn {
     text-decoration: none;
   }
 }
+button.add-founder {
+  @include button($button-bg1, $light-color);
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:hover {
+    background: #ffffff;
+    box-shadow: 0px 0px 5px 3px rgba(88, 128, 255, 0.15);
+    color: #09216a !important;
+  }
+}
 button.main-btn2 {
   @include button($button-bg2, $light-color);
   a {
@@ -1300,14 +1312,14 @@ img {
       margin-top: 25px;
       position: relative;
       z-index: 9;
-      &::after{
+      &::after {
         position: absolute;
         content: "";
         top: 100%;
         left: 10%;
         height: 58px;
         width: 5px;
-        border-left: 2px dashed #C9D8FF;
+        border-left: 2px dashed #c9d8ff;
         z-index: -1;
       }
       img {
@@ -1321,8 +1333,8 @@ img {
         color: #9aacdc;
         margin-left: 10px;
       }
-      &:last-child{
-        &::after{
+      &:last-child {
+        &::after {
           display: none;
         }
       }
@@ -1416,6 +1428,7 @@ img {
         width: inherit;
       }
     }
+
     textarea {
       background: #ffffff;
       border: 1px solid #e2e1e5;

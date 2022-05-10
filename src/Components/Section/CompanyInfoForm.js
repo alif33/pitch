@@ -105,7 +105,6 @@ const CompanyInfoForm = () => {
       <div className="row">
         <div className="col-md-10 m-auto">
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <FromPagination page={[1, 2]} />
             <h2 className="main-title mt-3 py-3" style={{ width: "724px" }}>
               Company info
             </h2>

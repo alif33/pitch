@@ -25,6 +25,7 @@ import SaleWillStartSoon from "./Components/SaleWillStartSoon";
 import SaleIsClosed from "./Components/SaleIsClosed";
 import About from "./Components/About";
 import Account from "./Components/Account";
+import FoundersInfo from "./Components/FoundersInfo";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ const App = () => {
           <Route path="/sale-will-start-soon" element={<SaleWillStartSoon />} />
           <Route path="/closed/:projectId" element={<SaleIsClosed />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/founders-info" element={<FoundersInfo />} />
           <Route path="/company-info" element={<CompanyInfo />} />
           <Route path="/metrics-info" element={<MetricsInfo />} />
           <Route path="/listing-info" element={<ListingInfo />} />

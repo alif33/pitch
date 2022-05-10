@@ -10,14 +10,14 @@ const Onboarding = ({ status, done }) => {
       <ul className="onbarding-items">
         <li
           className={`onbarding-item ${status === "contact" && "active"} ${
-            done === "contact" && "done"
+            done > 1 && "done"
           }`}
         >
           <img
             src={`img/onboarding-${
               status === "contact"
                 ? "active"
-                : done === "contact"
+                : done > 1
                 ? "okay"
                 : "wait"
             }.svg`}
@@ -27,14 +27,14 @@ const Onboarding = ({ status, done }) => {
         </li>
         <li
           className={`onbarding-item ${status === "founders" && "active"} ${
-            done === "founders" && "done"
+            done > 2 && "done"
           }`}
         >
           <img
             src={`img/onboarding-${
               status === "founders"
                 ? "active"
-                : done === "founders"
+                : done > 2
                 ? "okay"
                 : "wait"
             }.svg`}
@@ -44,14 +44,14 @@ const Onboarding = ({ status, done }) => {
         </li>
         <li
           className={`onbarding-item ${status === "company" && "active"} ${
-            done === "company" && "done"
+            done > 3 && "done"
           }`}
         >
           <img
             src={`img/onboarding-${
               status === "company"
                 ? "active"
-                : done === "company"
+                : done > 3
                 ? "okay"
                 : "wait"
             }.svg`}
@@ -61,14 +61,14 @@ const Onboarding = ({ status, done }) => {
         </li>
         <li
           className={`onbarding-item ${status === "metrics" && "active"} ${
-            done === "metrics" && "done"
+            done > 4 && "done"
           }`}
         >
           <img
             src={`img/onboarding-${
               status === "metrics"
                 ? "active"
-                : done === "metrics"
+                : done > 4
                 ? "okay"
                 : "wait"
             }.svg`}
@@ -78,14 +78,14 @@ const Onboarding = ({ status, done }) => {
         </li>
         <li
           className={`onbarding-item ${status === "listingInfo" && "active"} ${
-            done === "listingInfo" && "done"
+            done > 5 && "done"
           }`}
         >
           <img
             src={`img/onboarding-${
               status === "listingInfo"
                 ? "active"
-                : done === "listingInfo"
+                : done > 5
                 ? "okay"
                 : "wait"
             }.svg`}
@@ -96,13 +96,13 @@ const Onboarding = ({ status, done }) => {
         <li
           className={`onbarding-item ${
             status === "partnersInfluencers" && "active"
-          } ${done === "partnersInfluencers" && "done"}`}
+          } ${done > 6 && "done"}`}
         >
           <img
             src={`img/onboarding-${
               status === "partnersInfluencers"
                 ? "active"
-                : done === "partnersInfluencers"
+                : done > 6
                 ? "okay"
                 : "wait"
             }.svg`}
@@ -113,13 +113,13 @@ const Onboarding = ({ status, done }) => {
         <li
           className={`onbarding-item ${
             status === "listingStrategy" && "active"
-          } ${done === "listingStrategy" && "done"}`}
+          } ${done > 7 && "done"}`}
         >
           <img
             src={`img/onboarding-${
               status === "listingStrategy"
                 ? "active"
-                : done === "listingStrategy"
+                : done > 7
                 ? "okay"
                 : "wait"
             }.svg`}
@@ -130,13 +130,13 @@ const Onboarding = ({ status, done }) => {
         <li
           className={`onbarding-item ${
             status === "videoPitch" && "active"
-          } ${done === "videoPitch" && "done"}`}
+          } ${done > 8 && "done"}`}
         >
           <img
             src={`img/onboarding-${
               status === "videoPitch"
                 ? "active"
-                : done === "videoPitch"
+                : done > 8
                 ? "okay"
                 : "wait"
             }.svg`}
