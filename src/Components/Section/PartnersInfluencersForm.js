@@ -31,7 +31,7 @@ const PartnersInfluencersForm = () => {
 
             <div className="social-lick">
               <div className="row mt-2">
-                <div className="col-md-5 m-auto">
+                <div className="col-md-12 m-auto">
                   {" "}
                   <div className="form-group">
                     <label htmlFor="topPartners">
@@ -55,7 +55,7 @@ const PartnersInfluencersForm = () => {
                 </div>
               </div>
               <div className="row mt-2">
-                <div className="col-md-5 m-auto">
+                <div className="col-md-12 m-auto">
                   {" "}
                   <div className="form-group">
                     <label htmlFor="topInfluencers">

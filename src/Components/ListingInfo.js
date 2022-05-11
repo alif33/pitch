@@ -6,7 +6,7 @@ import Onboarding from './Section/Onboarding';
 
 const ListingInfo = () => {
     return (
-      <div>
+      <div className="contact form-background">
         <Navbar status={"submit"} />
         <div className="form-site-divide">
         <Onboarding status="listingInfo" done={5} />
