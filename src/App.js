@@ -15,7 +15,7 @@ import ListingInfo from "./Components/ListingInfo";
 import PartnersInfluencers from "./Components/PartnersInfluencers";
 import ListingStrategy from "./Components/ListingStrategy";
 import Congratulations from "./Components/Congratulations ";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./helpers/HttpService";
 import { setProjects } from "./store/projects/actions";
 import { Toaster } from "react-hot-toast";
@@ -29,6 +29,8 @@ import FoundersInfo from "./Components/FoundersInfo";
 
 const App = () => {
   const dispatch = useDispatch();
+  const { users } = useSelector((state) => state);
+  console.log(users);
 
   useEffect(() => {
     fetchData().then((data) => {
@@ -56,7 +58,7 @@ const App = () => {
           <Route path="/sale-will-start-soon" element={<SaleWillStartSoon />} />
           <Route path="/closed/:projectId" element={<SaleIsClosed />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/founders-info" element={<FoundersInfo />} /> */}
+          <Route path="/founders-info" element={<FoundersInfo />} />
           <Route path="/company-info" element={<CompanyInfo />} />
           <Route path="/metrics-info" element={<MetricsInfo />} />
           <Route path="/listing-info" element={<ListingInfo />} />

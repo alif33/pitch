@@ -5,12 +5,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCompanyInfo } from "../../store/users/actions";
 import toast from "react-hot-toast";
+import Select from "react-select";
 
 const CompanyInfoForm = () => {
   const [upload, setUpload] = useState(false);
   const [upload1, setUpload1] = useState(false);
   const [upload2, setUpload2] = useState(false);
   const [uploadFile, setUploadFile] = useState({});
+  const [selectState, setSelectState] = useState("");
+  const [compayStage, setCompayStage] = useState("");
 
   const {
     register,
@@ -22,8 +25,17 @@ const CompanyInfoForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // console.log({ selectState: { selectState }, compayStage: { compayStage } });
+
   const onSubmit = (data) => {
-    dispatch(setCompanyInfo({ ...uploadFile, ...data }));
+    dispatch(
+      setCompanyInfo({
+        ...uploadFile,
+        selectState,
+        compayStage,
+        ...data,
+      })
+    );
     if (
       companyInfo.pitchDeckURL &&
       companyInfo.tokenomicsFileURL &&
@@ -34,7 +46,7 @@ const CompanyInfoForm = () => {
   };
 
   const handlePitchDeckUpload = (file) => {
-    console.log(file);
+    // console.log(file);
     const formDate = new FormData();
     formDate.append("file", file[0]);
     formDate.append("upload_preset", "pitchshow");
@@ -45,7 +57,7 @@ const CompanyInfoForm = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         if (result.secure_url) {
           setUploadFile({ ...uploadFile, pitchDeckURL: result.secure_url });
           setUpload(true);
@@ -99,6 +111,23 @@ const CompanyInfoForm = () => {
       })
       .catch((err) => console.log(err));
   };
+  const options = [
+    { value: "Eth", label: "Eth" },
+    { value: "Sol", label: "Sol" },
+    { value: "Bsc", label: "Bsc" },
+  ];
+
+  const indicatorSeparatorStyle = {
+    alignSelf: "stretch",
+    backgroundColor: "#fff",
+    marginBottom: 8,
+    marginTop: 8,
+    width: 1,
+  };
+
+  const IndicatorSeparator = ({ innerProps }) => {
+    return <span style={indicatorSeparatorStyle} {...innerProps} />;
+  };
 
   return (
     <div className="container">
@@ -108,6 +137,46 @@ const CompanyInfoForm = () => {
             <h2 className="main-title mt-3 py-3" style={{ width: "724px" }}>
               Company info
             </h2>
+            <div className="social-lick">
+              <div className="row mt-2">
+                <div className="col-md-5">
+                  <div className="form-group">
+                    <label htmlFor="email">
+                      Company incorporated<span>*</span>
+                    </label>
+                    <Select
+                      options={options}
+                      onChange={(e) => setSelectState(e)}
+                      components={{ IndicatorSeparator }}
+                    />
+                    {errors.companyIncorporated && (
+                      <span>
+                        <img src="/img/false-icon.svg" alt="" />
+                        Company incorporated is required{" "}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="col-md-5 ms-auto">
+                  <div className="form-group">
+                    <label htmlFor="email">
+                      Company incorporated<span>*</span>
+                    </label>
+                    <Select
+                      options={options}
+                      onChange={(e) => setCompayStage(e)}
+                      components={{ IndicatorSeparator }}
+                    />
+                    {errors.blockchainNetwork && (
+                      <span>
+                        <img src="/img/false-icon.svg" alt="" />
+                        Compay stage is required{" "}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="form-group">
               <label htmlFor="projectDiscerption">
                 Project description<span>*</span>
@@ -148,7 +217,12 @@ const CompanyInfoForm = () => {
 
             <div className="social-lick mb-4">
               <div className="row mt-4">
-                <h5>links for Socials: </h5>
+                <div className="col-md-5">
+                  <h5>Links for Socials</h5>
+                </div>
+                <div className="col-md-5 ms-auto">
+                  <h5>Links for community </h5>
+                </div>
               </div>
               <div className="row mt-2">
                 <div className="col-md-5">
@@ -180,12 +254,38 @@ const CompanyInfoForm = () => {
                   {" "}
                   <div className="form-group">
                     <label htmlFor="instagram">
+                      Telegram*<span>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="telegram"
+                      placeholder="Enter your telegram page "
+                      defaultValue={companyInfo.socialsLink.telegram}
+                      {...register("telegram", {
+                        // pattern:
+                        required: true,
+                      })}
+                      className={errors.telegram ? "incorrect" : "input"}
+                    />
+                    {errors.telegram && (
+                      <span>
+                        <img src="/img/false-icon.svg" alt="" />
+                        Incorrect telegram
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-4 ">
+                <div className="col-md-5">
+                  <div className="form-group">
+                    <label htmlFor="instagram">
                       Instagram<span>*</span>
                     </label>
                     <input
                       type="text"
                       id="instagram"
-                      placeholder="Enter your Instagram page"
+                      placeholder="Enter your LinkedIn page"
                       defaultValue={companyInfo.socialsLink.instagram}
                       {...register("instagram", {
                         pattern:
@@ -197,34 +297,7 @@ const CompanyInfoForm = () => {
                     {errors.instagram && (
                       <span>
                         <img src="/img/false-icon.svg" alt="" />
-                        Incorrect Instagram
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className="row mt-4 ">
-                <div className="col-md-5">
-                  <div className="form-group">
-                    <label htmlFor="linkedIn">
-                      LinkedIn<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="linkedIn"
-                      placeholder="Enter your LinkedIn page "
-                      defaultValue={companyInfo.socialsLink.linkedIn}
-                      {...register("linkedIn", {
-                        pattern:
-                          /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\\/]))?/,
-                        required: true,
-                      })}
-                      className={errors.linkedIn ? "incorrect" : "input"}
-                    />
-                    {errors.linkedIn && (
-                      <span>
-                        <img src="/img/false-icon.svg" alt="" />
-                        Incorrect LinkedIn
+                        Incorrect instagram
                       </span>
                     )}
                   </div>
@@ -254,6 +327,33 @@ const CompanyInfoForm = () => {
                       <span>
                         <img src="/img/false-icon.svg" alt="" />
                         Incorrect Discord
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-4 ">
+                <div className="col-md-5">
+                  <div className="form-group">
+                    <label htmlFor="linkedIn">
+                      LinkedIn<span>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="linkedIn"
+                      placeholder="Enter your LinkedIn page "
+                      defaultValue={companyInfo.socialsLink.linkedIn}
+                      {...register("linkedIn", {
+                        pattern:
+                          /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\\/]))?/,
+                        required: true,
+                      })}
+                      className={errors.linkedIn ? "incorrect" : "input"}
+                    />
+                    {errors.linkedIn && (
+                      <span>
+                        <img src="/img/false-icon.svg" alt="" />
+                        Incorrect LinkedIn
                       </span>
                     )}
                   </div>
@@ -384,7 +484,9 @@ const CompanyInfoForm = () => {
                 </div>
               </div>
             </div>
-            <button type="submit" className="main-btn mt-5">Next</button>
+            <button type="submit" className="main-btn mt-5">
+              Next
+            </button>
             <button className="back-btn mt-3">
               <Link to="/contact">
                 <img src="/img/back-icon.svg" alt="" />

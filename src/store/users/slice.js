@@ -21,7 +21,22 @@ export const userSlice = createSlice({
         },
       };
     },
+    setFoundersInfo: (state, action) => {
+      const { founderName, founderRole, founderDiscerption, founderLinkedin } =
+        action.payload;
+      return {
+        ...state,
+        foundersInfo: {
+          founderName,
+          founderRole,
+          founderDiscerption,
+          founderLinkedin,
+        },
+      };
+    },
     setCompanyInfo: (state, action) => {
+      console.log(action.payload);
+
       const {
         projectDiscerption,
         teamBackground,
@@ -29,11 +44,14 @@ export const userSlice = createSlice({
         instagram,
         linkedIn,
         discord,
+        telegram,
         pitchDeckURL,
         tokenomicsFileURL,
         LogoURL,
+        compayStage,
+        selectState,
       } = action.payload;
-      console.log(action.payload);
+
       return {
         ...state,
         companyInfo: {
@@ -44,7 +62,10 @@ export const userSlice = createSlice({
             instagram,
             linkedIn,
             discord,
+            telegram,
           },
+          compayStage,
+          selectState,
           pitchDeckURL,
           tokenomicsFileURL,
           LogoURL,
@@ -52,13 +73,8 @@ export const userSlice = createSlice({
       };
     },
     setMetricsInfo: (state, action) => {
-      const {
-        value,
-        totalSupply,
-        dilutedValuation,
-        TGEMarketCap,
-        symbolURL,
-      } = action.payload;
+      const { value, totalSupply, dilutedValuation, TGEMarketCap, symbolURL } =
+        action.payload;
       // console.log()
       return {
         ...state,

@@ -6,14 +6,23 @@ export const userData = {
     code: "",
     phoneCode: "",
   },
+  foundersInfo: {
+    founderName: "",
+    founderRole: "",
+    founderDiscerption: "",
+    founderLinkedin: "",
+  },
   companyInfo: {
     projectDiscerption: "",
     teamBackground: "",
+    compayStage: "",
+    selectState: "",
     socialsLink: {
       facebook: "",
       instagram: "",
       linkedIn: "",
       discord: "",
+      telegram: "",
     },
     pitchDeckURL: "",
     tokenomicsFileURL: "",

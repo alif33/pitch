@@ -5,7 +5,7 @@ import Navbar from './Section/Navbar';
 import Onboarding from './Section/Onboarding';
 
 const FoundersInfo = () => {
-    const [founderForm, setFounderForm] = useState(1)
+    const [founderForm, setFounderForm] = useState([1, 2]);
     return (
         <div className="contact form-background">
         <Navbar status={"submit"} />
