@@ -26,6 +26,7 @@ import SaleIsClosed from "./Components/SaleIsClosed";
 import About from "./Components/About";
 import Account from "./Components/Account";
 import FoundersInfo from "./Components/FoundersInfo";
+import VideoPitch from "./Components/VideoPitch";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -67,6 +68,7 @@ const App = () => {
             element={<PartnersInfluencers />}
           />
           <Route path="/listing-strategy" element={<ListingStrategy />} />
+          <Route path="/video-pitch" element={<VideoPitch />} />
           <Route path="/congratulations" element={<Congratulations />} />
         </Routes>
         <Modal />

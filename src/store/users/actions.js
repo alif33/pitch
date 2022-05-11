@@ -22,6 +22,9 @@ export const setPartnersInfluencers = info => (dispatch) => {
 export const setListingStrategy = info => (dispatch) => {
     dispatch(slice.setListingStrategy(info))
 }
+export const setVideoPitch = info => (dispatch) => {
+    dispatch(slice.setVideoPitch(info))
+}
 
 export const usersReset = () => (dispatch) => {
     dispatch(slice.usersReset());

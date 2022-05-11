@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import FromPagination from "./FromPagination";
-import { useSelector, useDispatch } from "react-redux";
-import { setListingStrategy, usersReset } from "../../store/users/actions";
-import { collection, addDoc } from "firebase/firestore";
-// import db from "firebase/app";
-import db from "../../utils/db";
+import { useDispatch, useSelector } from "react-redux";
+import { setListingStrategy } from "../../store/users/actions";
 
 
-const ListingStrategyForm = ({setDataProcessing}) => {
+const ListingStrategyForm = () => {
  
   const {
     register,
@@ -20,24 +17,11 @@ const ListingStrategyForm = ({setDataProcessing}) => {
   const { listingStrategy } = users;
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const onSubmit = async (data) => {
-    setDataProcessing(true);
-    await dispatch(setListingStrategy(data));
-
-    await addDoc(collection(db, "contact"), {
-      ...users.contactInfo,
-      ...users.metricsInfo,
-      ...users.listingInfo,
-      ...users.partnersInfluencers,
-      ...users.listingStrategy,
-      projectDiscerption: users.companyInfo.projectDiscerption,
-      teamBackground: users.companyInfo.teamBackground,
-      ...users.companyInfo.socialsLink,
-    });
-
-    dispatch(usersReset());
-    navigate("/congratulations")
-    setDataProcessing(false);
+   
+    dispatch(setListingStrategy(data));
+    navigate("/video-pitch")
   };
 
   return (

@@ -58,4 +58,7 @@ export const userData = {
     liquidity: "",
     marketMaker: "",
   },
+  videoPitch: {
+    url: "",
+  },
 };

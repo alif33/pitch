@@ -132,6 +132,13 @@ export const userSlice = createSlice({
         listingStrategy: { choiceTitleSelection, liquidity, marketMaker },
       };
     },
+    setVideoPitch: (state, action) => {
+      const {url } = action.payload;
+      return {
+        ...state,
+        videoPitch: {url},
+      };
+    },
 
     usersReset: (state, action) => {
       return {

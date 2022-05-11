@@ -1,27 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Footer from './Section/Footer';
 import ListingStrategyForm from './Section/ListingStrategyForm';
 import Navbar from './Section/Navbar';
 import Onboarding from './Section/Onboarding';
-import DataProcessing from "./DataProcessing";
 
 const ListingStrategy = () => {
-  const [dataProcessing, setDataProcessing] = useState(false);
+
     return (
-      <div>
+      <div className="contact form-background">
         <Navbar status={"submit"} />
-        {
-            dataProcessing ? 
-              <>
-                <DataProcessing />
-              </>
-              : <>
-              <div className="form-site-divide">
+        <div className="form-site-divide">
               <Onboarding status="listingStrategy" done={7} />
-              <ListingStrategyForm setDataProcessing={setDataProcessing} />
+              <ListingStrategyForm />
             </div>
-              </>
-          }
         
         <Footer />
       </div>
