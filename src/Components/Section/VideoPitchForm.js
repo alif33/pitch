@@ -46,6 +46,16 @@ const VideoPitchForm = ({ setDataProcessing }) => {
             <h2 className="main-title mt-3 py-3 mb-3">video pitch</h2>
 
             <div className="social-lick">
+              <div className="row">
+                <div className="col-md-8 m-auto">
+                  <div className="video">
+                    <img src="img/animation4.gif" className="w-100" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="social-lick">
               <div className="row mt-4">
                 <div className="col-md-5">
                   <h5>UPLOAD video link </h5>

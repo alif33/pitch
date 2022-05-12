@@ -30,8 +30,8 @@ import VideoPitch from "./Components/VideoPitch";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { users } = useSelector((state) => state);
-  console.log(users);
+  // const { users } = useSelector((state) => state);
+  // console.log(users);
 
   useEffect(() => {
     fetchData().then((data) => {
