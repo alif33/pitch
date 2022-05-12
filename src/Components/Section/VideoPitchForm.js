@@ -47,7 +47,7 @@ const VideoPitchForm = ({ setDataProcessing }) => {
 
             <div className="social-lick">
               <div className="row">
-                <div className="col-md-8 m-auto">
+                <div className="col-md-7 m-auto">
                   <div className="video">
                     <img src="img/animation4.gif" className="w-100" alt="" />
                   </div>
@@ -55,7 +55,7 @@ const VideoPitchForm = ({ setDataProcessing }) => {
               </div>
             </div>
 
-            <div className="social-lick">
+            <div className="social-lick mt-4">
               <div className="row mt-4">
                 <div className="col-md-5">
                   <h5>UPLOAD video link </h5>
@@ -70,7 +70,7 @@ const VideoPitchForm = ({ setDataProcessing }) => {
                       video in order to create the best impression.
                     </p>
                     <input
-                      type="text"
+                      type="url"
                       id="videoPitch"
                       placeholder="Enter Market Maker"
                       // defaultValue={listingStrategy.liquidity}
