@@ -21,7 +21,7 @@ const SliderNav = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 991,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -29,7 +29,7 @@ const SliderNav = () => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
