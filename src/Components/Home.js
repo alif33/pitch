@@ -6,12 +6,14 @@ import Navbar from "./Section/Navbar";
 import NewProjects from "./Section/NewProjects";
 import PoolAlert from './Section/PoolAlert';
 import RecentProject from './Section/RecentProject';
+import SliderNav from './Section/sliderNav/SliderNav';
 import UpcomingProjects from './Section/UpcomingProjects';
 
 const Home = () => {
     return (
       <div className="home">
         <Navbar status={"home"} />
+        <SliderNav/>
         <Header/>
         <NewProjects/>
         <UpcomingProjects/>
