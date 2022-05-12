@@ -762,6 +762,7 @@ img {
     }
     @media (max-width: 600px) {
       width: 282px;
+      width: auto;
     }
     @media (max-width: 285px) {
       width: auto;
@@ -815,6 +816,7 @@ img {
     font-weight: 300;
     font-size: 25px;
     color: #000f3c;
+    margin-top: 15px;
     @media (max-width: 600px) {
       font-weight: 300;
       font-size: 18px;
