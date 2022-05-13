@@ -354,6 +354,7 @@ img {
   height: 120vh;
   background: linear-gradient(101.01deg, #d3deff -21.7%, $light-color 46.47%);
   position: relative;
+  overflow: hidden;
   .header-leftside {
     height: 100%;
     margin-left: 13%;
@@ -460,33 +461,77 @@ img {
 
   .header-rightside {
     position: relative;
-
-    @media (max-width: 804px) and (min-width: 600px) {
-      margin-top: 45px;
-    }
-    span {
+    height: 100%;
+    width: 100%;
+    .header-img {
       position: absolute;
-      bottom: 0%;
-      right: 7%;
-      @media (max-width: 992px) {
-        bottom: 8%;
-        right: 0%;
-      }
-      @media (max-width: 675px) {
-        display: none;
+      .bg-header-img {
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
-    img {
-      &:first-child {
-        display: block;
+    .header-img1 {
+      top: 0;
+      right: 298px;
+      width: 506.37px;
+      height: 300.4px;
+      animation: animation1 40s infinite;
+      overflow: hidden;
+      @media (max-width: 1920px) {
+        animation: animation12 40s infinite;
+        width: 341.42px;
+        height: 190.58px;
       }
-      display: none;
-
-      @media (max-width: 675px) {
-        &:first-child {
-          display: none !important;
+      .bg-header-img1 {
+        width: 506.37px;
+        height: 300.4px;
+        @media (max-width: 1920px) {
+          width: 341.42px;
+          height: 190.58px;
         }
-        display: block !important;
+      }
+    }
+    .header-img2 {
+      top: 12%;
+      right: 90px;
+      width: 243.06px;
+      height: 293.1px;
+      animation: animation3 40s infinite;
+      overflow: hidden;
+      @media (max-width: 1920px) {
+        right: 138px;
+        width: 184.26px;
+        height: 222.19px;
+        animation: animation32 40s infinite;
+      }
+      .bg-header-img2 {
+        width: 243.06px;
+        height: 293.1px;
+        @media (max-width: 1920px) {
+          width: 184.26px;
+          height: 222.19px;
+        }
+      }
+    }
+    .header-img3 {
+      right: 298px;
+      top: 279.4px;
+      width: 322.88px;
+      height: 348.91px;
+      animation: animation2 40s infinite;
+      overflow: hidden;
+      @media (max-width: 1920px) {
+        top: 183px;
+        width: 244.77px;
+        height: 262.29px;
+      }
+      .bg-header-img3 {
+        width: 322.88px;
+        height: 348.91px;
+        @media (max-width: 1920px) {
+          width: 244.77px;
+          height: 262.29px;
+        }
       }
     }
   }
@@ -501,7 +546,6 @@ img {
     padding-top: 90px;
   }
 }
-
 .new-project-items.all {
   display: block !important;
   @media (max-width: 991px) and (min-width: 600px) {

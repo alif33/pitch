@@ -5,7 +5,7 @@ import SubscribeModal from "./allModal/SubscribeModal";
 
 const Header = () => {
   const [email, setEmail] = useState("");
-  
+
   return (
     <div className="header d-flex justify-content-center align-items-center">
       <div className="container-fluid">
@@ -35,7 +35,11 @@ const Header = () => {
                 {email.match(
                   /^(([^<>()[\]\\.,;:\s@\\"]+(\.[^<>()[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                 ) ? (
-                  <SubscribeModal email={email} setEmail={setEmail} btnName={"Get Started"} />
+                  <SubscribeModal
+                    email={email}
+                    setEmail={setEmail}
+                    btnName={"Get Started"}
+                  />
                 ) : (
                   <button
                     className="header-search-btn"
@@ -49,12 +53,24 @@ const Header = () => {
           </div>
           <div className="col-lg-6 col-md-12">
             <div className="header-rightside">
-              <img src="/img/header-img.svg" alt="" />
-              <img src="/img/header-img1.svg" alt="" />
-
-              <span>
-                <img src="/img/frame.svg" alt="" />
-              </span>
+              <div className="header-img header-img1">
+                <div
+                  className="bg-header-img bg-header-img1"
+                  style={{ backgroundImage: `url('img/header-img1.svg')` }}
+                ></div>
+              </div>
+              <div className="header-img header-img2">
+              <div
+                  className="bg-header-img bg-header-img2"
+                  style={{ backgroundImage: `url('img/header-img2.svg')` }}
+                ></div>
+              </div>
+              <div className="header-img header-img3">
+              <div
+                  className="bg-header-img bg-header-img3"
+                  style={{ backgroundImage: `url('img/header-img3.svg')` }}
+                ></div>
+              </div>
             </div>
           </div>
         </div>
