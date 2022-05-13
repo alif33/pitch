@@ -71,6 +71,9 @@ const Header = () => {
                   style={{ backgroundImage: `url('img/header-img3.svg')` }}
                 ></div>
               </div>
+              <span>
+                <img src="/img/frame.svg" alt="" />
+              </span>
             </div>
           </div>
         </div>
