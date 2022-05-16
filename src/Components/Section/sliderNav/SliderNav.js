@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import SlideItem from "./SlideItem";
+import CoinGecko from "coingecko-api";
 
 const SliderNav = () => {
+  const [balance, setBalance] = useState([]);
+  //2. Initiate the CoinGecko API Client
+  const CoinGeckoClient = new CoinGecko();
+
+  //3. Make calls
+  var func = async () => {
+    // let data = await CoinGeckoClient.coins.markets();
+    // let data =  CoinGeckoClient.coins.fetch('bitcoin');
+    // let data = await CoinGeckoClient.coins.fetchHistory('bitcoin', {
+    //   date: '16-5-2022',
+    // });
+    // let data = await CoinGeckoClient.exchangeRates.all();
+    // let data = await CoinGeckoClient.statusUpdates();
+    // let data = await CoinGeckoClient.coins.markets({
+    //   ids: ["bitcoin", "ethereum","tether","usd"],
+    //   vs_currencies: ["eur", "usd", "usdt", "usdc"],
+    // });
+    let data = await CoinGeckoClient.coins.all();
+    setBalance(data.data);
+  };
+
+  useEffect(() => {
+    func();
+  }, []);
+
   var settings = {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 300,
+    speed: 100,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -37,62 +63,12 @@ const SliderNav = () => {
       },
     ],
   };
-  const sliderData = [
-    {
-      img: "img/btc.svg",
-      des: "Bitcoine(BTC)$0.073096",
-      parsent: "-0.86%",
-      pIcon: "down",
-    },
-    {
-      img: "img/eth.svg",
-      des: "Ethereum (ETH)$0.073096",
-      parsent: "0.86%",
-      pIcon: "up",
-    },
-    {
-      img: "img/usdt.svg",
-      des: "Tether(USDT)$0.073096",
-      parsent: "0.86%",
-      pIcon: "up",
-    },
-    {
-      img: "img/usdc.svg",
-      des: "USD Coin(USDC)$0.073096",
-      parsent: "0.86%",
-      pIcon: "down",
-    },
-    {
-      img: "img/btc.svg",
-      des: "Bitcoine(BTC)$0.073096",
-      parsent: "-0.86%",
-      pIcon: "down",
-    },
-    {
-      img: "img/eth.svg",
-      des: "Ethereum (ETH)$0.073096",
-      parsent: "0.86%",
-      pIcon: "up",
-    },
-    {
-      img: "img/usdt.svg",
-      des: "Tether(USDT)$0.073096",
-      parsent: "0.86%",
-      pIcon: "up",
-    },
-    {
-      img: "img/usdc.svg",
-      des: "USD Coin(USDC)$0.073096",
-      parsent: "0.86%",
-      pIcon: "down",
-    },
-  ];
   return (
     <div className="slider-nav">
       <div className="navbar-slider container-fluid">
         <div className="w-100">
           <Slider {...settings}>
-            {sliderData.map((slider, i) => (
+            {balance.map((slider, i) => (
               <SlideItem slider={slider} key={i} />
             ))}
           </Slider>

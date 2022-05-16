@@ -467,7 +467,7 @@ img {
       position: absolute;
       .bg-header-img {
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
       }
     }
     .header-img1 {
