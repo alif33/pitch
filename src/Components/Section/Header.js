@@ -56,19 +56,19 @@ const Header = () => {
               <div className="header-img header-img1">
                 <div
                   className="bg-header-img bg-header-img1"
-                  style={{ backgroundImage: `url('img/header-img1.svg')` }}
+                  style={{ backgroundImage: `url('img/header-img1.png')` }}
                 ></div>
               </div>
               <div className="header-img header-img2">
               <div
                   className="bg-header-img bg-header-img2"
-                  style={{ backgroundImage: `url('img/header-img2.svg')` }}
+                  style={{ backgroundImage: `url('img/header-img2.png')` }}
                 ></div>
               </div>
               <div className="header-img header-img3">
               <div
                   className="bg-header-img bg-header-img3"
-                  style={{ backgroundImage: `url('img/header-img3.svg')` }}
+                  style={{ backgroundImage: `url('img/header-img3.png')` }}
                 ></div>
               </div>
               <span>
