@@ -17,20 +17,17 @@ const Footer = () => {
             <ul className="footer-menu">
               <h4 className="footer-menu-title">company</h4>
               <li className="footer-menu-item">
-                <Link to="/chaiport">about</Link>
+                <Link to="/chaiport">Submit IDO</Link>
               </li>
 
               <li className="footer-menu-item">
-                <Link to="/">blog</Link>
+                <Link to="/">Launchpad</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">wallet</Link>
+                <Link to="/">About</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">merchant</Link>
-              </li>
-              <li className="footer-menu-item">
-                <Link to="/">tools</Link>
+                <Link to="/">Account</Link>
               </li>
             </ul>
           </div>
@@ -38,30 +35,30 @@ const Footer = () => {
             <ul className="footer-menu">
               <h4 className="footer-menu-title">support</h4>
               <li className="footer-menu-item">
-                <Link to="/">help</Link>
+                <Link to="/">Contact Us</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/contact">contact us</Link>
+                <Link to="/contact">Legal & Privacy</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">create account</Link>
+                <Link to="/">Terms & Conditions</Link>
+              </li>
+              <li className="footer-menu-item">
+                <Link to="/">Cookie Polity</Link>
               </li>
             </ul>
           </div>
           <div className="col-md-3 col-sm-4">
             <ul className="footer-menu">
-              <h4 className="footer-menu-title">support</h4>
+              <h4 className="footer-menu-title">Social Networks</h4>
               <li className="footer-menu-item">
-                <Link to="/">legal & privacy</Link>
+                <Link to="/">telegram</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">terms & conditions</Link>
+                <Link to="/">twitter</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">cookie policy</Link>
-              </li>
-              <li className="footer-menu-item">
-                <Link to="/">cookie preferences</Link>
+                <Link to="/">Discord</Link>
               </li>
             </ul>
           </div>
