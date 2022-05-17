@@ -928,7 +928,7 @@ img {
 
 .pool-alert {
   padding: 80px 0;
-  background: linear-gradient(94.33deg, #81a0f4 31.41%, #c1d3ff 104.29%);
+  background: #09216a;
 
   h1 {
     font-weight: 600;
@@ -2160,7 +2160,8 @@ img {
     width: 80% !important;
   }
   @media (max-width: 580px) {
-    height: 390px;
+    height: 95%;
+    background: #edf2ff !important;
   }
 }
 
@@ -2177,6 +2178,15 @@ img {
   box-shadow: none;
   border-radius: 0;
   height: 100%;
+  h2 {
+    @media (max-width: 580px) {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 30px;
+      color: #09216a;
+      text-align: center;
+    }
+  }
   .form-group .input-number .number-dropdon {
     .input-country-value {
       span {
@@ -2204,12 +2214,19 @@ img {
   .form-group {
     input {
       @media (max-width: 580px) {
-        width: 243px;
+        width: 100%;
         padding-right: 0;
-        padding-top: 3px;
-        padding-bottom: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         font-size: 14px;
+        color: #20336a;
+        &::placeholder {
+          color: #20336a;
+        }
       }
+    }
+    label {
+      color: #9aacdc;
     }
     .input-number {
       input {
@@ -2223,20 +2240,63 @@ img {
       width: auto;
     }
     @media (max-width: 580px) {
-      margin: 0 0;
+      margin: 0px auto;
+      margin-top: 28px !important;
+      width: 80%;
     }
   }
   button.main-btn {
     @media (max-width: 580px) {
       width: 168px;
-      height: 39px;
+      height: 48px;
       background: #ff2853;
       border-radius: 6px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 5px;
+      margin-top: 45px !important;
     }
+  }
+}
+
+.close-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  img {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #09216a;
+    margin-top: 20px;
+  }
+  p {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #20336a;
+  }
+  button {
+    width: 168px;
+    height: 48px;
+    background: #ff2853;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px !important;
   }
 }
 
@@ -2266,7 +2326,7 @@ img {
   right: 20px;
   top: 12px;
   font-size: 42px;
-  background: #ffffff;
+  background: transparent;
   border-radius: 18px;
   border: 0;
   &:focus-visible {
