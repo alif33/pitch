@@ -33,24 +33,23 @@ const SliderNav = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 100,
+    pauseOnHover: true,
     slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 0,
     autoplay: true,
+    speed: 9000,
+    autoplaySpeed: 100,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1280,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 991,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
           initialSlide: 2,
         },
       },
@@ -58,7 +57,6 @@ const SliderNav = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
     ],

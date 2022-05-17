@@ -314,3 +314,12 @@ ul {
     transform: translate(0%, 0%) scale(1);
   }
 }
+
+@keyframes navbarAnimation {
+  0%{
+    top: -100px;
+  }
+  100%{
+    top: 0;
+  }
+}

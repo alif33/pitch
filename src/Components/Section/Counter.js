@@ -19,6 +19,9 @@ import {
 import Web3 from "web3";
 
 const Counter = () => {
+  const [swapSuccess, setSwapSuccess] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [swap, setSwap] = useState(false);
   const [project, setProject] = useState();
   const [reload, setReload] = useState(1);
   const [disable, setDisable] = useState(false);
@@ -74,6 +77,7 @@ const Counter = () => {
   };
 
   const handleInvest = async () => {
+    setSwap(true);
     setDisable(true);
     const { status, message } = await NetworkHandler();
     if (status) {
@@ -91,10 +95,14 @@ const Counter = () => {
             window.ethereum.selectedAddress
           ).then((res) => {
             console.log(res);
+            setLoading(false);
+            setSwapSuccess(true);
           });
         }
       });
     } else {
+      setLoading(false);
+      setSwapSuccess(false);
       toast.error(`${message}`);
     }
   };
@@ -152,68 +160,95 @@ const Counter = () => {
             <h2 className="mt-5 mt-md-3 mb-4 pt-3 pt-md-0 token-purchase-title">
               Token purchase calculator
             </h2>
-            <div className="token-purchase mt-3">
-              <div className="row w-100">
-                <div className="col-12 col-md-6 order-md-first order-last">
-                  <div className="amount-of-tokens">
-                    <label htmlFor="">Amount of Tokens</label>
-                    <input
-                      type="number"
-                      value={rangeValue}
-                      onChange={(e) => setRangeValue(parseInt(e.target.value))}
-                      onFocus={() => setTokenSpan(!tokenSpan)}
-                      onBlur={() => setTokenSpan(!tokenSpan)}
-                    />
-                    {tokenSpan && <span></span>}
-                  </div>
-                  <div className="amount-of-tokens mt-2 USTD">
-                    <label htmlFor="">Amount of USDT</label>
-                    <input
-                      type="number"
-                      value={usdtAmountToInvest}
-                      onChange={(e) => handleUsdt(e)}
-                      onFocus={() => setUsdt(!usdt)}
-                      onBlur={() => setUsdt(!usdt)}
-                    />
-                    {usdt && <span></span>}
-                  </div>
-                </div>
-                <div className="col-12 col-md-6">
-                  <div className="balance">
-                    <div className="balance-header">
-                      {balance.status && <p>BALANCE: {balance.amount}</p>}
-                      <p></p>
-                      <img
-                        onClick={() => setReload(reload + 1)}
-                        src="/img/loader-icon.svg"
-                        alt=""
-                        className="reload-img"
-                      />
+            {swap ? (
+              <>
+                <div className="swap-section">
+                  {loading && (
+                    <>
+                      <img src="../img/animation2.gif" alt="" />
+                      <div className="content-swap">
+                        <h4>Swap Processing</h4>
+                        <h5>Please wait...</h5>
+                      </div>
+                    </>
+                  )}
 
-                      <a className="m-auto">
-                        1 USDT = {projectsList[projectId].swap_rate}{" "}
-                        {projectsList[projectId].symbol}
-                      </a>
-                      {network?._chain && (
-                        <p>
-                          {" "}
-                          NETWOTK: &nbsp;
-                          <img src={network._chain.logo} alt="" /> &nbsp;
-                          {network._chain.currency}
-                        </p>
-                      )}
+                  {swapSuccess ? (
+                    <h4>The purchase was made successfully</h4>
+                  ) : (
+                    <div>
+                      <h4>The purchase process failed</h4>
+                      <button className="mt-4 main-btn2">Try again</button>
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : (
+              <div className="token-purchase mt-3">
+                <div className="row w-100">
+                  <div className="col-12 col-md-6 order-md-first order-last">
+                    <div className="amount-of-tokens">
+                      <label htmlFor="">Amount of Tokens</label>
+                      <input
+                        type="number"
+                        value={rangeValue}
+                        onChange={(e) =>
+                          setRangeValue(parseInt(e.target.value))
+                        }
+                        onFocus={() => setTokenSpan(!tokenSpan)}
+                        onBlur={() => setTokenSpan(!tokenSpan)}
+                      />
+                      {tokenSpan && <span></span>}
+                    </div>
+                    <div className="amount-of-tokens mt-2 USTD">
+                      <label htmlFor="">Amount of USDT</label>
+                      <input
+                        type="number"
+                        value={usdtAmountToInvest}
+                        onChange={(e) => handleUsdt(e)}
+                        onFocus={() => setUsdt(!usdt)}
+                        onBlur={() => setUsdt(!usdt)}
+                      />
+                      {usdt && <span></span>}
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <div className="balance">
+                      <div className="balance-header">
+                        {balance.status && <p>BALANCE: {balance.amount}</p>}
+                        <p></p>
+                        <img
+                          onClick={() => setReload(reload + 1)}
+                          src="/img/loader-icon.svg"
+                          alt=""
+                          className="reload-img"
+                        />
+
+                        <a className="m-auto">
+                          1 USDT = {projectsList[projectId].swap_rate}{" "}
+                          {projectsList[projectId].symbol}
+                        </a>
+                        {network?._chain && (
+                          <p>
+                            {" "}
+                            NETWOTK: &nbsp;
+                            <img src={network._chain.logo} alt="" /> &nbsp;
+                            {network._chain.currency}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
+                <button
+                  disabled={disable}
+                  onClick={handleInvest}
+                  className="main-btn mt-4"
+                >
+                  swap
+                </button>
               </div>
-              <button
-                disabled={disable}
-                onClick={handleInvest}
-                className="main-btn mt-4"
-              >
-                swap
-              </button>
-            </div>
+            )}
           </div>
         </div>
       </div>

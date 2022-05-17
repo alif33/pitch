@@ -19,13 +19,20 @@ const Navbar = ({ status }) => {
     } catch (error) {
       console.log(error);
     }
-  }
-  
+  };
+
+  window.addEventListener("scroll", function () {
+    var header = document.querySelector(".navbar");
+    header.classList.toggle("sticky", window.scrollY > 100);
+  });
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
+
         <Link className="navbar-brand" to="/">
           <img src="/img/logo.svg" alt="" />
+          <img src="/img/logo2.svg" alt="" />
         </Link>
 
         <div className="navbar-div">
@@ -62,6 +69,11 @@ const Navbar = ({ status }) => {
                 </Link>
               </li>
               <li className={`nav-item ${status === "account" && "active"}`}>
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
+              <li className={`nav-item ${status === "account" && "active"}`}>
                 <Link className="nav-link" to="/account">
                   Account
                 </Link>
@@ -79,6 +91,7 @@ const Navbar = ({ status }) => {
             onClick={() => setNavbarShow(!navbarShow)}
           >
             <img src="/img/menu-icon.svg" alt="" />
+            <img src="/img/menu-icon2.svg" alt="" />
           </button>
         </div>
       </div>
