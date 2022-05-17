@@ -2151,7 +2151,7 @@ img {
   border: none !important;
   overflow: hidden;
   border-radius: 10px;
-  background: #ffffff;
+  background: #edf2ff !important;
   box-shadow: 0px 4px 20px 10px rgb(87 128 255 / 12%);
   @media (max-width: 992px) {
     width: 60% !important;
@@ -2161,7 +2161,7 @@ img {
   }
   @media (max-width: 580px) {
     height: 95%;
-    background: #edf2ff !important;
+    
   }
 }
 
@@ -2178,12 +2178,12 @@ img {
   box-shadow: none;
   border-radius: 0;
   height: 100%;
+  color: #09216a;
   h2 {
     @media (max-width: 580px) {
       font-weight: 700;
       font-size: 30px;
       line-height: 30px;
-      color: #09216a;
       text-align: center;
     }
   }
@@ -2213,16 +2213,17 @@ img {
   }
   .form-group {
     input {
+      color: #20336a;
+        &::placeholder {
+          color: #20336a;
+        }
       @media (max-width: 580px) {
         width: 100%;
         padding-right: 0;
         padding-top: 10px;
         padding-bottom: 10px;
         font-size: 14px;
-        color: #20336a;
-        &::placeholder {
-          color: #20336a;
-        }
+        
       }
     }
     label {
