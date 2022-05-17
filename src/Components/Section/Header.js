@@ -7,7 +7,7 @@ const Header = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="header d-flex justify-content-center align-items-center">
+    <div className="header">
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-6 col-md-12">

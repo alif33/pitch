@@ -355,6 +355,9 @@ img {
   background: linear-gradient(101.01deg, #d3deff -21.7%, $light-color 46.47%);
   position: relative;
   overflow: hidden;
+  .row {
+    margin-top: 64px;
+  }
   .header-leftside {
     height: 100%;
     margin-left: 13%;
@@ -463,6 +466,17 @@ img {
     position: relative;
     height: 100%;
     width: 100%;
+    @media (max-width: 991px) {
+      height: 468px;
+      margin-top: 108px !important;
+      width: 50%;
+      margin: auto;
+    }
+    @media (max-width: 600px) {
+      height: 270px;
+      margin-top: 86px !important;
+      width: 100%;
+    }
     .header-img {
       position: absolute;
       .bg-header-img {
@@ -481,6 +495,12 @@ img {
         animation: animation12 40s infinite;
         width: 341.42px;
         height: 190.58px;
+        right: 114px;
+      }
+      @media (max-width: 600px) {
+        animation: animation123 40s infinite;
+        width: 170.42px;
+        height: 110.58px;
       }
       .bg-header-img1 {
         width: 506.37px;
@@ -488,6 +508,10 @@ img {
         @media (max-width: 1920px) {
           width: 341.42px;
           height: 190.58px;
+        }
+        @media (max-width: 600px) {
+          width: 170.42px;
+          height: 110.58px;
         }
       }
     }
@@ -499,10 +523,15 @@ img {
       animation: animation3 40s infinite;
       overflow: hidden;
       @media (max-width: 1920px) {
-        right: 138px;
+        right: 0;
         width: 184.26px;
         height: 222.19px;
         animation: animation32 40s infinite;
+      }
+      @media (max-width: 600px) {
+        animation: animation323 40s infinite;
+        width: 128.26px;
+        height: 106.19px;
       }
       .bg-header-img2 {
         width: 243.06px;
@@ -510,6 +539,10 @@ img {
         @media (max-width: 1920px) {
           width: 184.26px;
           height: 222.19px;
+        }
+        @media (max-width: 600px) {
+          width: 128.26px;
+          height: 106.19px;
         }
       }
     }
@@ -521,9 +554,16 @@ img {
       animation: animation2 40s infinite;
       overflow: hidden;
       @media (max-width: 1920px) {
-        top: 183px;
+        top: 156px;
+        right: 142px;
         width: 244.77px;
         height: 262.29px;
+      }
+      @media (max-width: 600px) {
+        top: 90px;
+        right: 98px;
+        width: 144.77px;
+        height: 140.29px;
       }
       .bg-header-img3 {
         width: 322.88px;
@@ -532,6 +572,10 @@ img {
           width: 244.77px;
           height: 262.29px;
         }
+        @media (max-width: 600px) {
+          width: 144.77px;
+          height: 140.29px;
+        }
       }
     }
     span {
@@ -539,22 +583,22 @@ img {
       bottom: 0;
       right: 1%;
       width: 121.88px;
-      height: 72.36px; 
+      height: 72.36px;
       img {
         width: 100%;
         height: 100%;
+      }
+      @media (max-width: 991px) {
+        display: none;
       }
     }
   }
   @media (max-width: 992px) {
     height: auto;
-    padding-top: 150px;
   }
   @media (max-width: 600px) {
-    padding-top: 112px;
   }
   @media (max-width: 375px) {
-    padding-top: 90px;
   }
 }
 .new-project-items.all {
