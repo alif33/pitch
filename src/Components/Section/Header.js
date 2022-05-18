@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import SubscribeModal from "./allModal/SubscribeModal";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
     <div className="header">
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-6 col-md-12">
-            <div className="header-leftside">
+            <div
+              className="header-leftside"
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-back"
+            >
               <div className="header-title">
                 <h2>
                   <img src="/img/flag.svg" alt="" />A CrowdFunding Platform
@@ -60,13 +73,13 @@ const Header = () => {
                 ></div>
               </div>
               <div className="header-img header-img2">
-              <div
+                <div
                   className="bg-header-img bg-header-img2"
                   style={{ backgroundImage: `url('img/header-img2.png')` }}
                 ></div>
               </div>
               <div className="header-img header-img3">
-              <div
+                <div
                   className="bg-header-img bg-header-img3"
                   style={{ backgroundImage: `url('img/header-img3.png')` }}
                 ></div>
