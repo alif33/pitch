@@ -50,6 +50,8 @@ export const userSlice = createSlice({
         LogoURL,
         compayStage,
         selectState,
+        companyWebsite,
+        teamSize,
       } = action.payload;
 
       return {
@@ -57,6 +59,8 @@ export const userSlice = createSlice({
         companyInfo: {
           projectDiscerption,
           teamBackground,
+          companyWebsite,
+          teamSize,
           socialsLink: {
             facebook,
             instagram,
@@ -133,10 +137,10 @@ export const userSlice = createSlice({
       };
     },
     setVideoPitch: (state, action) => {
-      const {url } = action.payload;
+      const { url } = action.payload;
       return {
         ...state,
-        videoPitch: {url},
+        videoPitch: { url },
       };
     },
 

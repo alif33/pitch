@@ -216,6 +216,59 @@ const CompanyInfoForm = () => {
             </div>
 
             <div className="social-lick mb-4">
+              <div className="row mt-2">
+                <div className="col-md-5">
+                  <div className="form-group">
+                    <label htmlFor="teamSize">
+                      Team size<span>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="teamSize"
+                      placeholder="Enter your Facebook page"
+                      defaultValue={companyInfo.socialsLink.teamSize}
+                      {...register("teamSize", {
+                        required: true,
+                      })}
+                      className={errors.teamSize ? "incorrect" : "input"}
+                    />
+                    {errors.teamSize && (
+                      <span>
+                        <img src="/img/false-icon.svg" alt="" />
+                        Incorrect Team size
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="col-md-5 ms-auto">
+                  {" "}
+                  <div className="form-group">
+                    <label htmlFor="companyWebsite">
+                      Company Website<span>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="companyWebsite"
+                      placeholder="Enter your telegram page "
+                      defaultValue={companyInfo.socialsLink.companyWebsite}
+                      {...register("telegram", {
+                        // pattern:
+                        required: true,
+                      })}
+                      className={errors.companyWebsite ? "incorrect" : "input"}
+                    />
+                    {errors.companyWebsite && (
+                      <span>
+                        <img src="/img/false-icon.svg" alt="" />
+                        Incorrect Company Website
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="social-lick mb-4 bg-for-social">
               <div className="row mt-4">
                 <div className="col-md-5">
                   <h5>Links for Socials</h5>
@@ -484,6 +537,7 @@ const CompanyInfoForm = () => {
                 </div>
               </div>
             </div>
+            
             <button type="submit" className="main-btn mt-5">
               Next
             </button>

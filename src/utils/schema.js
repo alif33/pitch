@@ -17,6 +17,8 @@ export const userData = {
     teamBackground: "",
     compayStage: "",
     selectState: "",
+    teamSize: "",
+    companyWebsite: "",
     socialsLink: {
       facebook: "",
       instagram: "",
