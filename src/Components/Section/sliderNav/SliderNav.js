@@ -8,6 +8,7 @@ const SliderNav = () => {
   //2. Initiate the CoinGecko API Client
   const CoinGeckoClient = new CoinGecko();
 
+
   //3. Make calls
   var func = async () => {
     // let data = await CoinGeckoClient.coins.markets();
@@ -22,6 +23,7 @@ const SliderNav = () => {
     //   vs_currencies: ["eur", "usd", "usdt", "usdc"],
     // });
     let data = await CoinGeckoClient.coins.all();
+    console.log(data);
     setBalance(data.data);
   };
 

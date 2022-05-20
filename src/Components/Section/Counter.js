@@ -20,7 +20,7 @@ import Web3 from "web3";
 
 const Counter = () => {
   const [swapSuccess, setSwapSuccess] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [swap, setSwap] = useState(false);
   const [project, setProject] = useState();
   const [reload, setReload] = useState(1);
@@ -77,6 +77,7 @@ const Counter = () => {
   };
 
   const handleInvest = async () => {
+    setLoading(true);
     setSwap(true);
     setDisable(true);
     const { status, message } = await NetworkHandler();
@@ -165,20 +166,23 @@ const Counter = () => {
                 <div className="swap-section">
                   {loading && (
                     <>
-                      <img src="../img/animation2.gif" alt="" />
-                      <div className="content-swap">
-                        <h4>Swap Processing</h4>
-                        <h5>Please wait...</h5>
+                      <div>
+                        <img src="../img/animation2.gif" alt="" />
+                        <div className="content-swap">
+                          <h4>Swap Processing</h4>
+                          <h5>Please wait...</h5>
+                        </div>
                       </div>
                     </>
                   )}
 
-                  {swapSuccess ? (
+                  {swapSuccess && !loading && (
                     <h4>The purchase was made successfully</h4>
-                  ) : (
+                  )}
+                  {!swapSuccess && !loading && (
                     <div>
                       <h4>The purchase process failed</h4>
-                      <button className="mt-4 main-btn2">Try again</button>
+                      <button  onClick={handleInvest} className="mt-4 main-btn2">Try again</button>
                     </div>
                   )}
                 </div>
