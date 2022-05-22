@@ -20,8 +20,8 @@ import Web3 from "web3";
 
 const Counter = () => {
   const [swapSuccess, setSwapSuccess] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [swap, setSwap] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [swap, setSwap] = useState(true);
   const [project, setProject] = useState();
   const [reload, setReload] = useState(1);
   const [disable, setDisable] = useState(false);
@@ -202,7 +202,7 @@ const Counter = () => {
                         onFocus={() => setTokenSpan(!tokenSpan)}
                         onBlur={() => setTokenSpan(!tokenSpan)}
                       />
-                      {tokenSpan && <span></span>}
+                      {/* {tokenSpan && <span></span>} */}
                     </div>
                     <div className="amount-of-tokens mt-2 USTD">
                       <label htmlFor="">Amount of USDT</label>
