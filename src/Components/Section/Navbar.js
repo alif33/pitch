@@ -68,7 +68,7 @@ const Navbar = ({ status }) => {
                   Launchpad
                 </Link>
               </li>
-              <li className={`nav-item ${status === "account" && "active"}`}>
+              <li className={`nav-item ${status === "about" && "active"}`}>
                 <Link className="nav-link" to="/about">
                   About
                 </Link>

@@ -20,8 +20,8 @@ import Web3 from "web3";
 
 const Counter = () => {
   const [swapSuccess, setSwapSuccess] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [swap, setSwap] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [swap, setSwap] = useState(false);
   const [project, setProject] = useState();
   const [reload, setReload] = useState(1);
   const [disable, setDisable] = useState(false);
@@ -153,7 +153,7 @@ const Counter = () => {
                 completed={80}
                 className="mt-3"
                 bgColor="#FF2853"
-                labelColor="#fff"
+                labelColor="#FF2853"
                 height="15px"
               />
             </div>
@@ -213,7 +213,7 @@ const Counter = () => {
                         onFocus={() => setUsdt(!usdt)}
                         onBlur={() => setUsdt(!usdt)}
                       />
-                      {usdt && <span></span>}
+                      {/* {usdt && <span></span>} */}
                     </div>
                   </div>
                   <div className="col-12 col-md-6">

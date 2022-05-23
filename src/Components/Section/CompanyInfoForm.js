@@ -111,10 +111,15 @@ const CompanyInfoForm = () => {
       })
       .catch((err) => console.log(err));
   };
-  const options = [
-    { value: "Eth", label: "Eth" },
-    { value: "Sol", label: "Sol" },
-    { value: "Bsc", label: "Bsc" },
+  const SelectState = [
+    { value: "Israel1", label: "Israel" },
+    { value: "Israel2", label: "Israel" },
+    { value: "Israel3", label: "Israel" },
+  ];
+  const SelectStage = [
+    { value: "some thing1", label: "some thing" },
+    { value: "some thing2", label: "some thing" },
+    { value: "some thing3", label: "some thing" },
   ];
 
   const indicatorSeparatorStyle = {
@@ -132,7 +137,7 @@ const CompanyInfoForm = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-10 m-auto">
+        <div className="col-md-12 p-0 ps-0 pe-0 m-auto">
           <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <h2 className="main-title mt-3 py-3" style={{ width: "724px" }}>
               Company info
@@ -145,7 +150,8 @@ const CompanyInfoForm = () => {
                       Company incorporated<span>*</span>
                     </label>
                     <Select
-                      options={options}
+                      options={SelectState}
+                      defaultValue={{ value: "Select state", label: "Select state" }}
                       onChange={(e) => setSelectState(e)}
                       components={{ IndicatorSeparator }}
                     />
@@ -163,7 +169,8 @@ const CompanyInfoForm = () => {
                       Company incorporated<span>*</span>
                     </label>
                     <Select
-                      options={options}
+                      options={SelectStage}
+                      defaultValue={{ value: "Select stage ", label: "Select stage " }}
                       onChange={(e) => setCompayStage(e)}
                       components={{ IndicatorSeparator }}
                     />
@@ -225,7 +232,7 @@ const CompanyInfoForm = () => {
                     <input
                       type="text"
                       id="teamSize"
-                      placeholder="Enter your Facebook page"
+                      placeholder="Enter Team size"
                       defaultValue={companyInfo.socialsLink.teamSize}
                       {...register("teamSize", {
                         required: true,
@@ -249,7 +256,7 @@ const CompanyInfoForm = () => {
                     <input
                       type="text"
                       id="companyWebsite"
-                      placeholder="Enter your telegram page "
+                      placeholder="Enter Company Website"
                       defaultValue={companyInfo.socialsLink.companyWebsite}
                       {...register("telegram", {
                         // pattern:
@@ -268,151 +275,155 @@ const CompanyInfoForm = () => {
               </div>
             </div>
 
-            <div className="social-lick mb-4 bg-for-social">
-              <div className="row mt-4">
-                <div className="col-md-5">
-                  <h5>Links for Socials</h5>
-                </div>
-                <div className="col-md-5 ms-auto">
-                  <h5>Links for community </h5>
-                </div>
-              </div>
-              <div className="row mt-2">
-                <div className="col-md-5">
-                  <div className="form-group">
-                    <label htmlFor="facebook">
-                      Facebook<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="facebook"
-                      placeholder="Enter your Facebook page"
-                      defaultValue={companyInfo.socialsLink.facebook}
-                      {...register("facebook", {
-                        pattern:
-                          /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\\-]*\/)*([\w\\-]*)/,
-                        required: true,
-                      })}
-                      className={errors.facebook ? "incorrect" : "input"}
-                    />
-                    {errors.facebook && (
-                      <span>
-                        <img src="/img/false-icon.svg" alt="" />
-                        Incorrect Facebook
-                      </span>
-                    )}
+            <div className="bg-for-social">
+              <div className="social-lick mb-4 m-auto ">
+                <div className="row mt-4">
+                  <div className="col-md-5">
+                    <h5>Links for Socials</h5>
+                  </div>
+                  <div className="col-md-5 ms-auto">
+                    <h5>Links for community </h5>
                   </div>
                 </div>
-                <div className="col-md-5 ms-auto">
-                  {" "}
-                  <div className="form-group">
-                    <label htmlFor="instagram">
-                      Telegram*<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="telegram"
-                      placeholder="Enter your telegram page "
-                      defaultValue={companyInfo.socialsLink.telegram}
-                      {...register("telegram", {
-                        // pattern:
-                        required: true,
-                      })}
-                      className={errors.telegram ? "incorrect" : "input"}
-                    />
-                    {errors.telegram && (
-                      <span>
-                        <img src="/img/false-icon.svg" alt="" />
-                        Incorrect telegram
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className="row mt-4 ">
-                <div className="col-md-5">
-                  <div className="form-group">
-                    <label htmlFor="instagram">
-                      Instagram<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="instagram"
-                      placeholder="Enter your LinkedIn page"
-                      defaultValue={companyInfo.socialsLink.instagram}
-                      {...register("instagram", {
-                        pattern:
-                          /(?:(?:http|https):\/\/)?(?:www\.)?(?:instagram\.com|instagr\.am)\/([A-Za-z0-9-_\\.]+)/im,
-                        required: true,
-                      })}
-                      className={errors.instagram ? "incorrect" : "input"}
-                    />
-                    {errors.instagram && (
-                      <span>
-                        <img src="/img/false-icon.svg" alt="" />
-                        Incorrect instagram
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="col-md-5 ms-auto">
-                  {" "}
-                  <div className="form-group">
-                    <label htmlFor="discord">
-                      Discord<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="discord"
-                      placeholder="Enter your Discord page "
-                      defaultValue={companyInfo.socialsLink.discord}
-                      {...register(
-                        "discord"
-                        // {
-                        //   pattern:
-                        //   /discordapp.com\/api\/webhooks\/([^\\/]+)\/([^\\/]+)/,
-                        //   required: true,
-                        // }
+                <div className="row mt-2">
+                  <div className="col-md-5">
+                    <div className="form-group">
+                      <label htmlFor="facebook">
+                        Facebook<span>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="facebook"
+                        placeholder="Enter your Facebook page"
+                        defaultValue={companyInfo.socialsLink.facebook}
+                        {...register("facebook", {
+                          pattern:
+                            /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\\-]*\/)*([\w\\-]*)/,
+                          required: true,
+                        })}
+                        className={errors.facebook ? "incorrect" : "input"}
+                      />
+                      {errors.facebook && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Incorrect Facebook
+                        </span>
                       )}
-                      className={errors.discord ? "incorrect" : "input"}
-                    />
-                    {errors.discord && (
-                      <span>
-                        <img src="/img/false-icon.svg" alt="" />
-                        Incorrect Discord
-                      </span>
-                    )}
+                    </div>
+                  </div>
+                  <div className="col-md-5 ms-auto">
+                    {" "}
+                    <div className="form-group">
+                      <label htmlFor="instagram">
+                        Telegram*<span>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="telegram"
+                        placeholder="Enter your telegram page "
+                        defaultValue={companyInfo.socialsLink.telegram}
+                        {...register("telegram", {
+                          // pattern:
+                          required: true,
+                        })}
+                        className={errors.telegram ? "incorrect" : "input"}
+                      />
+                      {errors.telegram && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Incorrect telegram
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="row mt-4 ">
+                  <div className="col-md-5">
+                    <div className="form-group">
+                      <label htmlFor="instagram">
+                        Instagram<span>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="instagram"
+                        placeholder="Enter your LinkedIn page"
+                        defaultValue={companyInfo.socialsLink.instagram}
+                        {...register("instagram", {
+                          pattern:
+                            /(?:(?:http|https):\/\/)?(?:www\.)?(?:instagram\.com|instagr\.am)\/([A-Za-z0-9-_\\.]+)/im,
+                          required: true,
+                        })}
+                        className={errors.instagram ? "incorrect" : "input"}
+                      />
+                      {errors.instagram && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Incorrect instagram
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="col-md-5 ms-auto">
+                    {" "}
+                    <div className="form-group">
+                      <label htmlFor="discord">
+                        Discord<span>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="discord"
+                        placeholder="Enter your Discord page "
+                        defaultValue={companyInfo.socialsLink.discord}
+                        {...register(
+                          "discord"
+                          // {
+                          //   pattern:
+                          //   /discordapp.com\/api\/webhooks\/([^\\/]+)\/([^\\/]+)/,
+                          //   required: true,
+                          // }
+                        )}
+                        className={errors.discord ? "incorrect" : "input"}
+                      />
+                      {errors.discord && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Incorrect Discord
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="row mt-4 ">
+                  <div className="col-md-5">
+                    <div className="form-group">
+                      <label htmlFor="linkedIn">
+                        LinkedIn<span>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="linkedIn"
+                        placeholder="Enter your LinkedIn page "
+                        defaultValue={companyInfo.socialsLink.linkedIn}
+                        {...register("linkedIn", {
+                          pattern:
+                            /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\\/]))?/,
+                          required: true,
+                        })}
+                        className={errors.linkedIn ? "incorrect" : "input"}
+                      />
+                      {errors.linkedIn && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Incorrect LinkedIn
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="row mt-4 ">
-                <div className="col-md-5">
-                  <div className="form-group">
-                    <label htmlFor="linkedIn">
-                      LinkedIn<span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="linkedIn"
-                      placeholder="Enter your LinkedIn page "
-                      defaultValue={companyInfo.socialsLink.linkedIn}
-                      {...register("linkedIn", {
-                        pattern:
-                          /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\\/]))?/,
-                        required: true,
-                      })}
-                      className={errors.linkedIn ? "incorrect" : "input"}
-                    />
-                    {errors.linkedIn && (
-                      <span>
-                        <img src="/img/false-icon.svg" alt="" />
-                        Incorrect LinkedIn
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
+            </div>
 
+            <div className="social-lick">
               <div className="row mt-5 pt-4">
                 <div className="col-md-5">
                   <div className="upload-pitch-deck">
@@ -537,12 +548,12 @@ const CompanyInfoForm = () => {
                 </div>
               </div>
             </div>
-            
+
             <button type="submit" className="main-btn mt-5">
               Next
             </button>
             <button className="back-btn mt-3">
-              <Link to="/contact">
+              <Link to="/founders-info">
                 <img src="/img/back-icon.svg" alt="" />
                 Back
               </Link>

@@ -3026,6 +3026,8 @@ button.main-btn {
 .token-table {
   box-sizing: border-box;
   margin-top: 30px;
+  padding-bottom: 60px;
+  background: #3c5ab5;
   @media (max-width: 991px) {
     overflow-x: scroll;
   }
@@ -3214,6 +3216,7 @@ button.main-btn {
       line-height: 20px;
       text-align: center;
       color: #ffffff;
+      margin-top: 5px;
     }
   }
   h4 {
@@ -3238,6 +3241,9 @@ button.main-btn {
   margin: 0 auto;
 }
 
-// .bg-for-social {
-//   background: #e8edff;
-// }
+.bg-for-social {
+  padding: 5px 0;
+  background: #e8edff;
+  margin-top: 40px;
+  width: 100%;
+}

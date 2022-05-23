@@ -10,7 +10,7 @@ import Follow from "./Section/Follow";
 const About = () => {
   return (
     <div className="about">
-      <Navbar status={"home"} />
+      <Navbar status={"about"} />
       <AboutHeader />
       <Features />
       <ShowTime />

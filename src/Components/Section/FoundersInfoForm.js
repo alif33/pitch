@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setFoundersInfo } from "../../store/users/actions";
 
 const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { users } = useSelector((state) => state);
+  const { foundersInfo } = users;
   const {
     register,
     handleSubmit,
@@ -37,7 +39,7 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
                           type="text"
                           id="founderName"
                           placeholder="Enter full name"
-                          // defaultValue={companyInfo.socialsLink.facebook}
+                          defaultValue={foundersInfo.founderName}
                           {...register("founderName", {
                             required: true,
                           })}
@@ -61,7 +63,7 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
                           type="text"
                           id="founderRole"
                           placeholder="Enter Role"
-                          // defaultValue={companyInfo.socialsLink.instagram}
+                          defaultValue={foundersInfo.founderRole}
                           {...register("founderRole", {
                             required: true,
                           })}
@@ -84,7 +86,7 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
                   <textarea
                     id="founderDiscerption"
                     placeholder="Enter Background ..."
-                    // defaultValue={companyInfo.projectDiscerption}
+                    defaultValue={foundersInfo.founderDiscerption}
                     {...register("founderDiscerption", { required: true })}
                     className={
                       errors.founderDiscerption ? "incorrect" : "input"
@@ -107,7 +109,7 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
                         <input
                           id="founderLinkedin"
                           placeholder="Enter Linkedin link"
-                          // defaultValue={companyInfo.projectDiscerption}
+                          defaultValue={foundersInfo.founderLinkedin}
                           {...register("founderLinkedin", { required: true })}
                           className={
                             errors.founderLinkedin ? "incorrect" : "input"
