@@ -5,13 +5,12 @@ import Navbar from './Section/Navbar';
 import Onboarding from './Section/Onboarding';
 
 const FoundersInfo = () => {
-    const [founderForm, setFounderForm] = useState([1, 2]);
     return (
         <div className="contact form-background">
         <Navbar status={"submit"} />
         <div className="form-site-divide">
           <Onboarding status="founders" done={2} />
-          <FoundersInfoForm founderForm={founderForm} setFounderForm={setFounderForm} />
+          <FoundersInfoForm  />
         </div>
         <Footer />
       </div>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setFoundersInfo } from "../../store/users/actions";
 
-const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
+const FoundersInfoForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state);
@@ -37,12 +37,16 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
             <h2 className="main-title mt-3 py-3" style={{ width: "724px" }}>
               Founders Info
             </h2>
-            {addFounder.map((founder, index) => (<>
-               
-              
-                <div key={founder} className={`social-lick mb-4 ${founder !== 1 ? 'mt-4' : ''}`}>
+            {addFounder.map((founder, index) => (
+              <>
+                <div
+                  key={founder}
+                  className={`social-lick mb-4 ${founder !== 1 ? "mt-4" : ""}`}
+                >
                   <div className="row mt-2">
-                    {founder !== 1 && <h4 className="mb-3">Founder {founder}</h4>}
+                    {founder !== 1 && (
+                      <h4 className="mb-3">Founder {founder}</h4>
+                    )}
                     <div className="col-md-5">
                       <div className="form-group">
                         <label htmlFor="founderName">
@@ -140,9 +144,10 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
                           <button
                             type="button"
                             onClick={() => handleFounderRemove(index)}
-                            className="btn btn-danger"
+                            className="delete-founder-btn"
                           >
-                            Remove
+                            <img src="img/delete-founder.svg" alt="" /> Delete
+                            Founder
                           </button>
                         </div>
                       )}

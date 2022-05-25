@@ -3247,3 +3247,22 @@ button.main-btn {
   margin-top: 40px;
   width: 100%;
 }
+
+.delete-founder-btn {
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 28px;
+  color: #000f3c;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+    margin-top: 22px;
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+}
