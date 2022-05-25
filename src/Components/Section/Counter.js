@@ -156,6 +156,7 @@ const Counter = () => {
                 labelColor="#FF2853"
                 height="15px"
               />
+              
             </div>
 
             <h2 className="mt-5 mt-md-3 mb-4 pt-3 pt-md-0 token-purchase-title">

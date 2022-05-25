@@ -17,17 +17,17 @@ const Footer = () => {
             <ul className="footer-menu">
               <h4 className="footer-menu-title">company</h4>
               <li className="footer-menu-item">
-                <Link to="/chaiport">Submit IDO</Link>
+                <Link to="/contact">Submit IDO</Link>
               </li>
 
               <li className="footer-menu-item">
                 <Link to="/">Launchpad</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li className="footer-menu-item">
-                <Link to="/">Account</Link>
+                <Link to="/acount">Account</Link>
               </li>
             </ul>
           </div>

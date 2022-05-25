@@ -68,7 +68,7 @@ const Community = () => {
                   </li>
                 </ul>{" "}
               </div>
-              <div className="header-search about-header-search">
+              <div className="header-search about-header-search mt-5 pt-5">
                 <input
                   type="email"
                   placeholder="Join the Community with your Email"

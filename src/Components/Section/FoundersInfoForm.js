@@ -15,7 +15,7 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    dispatch(setFoundersInfo({...data }));
+    dispatch(setFoundersInfo({ ...data }));
     navigate("/company-info");
   };
 
@@ -28,109 +28,109 @@ const FoundersInfoForm = ({ founderForm, setFounderForm }) => {
               Founders Info
             </h2>
             <>
-                <div className="social-lick mb-4">
-                  <div className="row mt-2">
-                    <div className="col-md-5">
-                      <div className="form-group">
-                        <label htmlFor="founderName">
-                          Name<span>*</span>
-                        </label>
-                        <input
-                          type="text"
-                          id="founderName"
-                          placeholder="Enter full name"
-                          defaultValue={foundersInfo.founderName}
-                          {...register("founderName", {
-                            required: true,
-                          })}
-                          className={errors.founderName ? "incorrect" : "input"}
-                        />
-                        {errors.founderName && (
-                          <span>
-                            <img src="/img/false-icon.svg" alt="" />
-                            Incorrect founderName
-                          </span>
-                        )}
-                      </div>
+              <div className="social-lick mb-4">
+                <div className="row mt-2">
+                  <div className="col-md-5">
+                    <div className="form-group">
+                      <label htmlFor="founderName">
+                        Name<span>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="founderName"
+                        placeholder="Enter full name"
+                        defaultValue={foundersInfo.founderName}
+                        {...register("founderName", {
+                          required: true,
+                        })}
+                        className={errors.founderName ? "incorrect" : "input"}
+                      />
+                      {errors.founderName && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Incorrect founderName
+                        </span>
+                      )}
                     </div>
-                    <div className="col-md-5 ms-auto">
-                      {" "}
-                      <div className="form-group">
-                        <label htmlFor="founderRole">
-                          Role<span>*</span>
-                        </label>
-                        <input
-                          type="text"
-                          id="founderRole"
-                          placeholder="Enter Role"
-                          defaultValue={foundersInfo.founderRole}
-                          {...register("founderRole", {
-                            required: true,
-                          })}
-                          className={errors.founderRole ? "incorrect" : "input"}
-                        />
-                        {errors.founderRole && (
-                          <span>
-                            <img src="/img/false-icon.svg" alt="" />
-                            Incorrect Role
-                          </span>
-                        )}
-                      </div>
+                  </div>
+                  <div className="col-md-5 ms-auto">
+                    {" "}
+                    <div className="form-group">
+                      <label htmlFor="founderRole">
+                        Role<span>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="founderRole"
+                        placeholder="Enter Role"
+                        defaultValue={foundersInfo.founderRole}
+                        {...register("founderRole", {
+                          required: true,
+                        })}
+                        className={errors.founderRole ? "incorrect" : "input"}
+                      />
+                      {errors.founderRole && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Incorrect Role
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="founderDiscerption">
-                    Background<span>*</span>
-                  </label>
-                  <textarea
-                    id="founderDiscerption"
-                    placeholder="Enter Background ..."
-                    defaultValue={foundersInfo.founderDiscerption}
-                    {...register("founderDiscerption", { required: true })}
-                    className={
-                      errors.founderDiscerption ? "incorrect" : "input"
-                    }
-                  />
-                  {errors.founderDiscerption && (
-                    <span>
-                      <img src="/img/false-icon.svg" alt="" />
-                      Project discerption is required
-                    </span>
-                  )}
-                </div>
-                <div className="social-lick">
-                  <div className="row">
-                    <div className="col-12">
-                      <div className="form-group">
-                        <label htmlFor="founderLinkedin">
-                          Linkedin<span>*</span>
-                        </label>
-                        <input
-                          id="founderLinkedin"
-                          placeholder="Enter Linkedin link"
-                          defaultValue={foundersInfo.founderLinkedin}
-                          {...register("founderLinkedin", { required: true })}
-                          className={
-                            errors.founderLinkedin ? "incorrect" : "input"
-                          }
-                        />
-                        {errors.founderLinkedin && (
-                          <span>
-                            <img src="/img/false-icon.svg" alt="" />
-                            Linkedin is required
-                          </span>
-                        )}
-                      </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="founderDiscerption">
+                  Background<span>*</span>
+                </label>
+                <textarea
+                  id="founderDiscerption"
+                  placeholder="Enter Background ..."
+                  defaultValue={foundersInfo.founderDiscerption}
+                  {...register("founderDiscerption", { required: true })}
+                  className={errors.founderDiscerption ? "incorrect" : "input"}
+                />
+                {errors.founderDiscerption && (
+                  <span>
+                    <img src="/img/false-icon.svg" alt="" />
+                    Project discerption is required
+                  </span>
+                )}
+              </div>
+              <div className="social-lick">
+                <div className="row">
+                  <div className="col-12">
+                    <div className="form-group">
+                      <label htmlFor="founderLinkedin">
+                        Linkedin<span>*</span>
+                      </label>
+                      <input
+                        id="founderLinkedin"
+                        placeholder="Enter Linkedin link"
+                        defaultValue={foundersInfo.founderLinkedin}
+                        {...register("founderLinkedin", { required: true })}
+                        className={
+                          errors.founderLinkedin ? "incorrect" : "input"
+                        }
+                      />
+                      {errors.founderLinkedin && (
+                        <span>
+                          <img src="/img/false-icon.svg" alt="" />
+                          Linkedin is required
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
+            </>
 
             <div className="social-lick">
               <div className="row mt-3">
                 <div className="col-sm-3">
-                  <button className="add-founder">Add Founder</button>
+                  <button type="button" className="add-founder">
+                    Add Founder
+                  </button>
                 </div>
               </div>
             </div>

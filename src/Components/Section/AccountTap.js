@@ -15,7 +15,7 @@ const AccountTap = () => {
               onClick={() => setToken(true)}
               className={token ? "tokens active" : "tokens"}
             >
-              my tokens
+              My Tokens
             </button>
             <button
               onClick={() => setToken(false)}
