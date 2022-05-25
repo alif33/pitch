@@ -31,11 +31,11 @@ import VideoPitch from "./Components/VideoPitch";
 const App = () => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state);
-  console.log(users);
+  // console.log(users);
 
   useEffect(() => {
     fetchData().then((data) => {
-      console.log(data);
+      // console.log(data);
       dispatch(setProjects(data));
     });
   }, []);
